@@ -8,15 +8,15 @@ Instructions:
 Please do the following two tests:
 
 1.)
-- best is to start with leveled bed
+- best is to start with a leveled bed
 - flash the firmware 
 - reset to defaults via screen
-- heat up nozzle end bed to your desired temerature
+- heat up nozzle and bed to your desired temerature
 - g28
 - got to leveling on the screen
 - got to point 2
 - set initial z-offset on this point that it has a around 2mm clearance (this is not final leveling
-- go to points 3,4,5 an check if it nozzle to bed matches point 2, turn the wheels under bed to patch thos 2 mm..
+- go to points 3,4,5 an check if it nozzle to bed matches point 2, turn the wheels under bed to patch those 2 mm..
 - go back to point 2, lower your z-offset to your desired height via screen (paper method, gauge, etc)
 - go to points 3,4,5 and adjust those with the wheels to match point 2
 - go around 2-3 times
@@ -26,10 +26,10 @@ Please do the following two tests:
 - watch your g-code for the x position of your purge lines. your bad now starts exactly at x=0 and y=0
 
 2.)
-- best is to start with leveled bed
+- best is to start with a leveled bed
 - flash the firmware 
 - reset to defaults via screen
-- heat up nozzle end bed to your desired temerature
+- heat up nozzle and bed to your desired temerature
 - g28
 - got to leveling on the screen
 - got to point 1
