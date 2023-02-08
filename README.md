@@ -15,14 +15,13 @@ So my instructions for firmware installations are:
 - note your z-offset ex. -1.74mm
 - flash new firmware
 - connect with pronterface and issue
-
-M502 ; factory reset
-M851 Z-1.74 ; set your z-offset
-M500 ; save configuration
-M503 ; check if your z-offset matches
-G28 ; home your printer
-on the touch start autoleveling
-after autoleveling your are ready to print.
+- M502 ; factory reset
+- M851 Z-1.74 ; set your z-offset
+- M500 ; save configuration
+- M503 ; check if your z-offset matches
+- G28 ; home your printer
+- on the touch start autoleveling
+- after autoleveling your are ready to print.
 
 Be carefully with your printer. Mine works fine. But this is a new build. So have your fingers near the power button when lowering your z-axis and starting print for the first time.
 
