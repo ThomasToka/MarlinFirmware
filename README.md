@@ -14,7 +14,7 @@ So my instructions for firmware installations are:
 - level your bed with old firmware
 - note your z-offset ex. -1.74mm
 - flash new firmware
-- connect with pronterface and issue
+- connect with pronterface or other terminal to your printer and issue:
 - M502 ; factory reset
 - M851 Z-1.74 ; set your z-offset
 - M500 ; save configuration
