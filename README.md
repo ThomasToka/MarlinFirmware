@@ -3,13 +3,8 @@ Personal tweaks and builds of marlin 3d printer firmware repositories.
 
 Source code is here: https://github.com/ThomasToka/MarlinbySynman/tree/bugfix-2.1.x-tweakedbyThomasToka
 
-Update 08.02.2023 10:42 CET:
-
-It seems there is bug when pushing touch display fast at initial z-offset configuration via touch screen.
-I opened a bug with the builder of this wonderfull peace of software.
-https://github.com/synman/Ender-3-S1-Pro-Firmware/issues/20
-
-So my instructions for firmware installations are:
+-------------------------------------------------------------------------------------------------------------------
+My instructions for firmware installations are:
 
 - level your bed with old firmware
 - note your z-offset ex. -1.74mm
@@ -22,6 +17,18 @@ So my instructions for firmware installations are:
 - G28 ; home your printer
 - on the touch start autoleveling (there is no need to do the points if your bed was level before..)
 - after autoleveling your are ready to print.
+-------------------------------------------------------------------------------------------------------------------
+Update 08.02.2023 10:42 CET:
+
+It seems there is bug when pushing touch display fast at initial z-offset configuration via touch screen.
+I opened a bug with the builder of this wonderfull peace of software.
+https://github.com/synman/Ender-3-S1-Pro-Firmware/issues/20
+
+Update 09.02.2023 10:11 CET:
+
+The touch screen babystepping fast pushing bug has been adressed and (hopefully) fixed. Updated binaries have been uploaded.
+Feedback welcome.
+-------------------------------------------------------------------------------------------------------------------
 
 Be carefully with your printer. Mine works fine. But this is a new build. So have your fingers near the power button when lowering your z-axis and starting print for the first time.
 
