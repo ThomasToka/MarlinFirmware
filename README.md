@@ -28,6 +28,17 @@ Update 09.02.2023 10:11 CET:
 
 The touch screen babystepping fast pushing bug has been adressed and (hopefully) fixed. Updated binaries have been uploaded.
 Feedback welcome.
+
+-------------------------------------------------------------------------------------------------------------------
+Update 10.02.2023 10:59 CET:
+
+Updated binaries have been released. Its just a small Fix:
+The bed is 235x235, standard lcd_rts.cpp, the class managing lcd display only supports integer ex 170. But the bed middle is 235/2=117.5 .
+So i had to hardcode it to respect the .5 decimal.
+Works perfectly. 
+
+Now my firmware is technically complete, besides laser functionality which is not functional in upstream Marlin-2.1.x-pro-s1 source.
+So i will have to wait with this till upstream is functional.
 -------------------------------------------------------------------------------------------------------------------
 
 Be carefully with your printer. Mine works fine. But this is a new build. So have your fingers near the power button when lowering your z-axis and starting print for the first time.
