@@ -33,7 +33,7 @@ Feedback welcome.
 Update 10.02.2023 10:59 CET:
 
 Updated binaries have been released. Its just a small Fix:
-The bed is 235x235, standard lcd_rts.cpp, the class managing lcd display only supports integer ex 170. But the bed middle is 235/2=117.5 .
+The bed is 235x235, standard lcd_rts.cpp, the class managing lcd display only supports integer ex 117. But the bed middle is 235/2=117.5 .
 So i had to hardcode it to respect the .5 decimal.
 Works perfectly. 
 
