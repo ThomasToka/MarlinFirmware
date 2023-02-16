@@ -19,6 +19,13 @@ My instructions for firmware installations are:
 - after autoleveling your are ready to print.
 
 -------------------------------------------------------------------------------------------------------------------
+Update 16.02.2023 21:31 CET:
+
+Todays release is mainly a service and quality release.
+I fixed babystepping while printing as it is broken upstream.
+Enjoy :)
+
+-------------------------------------------------------------------------------------------------------------------
 Update 13.02.2023 0:13 CET:
 
 Today i ported all my config tweaks back and released a version of Marlin 2.0.8 with the Ender 3 S1 Pro upstream implementations.
