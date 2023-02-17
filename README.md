@@ -15,6 +15,7 @@ My instructions for firmware installations are:
 - M500 ; save configuration
 - M503 ; check if your z-offset matches
 - G28 ; home your printer
+- heat up nozzle and/or bed like usually do before bedleveling
 - on the touch start autoleveling (there is no need to do the points if your bed was level before..)
 - after autoleveling your are ready to print.
 
