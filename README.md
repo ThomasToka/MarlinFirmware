@@ -20,12 +20,19 @@ My instructions for firmware installations are:
 - after autoleveling your are ready to print.
 
 -------------------------------------------------------------------------------------------------------------------
+Update 21.02.2023 22:11 CET:
+
+Pushed a new update called "performance and quality" update.
+- increased buffers as we have enough ram for better sd card and octoprint performance
+- rebased on upstream fixes and again manually fixed upstream babystepping that is still not functional with 0.01 mm babysteps
+- increased min_segementtime
+- increased feedrates for faster printing with "reasonable" barriers
+-------------------------------------------------------------------------------------------------------------------
 Update 16.02.2023 21:31 CET:
 
 Todays release is mainly a service and quality release.
 I fixed babystepping while printing as it is broken upstream.
 Enjoy :)
-
 -------------------------------------------------------------------------------------------------------------------
 Update 13.02.2023 0:13 CET:
 
