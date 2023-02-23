@@ -20,6 +20,19 @@ My instructions for firmware installations are:
 - after autoleveling your are ready to print.
 
 -------------------------------------------------------------------------------------------------------------------
+Update 23.02.2023 19:47 CET:
+
+Todays update is that there is no update needed. lol
+Today i helped some testers, among there was on Ender S1 plus user wanting my firmware to use 300°C.
+No problem.. So i gethered measurements from the printer and sent him a version.
+He was not able to set 300°C.. My directly thought and after code review verified: "hm thats fishy af. haha, it will be the touch screen firmware!".
+We then installed the Ender 3 S1 Pro touch firmware version to break this barrier. double lol.
+It works. All other parameters seem also match.
+Again one happy person..
+I will release a version for the Ender 3 S1 Plus with touch display and the Ender 3 S1 with knob display soon.
+I am just gathering some informations and needed measurements. The firmware base is ready to rock also those machines.
+
+-------------------------------------------------------------------------------------------------------------------
 Update 21.02.2023 22:11 CET:
 
 Pushed a new update called "performance and quality" update.
