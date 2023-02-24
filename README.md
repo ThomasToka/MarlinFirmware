@@ -25,10 +25,12 @@ Do it your way as usual. You can set your z-offset by gcode, by touch display, b
 This firmware is installable as every other firmware.
 
 Note:
-Touch display firmware 1.0.2 or 1.0.3 is required. But if you have the recent vendor firmware running you should have 
-already one this touch firmware versions installed and be fine.
-The folder for the F4 installation on the sdcard is STM32F4_UPDATE . 
+Touch display firmware 1.0.2 or 1.0.3 is required.
+But if you have the recent vendor firmware running you should have already one of this touch firmware versions installed and be fine.
+
+The folder for the F4 installation on the sdcard is STM32F4_UPDATE .
 Put the firmware inside this folder on a 4096kb formated sdcard.
+
 Reboot your printer.
 
 -------------------------------------------------------------------------------------------------------------------
