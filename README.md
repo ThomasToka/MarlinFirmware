@@ -6,6 +6,18 @@ Source code is here: https://github.com/ThomasToka/MarlinbySynman/tree/bugfix-2.
 -------------------------------------------------------------------------------------------------------------------
 My instructions for firmware installations are:
 
+- check your chip inside your printer (look at the about page, usually you will see F4 in the number FW/Ver field)
+- for F4 printer create a folder STM32F4_UPDATE on your 4096 formated SD card and put my firmware bin file inside
+- for F1 printer it is sufficient to put the firmware bin file inside the root of your 4096 formated SD card
+- reboot printer
+
+Note:
+Touch display firmware 1.0.2 or 1.0.3 is required. Look at your about page "Screen VER"
+But if you have the recent vendor firmware running you should have already one of this touch firmware versions installed and be fine.
+
+-------------------------------------------------------------------------------------------------------------------
+
+My instructions for Z-Offset quick setting and installation:
 - level your bed with old firmware
 - note your z-offset ex. -1.74mm
 - flash new firmware
@@ -19,19 +31,10 @@ My instructions for firmware installations are:
 - on the touch start autoleveling (there is no need to do the points if your bed was level before..)
 - after autoleveling your are ready to print.
 
-Alternative method:
+Alternative method for Z-Offset setting:
 
 Do it your way as usual. You can set your z-offset by gcode, by touch display, by other terminal. However you do it.
 This firmware is installable as every other firmware.
-
-Note:
-Touch display firmware 1.0.2 or 1.0.3 is required.
-But if you have the recent vendor firmware running you should have already one of this touch firmware versions installed and be fine.
-
-The folder for the F4 installation on the sdcard is STM32F4_UPDATE .
-Put the firmware inside this folder on a 4096kb formated sdcard.
-
-Reboot your printer.
 
 -------------------------------------------------------------------------------------------------------------------
 Update 27.02.2023 16:40 CET:
