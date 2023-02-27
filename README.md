@@ -34,6 +34,20 @@ Put the firmware inside this folder on a 4096kb formated sdcard.
 Reboot your printer.
 
 -------------------------------------------------------------------------------------------------------------------
+Update 27.02.2023 16:40 CET:
+
+Thanks to the testers we have found another bug while sd printing in upstream sources.
+So i fixed today:
+- fixed filament runount sensor resume not functional
+- fixed sd print pause resume not functional
+
+New binarys have been released.
+
+And a good day for Ender 3 S1 Plus users: Also thanks to the testers i am now able to support Ender 3 S1 Plus with 310x315 heatbed.
+Just pushed first Release for it!
+
+Happy printing and filament changeing!
+------------------------------------------------------------------------------------------------------------------
 Update 23.02.2023 19:47 CET:
 
 Todays update is that there is no update needed. lol
