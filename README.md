@@ -15,6 +15,10 @@ Note:
 Touch display firmware 1.0.2 or 1.0.3 is required. Look at your about page "Screen VER"
 But if you have the recent vendor firmware running you should have already one of this touch firmware versions installed and be fine.
 
+Please check your machines start gcode.
+Your bed starts now at x=0. Some Slicer default to a negative purge line start point ex x=-2 or very close to the bededge ex x=0.1.
+Put it on x=5 or something reasonable beeing good placed on your bed..
+
 -------------------------------------------------------------------------------------------------------------------
 
 My instructions for Z-Offset quick setting and installation:
@@ -42,7 +46,7 @@ Update 08.03.2023 14:02 CET:
 
 Today i released new builds with some fixes for Linear Advance.
 Additionally i added a build for the Ender 3 S1 non Pro with the knob encoder display.
-I also uploaded the need files for the DWIN display and instructions what to do.
+I also uploaded the needed files for the DWIN display and instructions what to do.
 -------------------------------------------------------------------------------------------------------------------
 Update 27.02.2023 16:40 CET:
 
