@@ -36,6 +36,13 @@ Alternative method for Z-Offset setting:
 Do it your way as usual. You can set your z-offset by gcode, by touch display, by other terminal. However you do it.
 This firmware is installable as every other firmware.
 
+
+-------------------------------------------------------------------------------------------------------------------
+Update 08.03.2023 14:02 CET:
+
+Today i released new builds with some fixes for Linear Advance.
+Additionally i added a build for the Ender 3 S1 non Pro with the knob encoder display.
+I also uploaded the need files for the DWIN display and instructions what to do.
 -------------------------------------------------------------------------------------------------------------------
 Update 27.02.2023 16:40 CET:
 
