@@ -40,6 +40,25 @@ Alternative method for Z-Offset setting:
 Do it your way as usual. You can set your z-offset by gcode, by touch display, by other terminal. However you do it.
 This firmware is installable as every other firmware.
 
+-------------------------------------------------------------------------------------------------------------------
+Update 13.03.2023 20:21 CET:
+
+Today i have finalized the laser module integration. Basic workflow works. So it should work if there are no bugs in the code provided by creality.
+Additionally i today scripted my build environment to be able to faster build the maintained versions.
+Tomorrow i will backport new upstream code fixes into my fork and release new binarys with laser functionality enabled.
+Also i will release UBL builds with 5x5, 7x7, 10x10 meeshes.
+Many testers gave feedback so i could make this firmware as good as possible.
+With the next release the nameing cheme will change:
+Like firmware-XXXXXX-YYYY-E3S1Pro-abl5x5-LA-F1.bin or firmware-XXXXXXX-YYYY-E3S1Plus-ubl10x10-LA-F4.bin 
+XXXXXX will represeent the build day.
+YYYYYY will represent the build time.
+
+abl5x5 bilinear bed leveling with 5x5 square mesh.
+ubl5x5 ubl with 5x5 mesh
+ubl7x7 ubl with 7x7 mesh
+ubl10x10 ubl with 10x10 mesh
+
+All versions will support laser functionality!
 
 -------------------------------------------------------------------------------------------------------------------
 Update 08.03.2023 14:02 CET:
