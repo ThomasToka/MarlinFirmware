@@ -53,10 +53,10 @@ Like firmware-XXXXXX-YYYY-E3S1Pro-abl5x5-LA-F1.bin or firmware-XXXXXXX-YYYY-E3S1
 XXXXXX will represeent the build day.
 YYYYYY will represent the build time.
 
-abl5x5 bilinear bed leveling with 5x5 square mesh.
-ubl5x5 ubl with 5x5 mesh
-ubl7x7 ubl with 7x7 mesh
-ubl10x10 ubl with 10x10 mesh
+  abl5x5 bilinear bed leveling with 5x5 square mesh
+  ubl5x5 ubl with 5x5 mesh
+  ubl7x7 ubl with 7x7 mesh
+  ubl10x10 ubl with 10x10 mesh
 
 All versions will support laser functionality!
 
