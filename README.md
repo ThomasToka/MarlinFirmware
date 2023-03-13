@@ -50,13 +50,18 @@ Also i will release UBL builds with 5x5, 7x7, 10x10 meeshes.
 Many testers gave feedback so i could make this firmware as good as possible.
 With the next release the nameing cheme will change:
 Like firmware-XXXXXX-YYYY-E3S1Pro-abl5x5-LA-F1.bin or firmware-XXXXXXX-YYYY-E3S1Plus-ubl10x10-LA-F4.bin 
-XXXXXX will represeent the build day.
+
+XXXXXX will represent the build day.
+
 YYYYYY will represent the build time.
 
-  abl5x5 bilinear bed leveling with 5x5 square mesh
-  ubl5x5 ubl with 5x5 mesh
-  ubl7x7 ubl with 7x7 mesh
-  ubl10x10 ubl with 10x10 mesh
+abl5x5 bilinear bed leveling with 5x5 square mesh
+
+ubl5x5 ubl with 5x5 mesh
+
+ubl7x7 ubl with 7x7 mesh
+
+ubl10x10 ubl with 10x10 mesh
 
 All versions will support laser functionality!
 
