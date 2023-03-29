@@ -41,6 +41,21 @@ Do it your way as usual. You can set your z-offset by gcode, by touch display, b
 This firmware is installable as every other firmware.
 
 -------------------------------------------------------------------------------------------------------------------
+Update 30.03.2023 01:06 CET:
+
+Today i released a new major update of my fork.
+
+"folders and subfolders" support has been added to the firmware.
+
+You can now open folders and subfolders and load files out of this.
+
+Tere are some minor optimizations to do but overall it works.
+
+You can open folder with 8 chars or less, more chars folders wont be opened!
+
+Enjoy!
+
+-------------------------------------------------------------------------------------------------------------------
 Update 13.03.2023 20:21 CET:
 
 Today i have finalized the laser module integration. Basic workflow works. So it should work if there are no bugs in the code provided by creality.
