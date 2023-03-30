@@ -47,9 +47,9 @@ Today i released a new major update of my fork.
 
 "folders and subfolders" support has been added to the firmware.
 
-You can now open folders and subfolders and load files out of this.
+You can now open folders and subfolders and load files out of these.
 
-Tere are some minor optimizations to do but overall it works.
+There are some minor optimizations to do but overall it works.
 
 You can open folder with 8 chars or less, more chars folders wont be opened!
 
