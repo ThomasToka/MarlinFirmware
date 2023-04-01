@@ -9,6 +9,19 @@ All notable changes to this project will be documented in this file.
 
 I hope you like my work.
 
+## [MARLIN-S1FORK-BYTT-2-UNRELEASED] - 2023-04-?? (Preview of the next bugfix release)
+ 
+### Added
+- [MARLIN-S1FORK-BYTT-add2] I will include recent marlin commits if they make sense.
+
+### Changed
+- [MARLIN-S1FORK-BYTT-change2] I changed the behavior of the "print" button for the folders and subfolders. Now the print button enters the sd card on first click, and when you are in a folder or subfolder you can go one folder up with the "print" button. Real navigation.
+
+### Fixed
+- [MARLIN-S1FORK-BYTT-fix3] Is there something to fix?
+
+
+
 ## [MARLIN-S1FORK-BYTT-1] - 2023-03-31
  
 This release is called "M600 fix"
