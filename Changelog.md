@@ -9,22 +9,22 @@ All notable changes to this project will be documented in this file.
 
 I hope you like my work.
 
-## [MARLIN-S1FORK-BYTT-2-UNRELEASED] - 2023-04-?? (Preview of the next bugfix release)
+## [MARLIN-E3S1FORK-BYTT-2-UNRELEASED] - 2023-04-?? (Preview of the next bugfix release)
 
 This is a sneak preview of the comming updates. I will edit this file frequently..
  
 ### Added
-- [MARLIN-S1FORK-BYTT-add2] I will include recent marlin commits if they make sense.
+- [MARLIN-E3S1FORK-BYTT-add2] I will include recent marlin commits if they make sense.
 
 ### Changed
-- [MARLIN-S1FORK-BYTT-change2] I changed the behavior of the "print" button for the folders and subfolders. Now the print button enters the sd card on first click, and when you are in a folder or subfolder you can go one folder up with the "print" button. Real navigation.
+- [MARLIN-E3S1FORK-BYTT-change2] I changed the behavior of the "print" button for the folders and subfolders. Now the print button enters the sd card on first click, and when you are in a folder or subfolder you can go one folder up with the "print" button. Real navigation.
 
 ### Fixed
-- [MARLIN-S1FORK-BYTT-fix3] Is there something to fix?
+- [MARLIN-E3S1FORK-BYTT-fix3] Is there something to fix?
 
 
 
-## [MARLIN-S1FORK-BYTT-1] - 2023-03-31
+## [MARLIN-E3S1FORK-BYTT-1] - 2023-03-31
  
 This release is called "M600 fix"
 
@@ -35,10 +35,10 @@ Reverting this commit fixed it for one of them.
 The second has yet to respond. As i could reproduce this i will push the revert as we did not have this problem before.
  
 ### Added
-- [MARLIN-S1FORK-BYTT-add1] Changelog added
+- [MARLIN-E3S1FORK-BYTT-add1] Changelog added
 
 ### Changed
-- [MARLIN-S1FORK-BYTT-change1] Buffers reduced as they are not needed so high and sometimes lower buffers (faster reaction of the printer) are better.
+- [MARLIN-E3S1FORK-BYTT-change1] Buffers reduced as they are not needed so high and sometimes lower buffers (faster reaction of the printer) are better.
 
 before:
 
@@ -59,5 +59,5 @@ now:
 
 
 ### Fixed
-- [MARLIN-S1FORK-BYTT-fix1] Reverted Linear Advance Marlin commit https://github.com/MarlinFirmware/Marlin/commit/ca77850cbb8ed57d4cdcf29a12a278d6bfa5c0d5
-- [MARLIN-S1FORK-BYTT-fix2] M600 filament runout fixed. You can now use M600 in your gcode.
+- [MARLIN-E3S1FORK-BYTT-fix1] Reverted Linear Advance Marlin commit https://github.com/MarlinFirmware/Marlin/commit/ca77850cbb8ed57d4cdcf29a12a278d6bfa5c0d5
+- [MARLIN-E3S1FORK-BYTT-fix2] M600 filament runout fixed. You can now use M600 in your gcode.
