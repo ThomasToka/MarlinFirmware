@@ -20,7 +20,7 @@ This is a sneak preview of the comming updates. I will edit this file frequently
 - [MARLIN-E3S1FORK-BYTT-change2] I changed the behavior of the "print" button for the folders and subfolders. Now the print button enters the sd card on first click, and when you are in a folder or subfolder you can go one folder up with the "print" button. Real navigation.
 
 ### Fixed
-- [MARLIN-E3S1FORK-BYTT-fix3] Is there something to fix?
+- [MARLIN-E3S1FORK-BYTT-fix3] ubl7x7 finished percentage does not match and is stuck at 98%. With this release this visual bug is fixed.
 
 
 
