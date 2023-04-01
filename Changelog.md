@@ -10,6 +10,8 @@ All notable changes to this project will be documented in this file.
 I hope you like my work.
 
 ## [MARLIN-S1FORK-BYTT-2-UNRELEASED] - 2023-04-?? (Preview of the next bugfix release)
+
+This is a sneak preview of the comming updates. I will edit this file frequently..
  
 ### Added
 - [MARLIN-S1FORK-BYTT-add2] I will include recent marlin commits if they make sense.
