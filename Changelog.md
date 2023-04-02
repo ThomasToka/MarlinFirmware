@@ -9,12 +9,27 @@ All notable changes to this project will be documented in this file.
 
 I hope you like my work.
 
-## [MARLIN-E3S1FORK-BYTT-2-UNRELEASED] - 2023-04-?? (Preview of the next bugfix release)
+## [MARLIN-E3S1FORK-BYTT-3-UNRELEASED] - 2023-04-?? (Preview of the next bugfix release)
 
 This is a sneak preview of the comming updates. I will edit this file frequently..
  
 ### Added
-- [MARLIN-E3S1FORK-BYTT-add2] I will include recent marlin commits if they make sense.
+- [MARLIN-E3S1FORK-BYTT-add3] I will include recent marlin commits if they make sense.
+
+### Changed
+tba
+
+### Fixed
+- [MARLIN-E3S1FORK-BYTT-fix4] M600, pause and filament runout for the Ender 3 S1 nonProPlus with the encoder display.
+
+
+
+## [MARLIN-E3S1FORK-BYTT-2] - 2023-04-02
+
+The following adds/changes/fixes delivered with this release.
+ 
+### Added
+- [MARLIN-E3S1FORK-BYTT-add2] minor important marlin commits were added
 
 ### Changed
 - [MARLIN-E3S1FORK-BYTT-change2] I changed the behavior of the "print" button for the folders and subfolders. Now the print button enters the sd card on first click, and when you are in a folder or subfolder you can go one folder up with the "print" button. Real navigation.
