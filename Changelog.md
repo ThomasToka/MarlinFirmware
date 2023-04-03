@@ -1,4 +1,5 @@
-# Change Log Marlin bugfix-2.1.x fork for Ender 3 S1 Pro/Plus/noneProPlus
+# Change Log Marlin bugfix-2.1.x fork 
+# for Ender 3 S1 Pro/Plus/noneProPlus
 This is a fork of a fork.
 
 The initial port of the Creality lcd_rts.cpp was made by Synman.
@@ -9,18 +10,33 @@ All notable changes to this project will be documented in this file.
 
 I hope you like my work.
 
-## [MARLIN-E3S1FORK-BYTT-3-UNRELEASED] - 2023-04-?? (Preview of the next bugfix release)
+
+## [MARLIN-E3S1FORK-BYTT-4-UNRELEASED] - 2023-04-?? (Preview of the next bugfix release)
 
 This is a sneak preview of the comming updates. I will edit this file frequently..
  
 ### Added
-- [MARLIN-E3S1FORK-BYTT-add3] I will include recent marlin commits if they make sense.
+- [MARLIN-E3S1FORK-BYTT-add4] I will include recent marlin commits if they make sense.
 
 ### Changed
 tba
 
 ### Fixed
-- [MARLIN-E3S1FORK-BYTT-fix4] M600, pause and filament runout for the Ender 3 S1 nonProPlus with the encoder display.
+tba
+
+
+## [MARLIN-E3S1FORK-BYTT-3] - 2023-04-03 (Preview of the next bugfix release)
+
+This is a sneak preview of the comming updates. I will edit this file frequently..
+ 
+### Added
+- [MARLIN-E3S1FORK-BYTT-add3] Some non relevant Marlin commits were included.
+
+### Changed
+- [MARLIN-E3S1FORK-BYTT-change3] The S1 non Pro/Plus version has been rebased on the actual Marlin bufix-2.1.x as there is no toch class needed and it is easier to maintain a recent marlin for the DWIN_CREALITY_LCD. Laser support vanished out of this version for now. Maybe i will include it sometime.
+
+### Fixed
+- [MARLIN-E3S1FORK-BYTT-fix4] M600, pause and filament runout for the Ender 3 S1 nonProPlus with the encoder display. 
 
 
 
