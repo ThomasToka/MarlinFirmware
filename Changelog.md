@@ -25,7 +25,7 @@ tba
 tba
 
 
-## [MARLIN-E3S1FORK-BYTT-3] - 2023-04-03 (Preview of the next bugfix release)
+## [MARLIN-E3S1FORK-BYTT-3] - 2023-04-03
 
 This is a sneak preview of the comming updates. I will edit this file frequently..
  
