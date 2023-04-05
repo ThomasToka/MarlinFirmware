@@ -19,7 +19,7 @@ This is a sneak preview of the comming updates. I will edit this file frequently
 - [MARLIN-E3S1FORK-BYTT-add4] I will include recent marlin commits if they make sense.
 
 ### Changed
-tba
+- [MARLIN-E3S1FORK-BYTT-change4] Ender 3S1 Pro build top z limit from 250mm to 270mm.
 
 ### Fixed
 tba
