@@ -20,6 +20,7 @@ This is a sneak preview of the comming updates. I will edit this file frequently
 
 ### Changed
 - [MARLIN-E3S1FORK-BYTT-change4] Ender 3S1 Pro build top z limit from 250mm to 270mm.
+- [MARLIN-E3S1FORK-BYTT-change5] Sd cardreader shows 5 pages/files per page not 4 like the stock or other firmwares
 
 ### Fixed
 tba
