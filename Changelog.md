@@ -14,6 +14,13 @@ I hope you like my work.
 ## [MARLIN-E3S1FORK-BYTT-4-UNRELEASED] - 2023-04-?? (Preview of the next bugfix release)
 
 This is a sneak preview of the comming updates. I will edit this file frequently..
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! ATTENTION !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! 
+With the next release i will release an own forked version of the Creality Code based on Marlin bugfix-2.1.x with todays commits.
+To comply with the GPL i will also release my fixed source files to publicity within 30 days after release.
+I want to make sure released source files are fixed as the port of all this was a lot of codeing.
+But hell. Yeah i did it. Just with the help the existing repositories by Creality and the initial old port of Synman.
+I have taken the original Creality files and upgraded/updated those to match with actual marlin.
  
 ### Added
 - [MARLIN-E3S1FORK-BYTT-add4] I will include recent marlin commits if they make sense.
@@ -21,6 +28,7 @@ This is a sneak preview of the comming updates. I will edit this file frequently
 ### Changed
 - [MARLIN-E3S1FORK-BYTT-change4] Ender 3S1 Pro build top z limit from 250mm to 270mm.
 - [MARLIN-E3S1FORK-BYTT-change5] Sd cardreader shows 5 pages/files per page not 4 like the stock or other firmwares
+- [MARLIN-E3S1FORK-BYTT-change6] Complete code rebase on Marlin bugfix-2.1.x and the initial port by Synman.
 
 ### Fixed
 tba
