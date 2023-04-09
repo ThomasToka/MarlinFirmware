@@ -9,6 +9,7 @@ All notable changes to this project will be documented in this file.
 
 I hope you like my work.
 
+First the upcoming changes which will be edited as requests or fixes are made for the next release:
 
 ## [MARLIN-E3S1PROFORK-BYTT-5-UNRELEASED] - 2023-04-?? (Preview of the next bugfix release)
 
@@ -22,6 +23,8 @@ tba
 
 ### Fixed
 tba
+
+Changelog of already released bugfixes:
 
 ## [MARLIN-E3S1PROFORK-BYTT-4] - 2023-04-09
 
