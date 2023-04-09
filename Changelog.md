@@ -1,13 +1,6 @@
 # Change Log Marlin bugfix-2.1.x fork 
 # for Ender 3 S1 Pro/Plus/noneProPlus
-This is a fork of a fork.
-
-The initial port of the Creality lcd_rts.cpp was made by Synman.
-
-After this i forked Synmans repository and created my own fork.
-
-On April 1st 2023 i began porting the needed changes to a actual Marlin bugfix-2.1.x in order to have
-my own ported version.
+This is a fork of Marlin bugfix-2.1.x and the Creality Ender 3 S1 Pro source code.
 
 As of the release of [MARLIN-E3S1PROFORK-BYTT-4] this port is made by me.
 
@@ -16,9 +9,20 @@ All notable changes to this project will be documented in this file.
 I hope you like my work.
 
 
-## [MARLIN-E3S1PROFORK-BYTT-4-UNRELEASED] - 2023-04-?? (Preview of the next bugfix release)
+## [MARLIN-E3S1PROFORK-BYTT-5-UNRELEASED] - 2023-04-?? (Preview of the next bugfix release)
 
 This is a sneak preview of the comming updates. I will edit this file frequently..
+ 
+### Added
+tba
+
+### Changed
+tba
+
+### Fixed
+tba
+
+## [MARLIN-E3S1PROFORK-BYTT-4] - 2023-04-09
 
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! ATTENTION !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! 
 
@@ -34,7 +38,7 @@ I have taken the original Creality files and upgraded/updated those to match wit
 
  
 ### Added
-- [MARLIN-E3S1PROFORK-BYTT-add4] I will include recent marlin commits if they make sense.
+- [MARLIN-E3S1PROFORK-BYTT-add4] I included all marlin upstream commits.
 
 ### Changed
 - [MARLIN-E3S1PROFORK-BYTT-change4] Ender 3S1 Pro build top z limit from 250mm to 270mm.
