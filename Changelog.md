@@ -1,5 +1,6 @@
-# Change Log Marlin bugfix-2.1.x fork 
+# Changelog of [MARLIN-E3S1PROFORK-BYTT] based on Marlin bugfix-2.1.x
 # for Ender 3 S1 Pro/Plus/noneProPlus
+
 This is a fork of Marlin bugfix-2.1.x and the Creality Ender 3 S1 Pro source code.
 
 As of the release of [MARLIN-E3S1PROFORK-BYTT-4] this port is made by me.
