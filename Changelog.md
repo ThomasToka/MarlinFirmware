@@ -9,6 +9,8 @@ All notable changes to this project will be documented in this file.
 
 I hope you like my work.
 
+I have created a discord server for faster communication https://discord.gg/Fh4jsUJWe6 .
+
 First the upcoming changes which will be edited as requests or fixes are made for the next release:
 
 ## [MARLIN-E3S1PROFORK-BYTT-5-UNRELEASED] - 2023-04-?? (Preview of the next bugfix release)
