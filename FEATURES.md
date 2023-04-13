@@ -23,7 +23,7 @@ Features Ender 3 S1 Pro:
 - probing margin bumped to 45mm to get a square mesh
 - no preheat before leveling, set what you want for that before leveling.
 - pidtemp and piditemp set to values of my runs with stock bed, but calibrate for your printer please
-- fixed manual bed leveling point 1 from x=117 to y=117 to x=117.5 to y=117.5
+- fixed manual bed leveling point 1 from x=117 to x=117.5 and y=117 to y=117.5
 - fixed filament runount sensor resume not functional
 - fixed sd print pause resume not functional
 - fixed prusa sclicer M600 functionality
@@ -70,7 +70,7 @@ Features Ender 3 S1 Plus:
 - probing margin bumped to 55mm to get a square mesh
 - no preheat before leveling, set what you want for that before leveling.
 - pidtemp and piditemp set to values of my runs with stock bed, but calibrate for your printer please
-- fixed manual bed leveling point 1 from x=157 to y=157.5
+- fixed manual bed leveling point 1 from x=157 to x=157.5
 - fixed filament runount sensor resume not functional
 - fixed sd print pause resume not functional
 - fixed prusa sclicer M600 functionality
