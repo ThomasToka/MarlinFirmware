@@ -21,7 +21,7 @@ This is a sneak preview of the comming updates. I will edit this file frequently
 tba
 
 ### Changed
-tba
+- [MARLIN-E3S1PROFORK-BYTT-change8] The display will show which version is installed exactly (abl5x5-byTT,ubl5x5-byTT, etc..).
 
 ### Fixed
 tba
