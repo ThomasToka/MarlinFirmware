@@ -26,6 +26,28 @@ Please check your machines start gcode.
 Your bed starts now at x=0. Some Slicer default to a negative purge line start point ex x=-2 or very close to the bededge ex x=0.1.
 Put it on x=5 or something reasonable beeing good placed on your bed..
 
+Example old:
+
+G1 X-2.1 Y20 Z0.28 F5000.0 ;Move to start position
+
+G1 X-2.1 Y200.0 Z0.28 F1500.0 E15 ;Draw the first line
+
+G1 X-2.4 Y200.0 Z0.28 F5000.0 ;Move to side a little
+
+G1 X-2.4 Y20 Z0.28 F1500.0 E30 ;Draw the second line
+
+
+Example new:
+
+G1 X5.1 Y20 Z0.28 F5000.0 ;Move to start position
+
+G1 X5.1 Y200.0 Z0.28 F1500.0 E15 ;Draw the first line
+
+G1 X5.4 Y200.0 Z0.28 F5000.0 ;Move to side a little
+
+G1 X5.4 Y20 Z0.28 F1500.0 E30 ;Draw the second line
+
+
 -------------------------------------------------------------------------------------------------------------------
 
 My instructions for Z-Offset quick setting and installation:
