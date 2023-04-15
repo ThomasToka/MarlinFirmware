@@ -1,3 +1,5 @@
+### ATTENTION: Binaries moved to https://github.com/ThomasToka/MarlinFirmware/releases ###
+
 # MarlinFirmware
 Personal tweaks and builds of marlin 3d printer firmware repositories.
 
