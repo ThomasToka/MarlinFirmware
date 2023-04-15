@@ -13,7 +13,8 @@ I have created a discord server for faster communication https://discord.gg/Fh4j
 
 First the upcoming changes which will be edited as requests or fixes are made for the next release:
 
-## [MARLIN-E3S1PROFORK-BYTT-5-UNRELEASED] - 2023-04-?? (Preview of the next bugfix release)
+
+## [MARLIN-E3S1PROFORK-BYTT-6-UNRELEASED] - 2023-04-?? (Preview of the next bugfix release)
 
 This is a sneak preview of the comming updates. I will edit this file frequently..
  
@@ -21,11 +22,27 @@ This is a sneak preview of the comming updates. I will edit this file frequently
 tba
 
 ### Changed
-- [MARLIN-E3S1PROFORK-BYTT-change8] The display will show which version is installed exactly (abl5x5-byTT,ubl5x5-byTT, etc..).
-- [MARLIN-E3S1PROFORK-BYTT-change9] Change all UBL builds to new coordinates. Accordingly the manual leveling points will be adjusted to match the autoleveling points. Change is from 45mm mesh_inset all around to. 27mm for left (EDIT: Added 2m for cable clearance), right and front and 45 mm for the back as the probe cant reach more.
+tba
 
 ### Fixed
 tba
+
+Changelog of already released bugfixes:
+
+## [MARLIN-E3S1PROFORK-BYTT-5] - 2023-04-15
+
+This release mainly covers UBL functionality. The mesh area has been extended and the manual leveling points changed to match the new location of the autoleveling points. it has still 45 mm clearance on the back as the probe can not reach much more (probe offset exactly. so 45mm is 3.2mm near to this and ok to have some clearance.)
+ 
+### Added
+- [MARLIN-E3S1PROFORK-BYTT-add4] I included all marlin upstream commits since the last release.
+
+### Changed
+- [MARLIN-E3S1PROFORK-BYTT-change8] The display will show which version is installed exactly (abl5x5-byTT,ubl5x5-byTT, etc..).
+- [MARLIN-E3S1PROFORK-BYTT-change9] Change all UBL builds to new coordinates. Accordingly the manual leveling points will be adjusted to match the autoleveling points. Change is from 45mm mesh_inset all around to. 27mm for left (EDIT: Added 2m for cable clearance), right and front and 45 mm for the back as the probe cant reach more. Movement area extended with +6 on X. 
+- [MARLIN-E3S1PROFORK-BYTT-change10] As of now i will release the releases on the releases page https://github.com/ThomasToka/MarlinFirmware/releases
+
+### Fixed
+- nothing had to be fixed..
 
 Changelog of already released bugfixes:
 
