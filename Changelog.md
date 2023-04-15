@@ -22,6 +22,7 @@ tba
 
 ### Changed
 - [MARLIN-E3S1PROFORK-BYTT-change8] The display will show which version is installed exactly (abl5x5-byTT,ubl5x5-byTT, etc..).
+- [MARLIN-E3S1PROFORK-BYTT-change9] Change all UBL builds to new coordinates. Accordingly the manual leveling points will be adjusted to match the autoleveling points. Change is from 45mm mesh_inset all around to. 25mm for left, right and front and 45 mm for the back as the probe cant reach more.
 
 ### Fixed
 tba
