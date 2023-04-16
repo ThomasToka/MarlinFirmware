@@ -22,7 +22,7 @@ This is a sneak preview of the comming updates. I will edit this file frequently
 tba
 
 ### Changed
-tba
+- [MARLIN-E3S1PROFORK-BYTT-change11] I am evaluationg the fix of M206. It seems broken after upstream commits.
 
 ### Fixed
 tba
@@ -38,7 +38,7 @@ This release mainly covers UBL functionality. The mesh area has been extended an
 
 ### Changed
 - [MARLIN-E3S1PROFORK-BYTT-change8] The display will show which version is installed exactly (abl5x5-byTT,ubl5x5-byTT, etc..).
-- [MARLIN-E3S1PROFORK-BYTT-change9] Change all UBL builds to new coordinates. Accordingly the manual leveling points will be adjusted to match the autoleveling points. Change is from 45mm mesh_inset all around to. 27mm for left (EDIT: Added 2m for cable clearance), right and front and 45 mm for the back as the probe cant reach more. Movement area extended with +6 on X. 
+- [MARLIN-E3S1PROFORK-BYTT-change9] Change all UBL builds to new coordinates. Accordingly the manual leveling points will be adjusted to match the autoleveling points. Change is from 45mm mesh_inset all around to. 27mm for left (EDIT: Added 2mm for cable clearance), right and front and 45 mm for the back as the probe cant reach more. Movement area extended with +6 on X. 
 - [MARLIN-E3S1PROFORK-BYTT-change10] As of now i will release the releases on the releases page https://github.com/ThomasToka/MarlinFirmware/releases
 
 ### Fixed
