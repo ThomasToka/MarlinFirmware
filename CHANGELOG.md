@@ -13,8 +13,7 @@ I have created a discord server for faster communication https://discord.gg/Fh4j
 
 First the upcoming changes which will be edited as requests or fixes are made for the next release:
 
-
-## [MARLIN-E3S1PROFORK-BYTT-6-UNRELEASED] - 2023-04-?? (Preview of the next bugfix release)
+## [MARLIN-E3S1PROFORK-BYTT-7-UNRELEASED] - 2023-04-?? (Preview of the next bugfix release)
 
 This is a sneak preview of the comming updates. I will edit this file frequently..
  
@@ -22,7 +21,21 @@ This is a sneak preview of the comming updates. I will edit this file frequently
 tba
 
 ### Changed
-- [MARLIN-E3S1PROFORK-BYTT-change11] I am evaluationg the fix of M206. It seems broken after upstream commits.
+- [MARLIN-E3S1PROFORK-BYTT-change11] CHANGE PENDING! WAITING FOR CONFIRMATION FROM UPSTREAM! I am evaluating the fix of M206. It seems broken after upstream commits.
+
+### Fixed
+tba
+
+## [MARLIN-E3S1PROFORK-BYTT-6] - 2023-04-16
+
+In this release i changed the dimensions of Ender 3 S1 Pro slightly to match more users defaults.
+The esteps for x and y have been adjusted after testing dimensions and movement width from 80 to 79.5 for x an y.
+
+Added
+- [MARLIN-E3S1PROFORK-BYTT-add5] I included all marlin upstream commits since the last release.
+
+### Changed
+- [MARLIN-E3S1PROFORK-BYTT-change11] CHANGE Pending. See next release!
 - [MARLIN-E3S1PROFORK-BYTT-change12] Dimensional change Ender 3 S1 Pro. X-Min position from -0.8 to -2. 
 - [MARLIN-E3S1PROFORK-BYTT-change13] Esteps x and y from 80 to 79.5 to have better dimensional accuracy of printed parts.
 
