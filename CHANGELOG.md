@@ -23,6 +23,8 @@ tba
 
 ### Changed
 - [MARLIN-E3S1PROFORK-BYTT-change11] I am evaluationg the fix of M206. It seems broken after upstream commits.
+- [MARLIN-E3S1PROFORK-BYTT-change12] Dimensional change Ender 3 S1 Pro. X-Min position from -0.8 to -2. 
+- [MARLIN-E3S1PROFORK-BYTT-change13] Esteps x and y from 80 to 79.5 to have better dimensional accuracy of printed parts.
 
 ### Fixed
 tba
