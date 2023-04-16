@@ -79,6 +79,6 @@ Please open an issue if there is something wrong.
 
 -------------------------------------------------------------------------------------------------------------------
 
-The changelog has been rebased to: https://github.com/ThomasToka/MarlinFirmware/blob/Firmware-Binaries/Changelog.md
+The changelog has been rebased to: https://github.com/ThomasToka/MarlinFirmware/blob/Firmware-Binaries/CHANGELOG.md
 
 -------------------------------------------------------------------------------------------------------------------
