@@ -22,6 +22,7 @@ tba
 
 ### Changed
 - [MARLIN-E3S1PROFORK-BYTT-change11] CHANGE PENDING! WAITING FOR CONFIRMATION FROM UPSTREAM! I am evaluating the fix of M206. It seems broken after upstream commits.
+- [MARLIN-E3S1PROFORK-BYTT-change14] Ender 3 S1 Plus manual leveleing points ubl correction. More room for the mesh is possible, so i will adjust this.
 
 ### Fixed
 tba
