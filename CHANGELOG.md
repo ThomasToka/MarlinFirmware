@@ -25,7 +25,7 @@ tba
 - [MARLIN-E3S1PROFORK-BYTT-change14] Ender 3 S1 Plus manual leveling points ubl correction. More room for the mesh is possible, so i will adjust this.
 
 ### Fixed
-- [MARLIN-E3S1PROFORK-BYTT-fix5] Users report that filament runout sensor is broken again. I can confirm this and am already investigating what happend as i fixed this already. Seems to something wrong with this after upstream commits.
+- [MARLIN-E3S1PROFORK-BYTT-fix5] Users report that filament runout sensor is broken again. I can confir that i fatfingered it myself on the last rebase of the code. Fixed again. Sorry.
 
 
 ## [MARLIN-E3S1PROFORK-BYTT-6] - 2023-04-16
