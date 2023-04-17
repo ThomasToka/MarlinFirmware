@@ -13,12 +13,29 @@ I have created a discord server for faster communication https://discord.gg/Fh4j
 
 First the upcoming changes which will be edited as requests or fixes are made for the next release:
 
-## [MARLIN-E3S1PROFORK-BYTT-7-UNRELEASED] - 2023-04-?? (Preview of the next bugfix release)
+## [MARLIN-E3S1PROFORK-BYTT-8-UNRELEASED] - 2023-04-?? (Preview of the next bugfix release)
 
 This is a sneak preview of the comming updates. I will edit this file frequently..
  
 ### Added
 tba
+
+### Changed
+- [MARLIN-E3S1PROFORK-BYTT-change11] CHANGE PENDING! WAITING FOR CONFIRMATION FROM UPSTREAM! I am evaluating the fix of M206. It seems broken after upstream commits.
+
+### Fixed
+tba
+
+Changelog of already released bugfixes:
+
+## [MARLIN-E3S1PROFORK-BYTT-7] - 2023-04-17
+
+In this release today i again fixed the filament runout sensor. Me myself fatfingered it on the last rebase and so my initial fix was not implemented. Sorry.
+
+I also adjusted the manual leveling points of the Ender 3 S1 Plus. I am not 100% satisfied with it. Further changes will follow. Problematic on this machine is the locked screen firmware to x=300 and y=300. We will see how it works with this release.
+
+### Added
+- [MARLIN-E3S1PROFORK-BYTT-add6] I included all marlin upstream commits since the last release.
 
 ### Changed
 - [MARLIN-E3S1PROFORK-BYTT-change11] CHANGE PENDING! WAITING FOR CONFIRMATION FROM UPSTREAM! I am evaluating the fix of M206. It seems broken after upstream commits.
@@ -43,8 +60,6 @@ Added
 
 ### Fixed
 tba
-
-Changelog of already released bugfixes:
 
 ## [MARLIN-E3S1PROFORK-BYTT-5] - 2023-04-15
 
