@@ -13,9 +13,11 @@ I have created a discord server for faster communication https://discord.gg/Fh4j
 
 First the upcoming changes which will be edited as requests or fixes are made for the next release:
 
-## [MARLIN-E3S1PROFORK-BYTT-8-UNRELEASED] - 2023-04-?? (Preview of the next bugfix release)
+## [MARLIN-E3S1PROFORK-BYTT-9-UNRELEASED] - 2023-04-?? (Preview of the next bugfix release)
 
 This is a sneak preview of the comming updates. I will edit this file frequently..
+
+I am working on the new touchscreen firmware and new motherboard firmware. :)
  
 ### Added
 tba
@@ -25,6 +27,23 @@ tba
 
 ### Fixed
 tba
+
+Changelog of already released bugfixes:
+
+## [MARLIN-E3S1PROFORK-BYTT-8] - 2023-05-xx (next 
+
+This is a short service release covering only one problem as i am mid development of the new touchscreen and mainboard firmware.
+
+In this release i fixed zoffset setting on the auxl. lvl. page. It was damaged due to a new introduced logic depending on internal signals. But those signals were not consistent in all ranges. So i reverted to my earlier logic.
+ 
+### Added
+- nothing
+
+### Changed
+- [MARLIN-E3S1PROFORK-BYTT-change11] CHANGE PENDING! WAITING FOR CONFIRMATION FROM UPSTREAM! I am evaluating the fix of M206. It seems broken after upstream commits.
+
+### Fixed
+- [MARLIN-E3S1PROFORK-BYTT-fix6] Auxl. lvl. zoffset adjusting stopped at -2.08mm. Fixed.
 
 Changelog of already released bugfixes:
 
