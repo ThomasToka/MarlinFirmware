@@ -30,7 +30,7 @@ tba
 
 Changelog of already released bugfixes:
 
-## [MARLIN-E3S1PROFORK-BYTT-8] - 2023-05-xx (next 
+## [MARLIN-E3S1PROFORK-BYTT-8] - 2023-05-05 Service Release
 
 This is a short service release covering only one problem as i am mid development of the new touchscreen and mainboard firmware.
 
