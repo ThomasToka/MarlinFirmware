@@ -11,24 +11,28 @@ I hope you like my work.
 
 I have created a discord server for faster communication https://discord.gg/Fh4jsUJWe6 .
 
-First the upcoming changes which will be edited as requests or fixes are made for the next release:
+## [MARLIN-E3S1PROFORK-BYTT-9] - 2023-05-10
 
-## [MARLIN-E3S1PROFORK-BYTT-9-UNRELEASED] - 2023-04-?? (Preview of the next bugfix release)
+This release is the prerelease for the screen firmware release. Development features are already in the firmware but not visible yet.
+I will deliver the new stable screen firmware in the next 14days.
 
-This is a sneak preview of the comming updates. I will edit this file frequently..
+Users of the beta screen firmware can also install this build. My new developments are transparent and not interfering with the stock screen firmware. So if you use the stock screen you dont see my new developments. 
 
-I am working on the new touchscreen firmware and new motherboard firmware. :)
- 
+I had to disable the LASER FEATURE temporary. We are running out of memory and most users dont use it. Maybe it will come back later..
+
+In this release i also fixed the M600 repeating bug. Now it is possible to do multiple M600 as the variables are reset correctly.
+
 ### Added
-tba
+- [MARLIN-E3S1PROFORK-BYTT-add7] I included all marlin upstream commits since the last release.
+- [MARLIN-E3S1PROFORK-BYTT-add8] New features added in the backgroud for the upcomming screen release.
 
 ### Changed
-- [MARLIN-E3S1PROFORK-BYTT-change11] CHANGE PENDING! WAITING FOR CONFIRMATION FROM UPSTREAM! I am evaluating the fix of M206. It seems broken after upstream commits.
+- [MARLIN-E3S1PROFORK-BYTT-change15] Laser feature deactivated due to low memory.
+- [MARLIN-E3S1PROFORK-BYTT-change16] Unifing beta phase code and last release code. 
 
 ### Fixed
-tba
+- [MARLIN-E3S1PROFORK-BYTT-fix7] M600 can now be used multiple times. 
 
-Changelog of already released bugfixes:
 
 ## [MARLIN-E3S1PROFORK-BYTT-8] - 2023-05-05 Service Release
 
