@@ -18,18 +18,14 @@ This release is another service release. During my development i have found a bu
 This service release correts this.
 
 
-Added
+### Added
+- nothing
 
-    -nothing
+### Changed
+- nothing
 
-Changed
-
-    -nothing
-    
-
-Fixed
-
-    [MARLIN-E3S1PROFORK-BYTT-fix8] Mesh save after G29 was faulty and not saved.
+### Fixed
+- [MARLIN-E3S1PROFORK-BYTT-fix8] Mesh save after G29 was faulty and not saved.
 
 ## [MARLIN-E3S1PROFORK-BYTT-9] - 2023-05-10
 
