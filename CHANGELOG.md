@@ -11,6 +11,26 @@ I hope you like my work.
 
 I have created a discord server for faster communication https://discord.gg/Fh4jsUJWe6 .
 
+## [MARLIN-E3S1PROFORK-BYTT-10] - 2023-05-11
+
+This release is another service release. During my development i have found a bug in the saving of the mesh to the eeprom. So it is lost after reboot of the printer.
+
+This service release correts this.
+
+
+Added
+
+    -nothing
+
+Changed
+
+    -nothing
+    
+
+Fixed
+
+    [MARLIN-E3S1PROFORK-BYTT-fix8] Mesh save after G29 was faulty and not saved.
+
 ## [MARLIN-E3S1PROFORK-BYTT-9] - 2023-05-10
 
 This release is the prerelease for the screen firmware release. Development features are already in the firmware but not visible yet.
