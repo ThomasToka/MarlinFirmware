@@ -49,8 +49,9 @@ G1 X5.4 Y200.0 Z0.28 F5000.0 ;Move to side a little
 
 G1 X5.4 Y20 Z0.28 F1500.0 E30 ;Draw the second line
 
-Check also the set dimensions of the buildplate in your slicer. Most slicers have 220mm x 220 mm cause of the not
-matching firmware. The bed has 235mm x 235mm physically and so the firmware is configured.
+Check also the set dimensions of the buildplate in your slicer. Most slicers have 220mm x 220 mm (Pro) or 300mm x 300mm (Plus) cause of the not
+matching firmware. The bed has 235mm x 235mm (Pro) or 310mm x 315mm (Plus) physically and so the firmware is configured.
+Please set this values as your printarea in you slicer.
 
 -------------------------------------------------------------------------------------------------------------------
 
