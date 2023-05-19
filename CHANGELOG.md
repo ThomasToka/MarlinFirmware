@@ -11,6 +11,21 @@ I hope you like my work.
 
 I have created a discord server for faster communication https://discord.gg/Fh4jsUJWe6 .
 
+## [MARLIN-E3S1PROFORK-BYTT-rc1] - 2023-05-19
+
+This release is the next major release. So i won´t write the details. 
+
+
+### Added
+- [MARLIN-E3S1PROFORK-BYTT-add9] I included all marlin upstream commits since the last release.
+
+### Changed
+- [MARLIN-E3S1PROFORK-BYTT-change17] too much to list. :-) See installation.txt in the release.
+
+### Fixed
+- [MARLIN-E3S1PROFORK-BYTT-fix9] too much to list.
+
+
 ## [MARLIN-E3S1PROFORK-BYTT-10] - 2023-05-11
 
 This release is another service release. During my development i have found a bug in the saving of the mesh to the eeprom. So it is lost after reboot of the printer.
