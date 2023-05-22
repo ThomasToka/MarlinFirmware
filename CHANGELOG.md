@@ -11,6 +11,24 @@ I hope you like my work.
 
 I have created a discord server for faster communication https://discord.gg/Fh4jsUJWe6 .
 
+
+## [MARLIN-E3S1PROFORK-BYTT-rc2] - 2023-05-22
+
+In this release a visual mesh bug was fixed. Mesh was saved and used correctly but the visual output after reboot was not correct as the points were swapped in each line. Technically the correct mesh was used on printing also after reboot where it showed wrong on the mesh visualisation site. rc2 fixes this.
+
+I also added a CR-Toch messurement for points 1,6,7,8,9. points 3,4,5 are not reachable by the probe. Point 2 has no counterparts so also left away. You can enter the messuring mode on the Auxl.Lvl page.
+
+### Added
+- [MARLIN-E3S1PROFORK-BYTT-add10] I included all marlin upstream commits since the last release.
+- [MARLIN-E3S1PROFORK-BYTT-add11] I added a CR-Touch messurement for points 1,6,7,8,9
+
+### Changed
+- [MARLIN-E3S1PROFORK-BYTT-change18] Small changes under the hood to make new features possible.
+
+### Fixed
+- [MARLIN-E3S1PROFORK-BYTT-fix10] meshview loading after reboot visually fixed.
+
+
 ## [MARLIN-E3S1PROFORK-BYTT-rc1] - 2023-05-19
 
 This release is the next major release. So i won´t write the details. 
