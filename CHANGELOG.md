@@ -22,7 +22,7 @@ In this release the following additions/changes/fixes have been made:
 - [MARLIN-E3S1PROFORK-BYTT-add15] added two home buttons on the manual leveleing pages to home after stepper deactivation
 - 
 ### Changed
-- [MARLIN-E3S1PROFORK-BYTT-change19] #define HOME_AFTER_DEACTIVATE was activated to force G28 after motor deactivation in every situation
+- [MARLIN-E3S1PROFORK-BYTT-change19] #define HOME_AFTER_DEACTIVATE was activated to force the need of a manual G28 after motor deactivation in every situation
 - [MARLIN-E3S1PROFORK-BYTT-change20] x jerk to 12, y jerk to 12
 
 ### Fixed
