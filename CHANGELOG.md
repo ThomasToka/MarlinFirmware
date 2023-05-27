@@ -23,6 +23,7 @@ In this release the following additions/changes/fixes have been made:
 - 
 ### Changed
 - [MARLIN-E3S1PROFORK-BYTT-change19] #define HOME_AFTER_DEACTIVATE was activated to force G28 after motor deactivation in every situation
+- [MARLIN-E3S1PROFORK-BYTT-change20] x jerk to 12, y jerk to 12
 
 ### Fixed
 - nothing had to be fixed.
