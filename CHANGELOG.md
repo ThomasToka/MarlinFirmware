@@ -11,6 +11,21 @@ I hope you like my work.
 
 I have created a discord server for faster communication https://discord.gg/Fh4jsUJWe6 .
 
+## [MARLIN-E3S1PROFORK-BYTT-rc3] - 2023-05-27
+
+In this release the following additions/changes/fixes have been made:
+
+### Added
+- [MARLIN-E3S1PROFORK-BYTT-add12] I included all marlin upstream commits since the last release.
+- [MARLIN-E3S1PROFORK-BYTT-add13] extended preset materials to 4. PLA,ABS,PETG,CUST (for Custom)
+- [MARLIN-E3S1PROFORK-BYTT-add14] input shaping manipulation via touch added on the acceleration site
+- [MARLIN-E3S1PROFORK-BYTT-add15] added two home buttons on the manual leveleing pages to home after stepper deactivation
+- 
+### Changed
+- [MARLIN-E3S1PROFORK-BYTT-change19] #define HOME_AFTER_DEACTIVATE was activated to force G28 after motor deactivation in every situation
+
+### Fixed
+- nothing had to be fixed.
 
 ## [MARLIN-E3S1PROFORK-BYTT-rc2] - 2023-05-22
 
