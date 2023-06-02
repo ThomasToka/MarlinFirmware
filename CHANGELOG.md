@@ -11,6 +11,28 @@ I hope you like my work.
 
 I have created a discord server for faster communication https://discord.gg/Fh4jsUJWe6 .
 
+## [MARLIN-E3S1PROFORK-BYTT-rc4] - 2023-06-02
+
+This ist the last release candidate release before the final release.
+
+In this release the following additions/changes/fixes have been made:
+
+### Added
+- [MARLIN-E3S1PROFORK-BYTT-add16] I included all marlin upstream commits since the last release.
+- [MARLIN-E3S1PROFORK-BYTT-add17] added "Autorun" on the CR-Touch measuring page to initially measure the five points automatically
+- [MARLIN-E3S1PROFORK-BYTT-add18] added icons on the Manual Tramming and Cr-Touch measuring page
+- [MARLIN-E3S1PROFORK-BYTT-add19] added the ability to stop a octoprint print with the touch displays stop button
+
+### Changed
+- [MARLIN-E3S1PROFORK-BYTT-change21] extended the deciamals to 3 on the CR-Touch measuring page to be consistent with the meshviewer
+- [MARLIN-E3S1PROFORK-BYTT-change22] changed output of autopid to serial to a human readable understandable output
+- [MARLIN-E3S1PROFORK-BYTT-change23] removed debug headers
+
+### Fixed
+- [MARLIN-E3S1PROFORK-BYTT-fix11] fixed visual discrepancy on the touch and terminal output while running autopid
+- [MARLIN-E3S1PROFORK-BYTT-fix12] visual corrections on pidrouting page
+
+
 ## [MARLIN-E3S1PROFORK-BYTT-rc3] - 2023-05-27
 
 In this release the following additions/changes/fixes have been made:
