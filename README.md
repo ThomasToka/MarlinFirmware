@@ -6,7 +6,7 @@ Source code is here: [https://github.com/ThomasToka/Marlin/tree/MARLIN-E3S1PRO-F
 
 Source code release will be on the 9th of june 2023.
 
-This firmware is for the Ender 3 S1 Pro and Ender 3 S1 Plus.
+This firmware is for the Creality Ender 3 S1 Pro and Ender 3 S1 Plus.
 
 It has its own screen firmware for DWIN and Dacai displays. This firmware is backward compatible with the stock
 screen display firmware. Naturally then only the stock features are available.
