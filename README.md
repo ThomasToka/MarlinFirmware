@@ -1,11 +1,15 @@
 ### ATTENTION: Binaries moved to https://github.com/ThomasToka/MarlinFirmware/releases ###
 
-# MarlinFirmware
-Personal tweaks and builds of marlin 3d printer firmware repositories.
+# MarlinFirmware fork MARLIN-E3S1PRO-FORK-BYTT
 
 Source code is here: [https://github.com/ThomasToka/Marlin/tree/MARLIN-E3S1PRO-FORK-BYTT]
 
-Release of my own ported and fixed source code will be 30 days after [MARLIN-E3S1PROFORK-BYTT-4]. 
+Source code release will be on the 9th of june 2023.
+
+This firmware is for the Ender 3 S1 Pro and Ender 3 S1 Plus.
+
+It has its own screen firmware for DWIN and Dacai displays. This firmware is backward compatible with the stock
+screen display firmware. Naturally then only the stock features are available.
 
 Expect updates of other non patched firmwares with this fixes then.. lol
 
