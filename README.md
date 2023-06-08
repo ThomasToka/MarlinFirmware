@@ -1,10 +1,10 @@
 ### ATTENTION: Binaries moved to https://github.com/ThomasToka/MarlinFirmware/releases ###
 
-# MarlinFirmware fork MARLIN-E3S1PRO-FORK-BYTT
+# MarlinFirmware fork MARLIN-E3S1PROFORK-BYTT
 
-Source code is here: [https://github.com/ThomasToka/Marlin/tree/MARLIN-E3S1PRO-FORK-BYTT]
+Source code is here: [https://github.com/ThomasToka/Marlin/tree/MARLIN-E3S1PROFORK-BYTT]
 
-Source code release will be on the 9th of june 2023.
+The official pull request is here: https://github.com/MarlinFirmware/Marlin/pull/25948
 
 This firmware is for the Creality Ender 3 S1 Pro and Ender 3 S1 Plus.
 
