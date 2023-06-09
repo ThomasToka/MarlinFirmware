@@ -11,9 +11,30 @@ I hope you like my work.
 
 I have created a discord server for faster communication https://discord.gg/Fh4jsUJWe6 .
 
+
+## [MARLIN-E3S1PROFORK-BYTT-v001] - 2023-06-09
+
+This is the final release of MARLIN-E3S1PROFORK-BYTT.
+
+With this version we beginn at v001 as version number.
+
+In this release the following additions/changes/fixes have been made:
+
+### Added
+- [MARLIN-E3S1PROFORK-BYTT-add20] I included all marlin upstream commits since the last release.
+- [MARLIN-E3S1PROFORK-BYTT-add21] sound off/on toggle added. it seems not to work on most dacai displays. i have both dwin and dacai and here it works on both. to be fixed for all..
+- [MARLIN-E3S1PROFORK-BYTT-add22] source code release and pull request to marlin upstream
+
+### Changed
+- [MARLIN-E3S1PROFORK-BYTT-change24] aux.lvl and cr-touch page reworked
+
+### Fixed
+- [MARLIN-E3S1PROFORK-BYTT-fix13] fixed manual leveling/cr-touch points on Ender 3 S1 Plus again as there was a typo.
+
+
 ## [MARLIN-E3S1PROFORK-BYTT-rc4] - 2023-06-02
 
-This ist the last release candidate release before the final release.
+This is the last release candidate release before the final release.
 
 In this release the following additions/changes/fixes have been made:
 
