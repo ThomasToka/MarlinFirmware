@@ -24,6 +24,7 @@ In this release the following additions/changes/fixes have been made:
 - [MARLIN-E3S1PROFORK-BYTT-add20] I included all marlin upstream commits since the last release.
 - [MARLIN-E3S1PROFORK-BYTT-add21] sound off/on toggle added. it seems not to work on most dacai displays. i have both dwin and dacai and here it works on both. to be fixed for all..
 - [MARLIN-E3S1PROFORK-BYTT-add22] source code release and pull request to marlin upstream
+- [MARLIN-E3S1PROFORK-BYTT-add23] added the abilty to stop and pause a host print (ex. from octoprint). but there will be not popus. resume is to be done on touch or on the "resume" button in octoprint.
 
 ### Changed
 - [MARLIN-E3S1PROFORK-BYTT-change24] aux.lvl and cr-touch page reworked
