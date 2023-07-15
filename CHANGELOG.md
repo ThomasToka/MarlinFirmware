@@ -12,6 +12,30 @@ I hope you like my work.
 I have created a discord server for faster communication https://discord.gg/Fh4jsUJWe6 .
 
 
+## [MARLIN-E3S1PROFORK-BYTT-v002] - 2023-07-15
+
+This release i call "The return of UBL and M206 release".
+
+In this release the following additions/changes/fixes have been made:
+
+### Added
+- [MARLIN-E3S1PROFORK-BYTT-add24] I included all marlin upstream commits since the last release and PR #25996.
+- [MARLIN-E3S1PROFORK-BYTT-add25] added the ability to set x_min_pos and y_min_pos for better printable area calibration over touch or with M206. Marlin PR #25996
+- [MARLIN-E3S1PROFORK-BYTT-add26] reintroduced ubl5x5 build and integrated with meshviewer (laser disabled in ubl build!)
+- [MARLIN-E3S1PROFORK-BYTT-add27] added offsetrouting page for home offset and hotend offset
+- [MARLIN-E3S1PROFORK-BYTT-add28] added runout sensor on/off on front page, pause and resume pages
+
+### Changed
+- [MARLIN-E3S1PROFORK-BYTT-change25] secured auxl. lvl and cr-touch pages points in case of "M84" motors off. G28 will be forced before a point can be used after M84.
+- [MARLIN-E3S1PROFORK-BYTT-change26] changed sound on/off setting serial output to human readable (dacai displays still cant on/off the sound)
+  
+### Fixed
+- [MARLIN-E3S1PROFORK-BYTT-fix14] fixed some screen firmware buttons
+- [MARLIN-E3S1PROFORK-BYTT-fix15] fixed leading 0 of the remaining time minutes not shown while printing in the screen firmware
+- [MARLIN-E3S1PROFORK-BYTT-fix16] fixed saving of input shaping frequency so it survives a reboot.
+- [MARLIN-E3S1PROFORK-BYTT-fix17] fixed start button status after autoleveling back to not pushed
+
+
 ## [MARLIN-E3S1PROFORK-BYTT-v001] - 2023-06-09
 
 This is the final release of MARLIN-E3S1PROFORK-BYTT.
