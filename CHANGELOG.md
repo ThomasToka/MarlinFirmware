@@ -30,7 +30,7 @@ In this release the following additions/changes/fixes have been made:
   
 ### Fixed
 - [MARLIN-E3S1PROFORK-BYTT-fix18] fixed tramming point 1 on the autorun which was not functional
-- [MARLIN-E3S1PROFORK-BYTT-fix19] fixed runout sensor mocking for filament on print start or resume from pause if runout sensor was off but not filament in the sensor
+- [MARLIN-E3S1PROFORK-BYTT-fix19] fixed runout sensor mocking for filament on print start or resume from pause if runout sensor was off but no filament in the sensor
 
 
 ## [MARLIN-E3S1PROFORK-BYTT-v002] - 2023-07-15
