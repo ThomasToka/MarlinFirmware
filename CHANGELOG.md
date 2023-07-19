@@ -27,7 +27,6 @@ In this release the following additions/changes/fixes have been made:
 
 ### Changed
 - [MARLIN-E3S1PROFORK-BYTT-change27] extended the new home offset functionality and reworked the home offset page
-- [MARLIN-E3S1PROFORK-BYTT-change28] changed sound on/off setting serial output to human readable (dacai displays still cant on/off the sound)
   
 ### Fixed
 - [MARLIN-E3S1PROFORK-BYTT-fix18] fixed tramming point 1 on the autorun which was not functional
