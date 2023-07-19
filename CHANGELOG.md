@@ -21,7 +21,7 @@ In this release the following additions/changes/fixes have been made:
 - [MARLIN-E3S1PROFORK-BYTT-add29] I included all marlin upstream commits since the last release
 - [MARLIN-E3S1PROFORK-BYTT-add30] added the ability to adjust hotend flow and included this in M503 report
 - [MARLIN-E3S1PROFORK-BYTT-add31] added the ability to change hotend flow, input shaping, linear advance during print
-- [MARLIN-E3S1PROFORK-BYTT-add32] added 7x7 10x10 abl builds including meshviewer integrationet
+- [MARLIN-E3S1PROFORK-BYTT-add32] added 7x7 10x10 abl builds including meshviewer integration
 - [MARLIN-E3S1PROFORK-BYTT-add33] added 7x7 10x10 ubl builds including meshviewer integration
 - [MARLIN-E3S1PROFORK-BYTT-add34] added the ability to use gcode repeat markers with M808
 
