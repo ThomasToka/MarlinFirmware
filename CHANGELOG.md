@@ -11,6 +11,28 @@ I hope you like my work.
 
 I have created a discord server for faster communication https://discord.gg/Fh4jsUJWe6 .
 
+## [MARLIN-E3S1PROFORK-BYTT-v003] - 2023-07-19
+
+This release i call "The 5x5 7x7 10x10 release".
+
+In this release the following additions/changes/fixes have been made:
+
+### Added
+- [MARLIN-E3S1PROFORK-BYTT-add29] I included all marlin upstream commits since the last release
+- [MARLIN-E3S1PROFORK-BYTT-add30] added the ability to adjust hotend flow and included this in M503 report
+- [MARLIN-E3S1PROFORK-BYTT-add31] added the ability to change hotend flow, input shaping, linear advance during print
+- [MARLIN-E3S1PROFORK-BYTT-add32] added 7x7 10x10 abl builds including meshviewer integrationet
+- [MARLIN-E3S1PROFORK-BYTT-add33] added 7x7 10x10 ubl builds including meshviewer integration
+- [MARLIN-E3S1PROFORK-BYTT-add34] added the ability to use gcode repeat markers with M808
+
+### Changed
+- [MARLIN-E3S1PROFORK-BYTT-change27] extended the new home offset functionality and reworked the home offset page
+- [MARLIN-E3S1PROFORK-BYTT-change28] changed sound on/off setting serial output to human readable (dacai displays still cant on/off the sound)
+  
+### Fixed
+- [MARLIN-E3S1PROFORK-BYTT-fix18] fixed tramming point 1 on the autorun which was not functional
+- [MARLIN-E3S1PROFORK-BYTT-fix19] fixed runout sensor mocking for filament on print start or resume from pause if runout sensor was off but not filament in the sensor
+
 
 ## [MARLIN-E3S1PROFORK-BYTT-v002] - 2023-07-15
 
