@@ -11,6 +11,31 @@ I hope you like my work.
 
 I have created a discord server for faster communication https://discord.gg/Fh4jsUJWe6 .
 
+## [MARLIN-E3S1PROFORK-BYTT-v004] - 2023-07-28
+
+This release i call "The laser feature and power loss recovery release".
+
+In this release the following additions/changes/fixes have been made:
+
+### Added
+- [MARLIN-E3S1PROFORK-BYTT-add35] I included all marlin upstream commits since the last release
+- [MARLIN-E3S1PROFORK-BYTT-add36] added better barriers for the home offset pads to not break out to max position
+- [MARLIN-E3S1PROFORK-BYTT-add37] added a power loss recovery status and toggle on main and resume sites. it updates on each entering of the site.
+- [MARLIN-E3S1PROFORK-BYTT-add38] added a extruder flowrate status and toggle on main and resume sites. it updates on each entering of the site.
+- [MARLIN-E3S1PROFORK-BYTT-add39] added a reset of the mesh on autoleveling start
+- [MARLIN-E3S1PROFORK-BYTT-add40] added a check for a running autoleveling so it is not possible to "queue" a second run or reset the running mesh while autoleveling is running
+
+### Changed
+- [MARLIN-E3S1PROFORK-BYTT-change28] removed 10x10 builds for now as they dont save to eeprom. investigating this.
+  
+### Fixed
+- [MARLIN-E3S1PROFORK-BYTT-fix20] fixed laser feature PWM Range. Now it supports standard gcode that also works in stock firmware.
+- [MARLIN-E3S1PROFORK-BYTT-fix21] fixed general laser feature gcode parsing for the range for example.
+- [MARLIN-E3S1PROFORK-BYTT-fix22] fixed tramming point 1 on the autorun which was not functional
+- [MARLIN-E3S1PROFORK-BYTT-fix23] fixed basic power loss recovery functionality. Attention: USE at your own risk. I see a marlin bug here where the extruder sometimes extrudes much on the resume position. It is under investigation. But i release this now as it the part that i coudl fix is fixed. Now its on marlin devs to fix the rest.
+- [MARLIN-E3S1PROFORK-BYTT-fix24] fixed some minor visual missalignments (ex. mesh 7x7 on dacai)
+
+
 ## [MARLIN-E3S1PROFORK-BYTT-v003] - 2023-07-19
 
 This release i call "The 5x5 7x7 10x10 release".
