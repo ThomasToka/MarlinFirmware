@@ -11,6 +11,25 @@ I hope you like my work.
 
 I have created a discord server for faster communication https://discord.gg/Fh4jsUJWe6 .
 
+
+## [MARLIN-E3S1PROFORK-BYTT-v005] - 2023-08-05
+
+This release i call "The return of 10x10 ubl and cardreader update".
+
+In this release the following additions/changes/fixes have been made:
+
+### Added
+- [MARLIN-E3S1PROFORK-BYTT-add40] I included all marlin upstream commits since the last release
+- [MARLIN-E3S1PROFORK-BYTT-add41] readded 10x10 ubl builds as they work as intended.
+- [MARLIN-E3S1PROFORK-BYTT-add42] added cardreader site accounting (also for the laser part).
+- [MARLIN-E3S1PROFORK-BYTT-add43] added temperature adjustment on the main site.
+
+### Changed
+- [MARLIN-E3S1PROFORK-BYTT-change29] changed cardreader max files per folder from 20 to 40.
+  
+### Fixed
+nothing had to be fixed
+
 ## [MARLIN-E3S1PROFORK-BYTT-v004] - 2023-07-28
 
 This release i call "The laser feature and power loss recovery release".
