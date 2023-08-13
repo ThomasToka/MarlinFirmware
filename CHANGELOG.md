@@ -11,6 +11,26 @@ I hope you like my work.
 
 I have created a discord server for faster communication https://discord.gg/Fh4jsUJWe6 .
 
+## [MARLIN-E3S1PROFORK-BYTT-v006] - 2023-08-13
+
+This release i call "The display features update".
+
+In this release the following additions/changes/fixes have been made:
+
+### Added
+- [MARLIN-E3S1PROFORK-BYTT-add44] I included all marlin upstream commits since the last release
+- [MARLIN-E3S1PROFORK-BYTT-add45] added the ability to manipulate the sound (toggle should work for all)
+- [MARLIN-E3S1PROFORK-BYTT-add46] prepared the ability to manipulate the sound with pads (implemented correctly, but seems not to work!)
+- [MARLIN-E3S1PROFORK-BYTT-add47] added the ability to manipulate the display brightness
+- [MARLIN-E3S1PROFORK-BYTT-add48] added the ability to manipulate the display standby brightness
+- [MARLIN-E3S1PROFORK-BYTT-add49] added the ability to manipulate the display standby timeout
+- [MARLIN-E3S1PROFORK-BYTT-add50] added a sound off/on toggle on the main, resume, pause and finish site
+
+### Changed
+- [MARLIN-E3S1PROFORK-BYTT-change30] prepared the system for a lcd_rts_settings data struct which is saved in eeprom (display features use this already!)
+  
+### Fixed
+- [MARLIN-E3S1PROFORK-BYTT-fix25] fixed eeprom saving of parameters in bigger builds
 
 ## [MARLIN-E3S1PROFORK-BYTT-v005] - 2023-08-05
 
