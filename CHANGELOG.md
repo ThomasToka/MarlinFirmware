@@ -15,6 +15,8 @@ I have created a discord server for faster communication https://discord.gg/Fh4j
 
 This release i call "The display features update".
 
+EDIT: 08/15/2023: I hotfixed the hotend offset function as it did not do what it should. it simply went in the wrong direction. Sorry!
+
 In this release the following additions/changes/fixes have been made:
 
 ### Added
@@ -31,6 +33,7 @@ In this release the following additions/changes/fixes have been made:
   
 ### Fixed
 - [MARLIN-E3S1PROFORK-BYTT-fix25] fixed eeprom saving of parameters in bigger builds
+- [MARLIN-E3S1PROFORK-BYTT-fix26] ***hotfixed past release*** i had to hotfix the hotend offset function cause it die not work as expected. new binaries uploaded on 08/15/2023
 
 ## [MARLIN-E3S1PROFORK-BYTT-v005] - 2023-08-05
 
