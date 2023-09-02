@@ -11,6 +11,53 @@ I hope you like my work.
 
 I have created a discord server for faster communication https://discord.gg/Fh4jsUJWe6 .
 
+If you like my work please support me with a donation:
+
+Patreon: https://www.patreon.com/ThomasToka
+
+Github Sponsors: https://github.com/sponsors/ThomasToka
+
+## [MARLIN-E3S1PROFORK-BYTT-v008] - 2023-09-03
+
+This release i call "The gcode preview update".
+
+In this release the following additions/changes/fixes have been made:
+
+### Added
+- [MARLIN-E3S1PROFORK-BYTT-add53] I included all marlin upstream commits since the last release
+- [MARLIN-E3S1PROFORK-BYTT-add54] gcode preview for prusa slicer, creality slicer, cura in 250x250px
+- [MARLIN-E3S1PROFORK-BYTT-add55] gcode preview wiki site with own scripts and instructions: https://github.com/ThomasToka/MarlinFirmware/wiki/Gcode-preview
+- [MARLIN-E3S1PROFORK-BYTT-add56] new environment for F1 RC chipset with 256KB, F1 now has F1-RC (256KB) and F1-RE (512KB) builds
+
+### Changed
+- [MARLIN-E3S1PROFORK-BYTT-change32] front, pause, resume sites changed to show gcode preview
+- [MARLIN-E3S1PROFORK-BYTT-change33] rearranged front, pause, resume sites functionaly (powerloss toggle, runout toggle)
+- [MARLIN-E3S1PROFORK-BYTT-change34] changed the icons on the acceleration site
+- [MARLIN-E3S1PROFORK-BYTT-change35] disabled G26 mesh validation test to save flash 
+- [MARLIN-E3S1PROFORK-BYTT-change36] reverted Ubl dynamic change prepare as it does not work like abl
+
+### Fixed
+- [MARLIN-E3S1PROFORK-BYTT-fix27] changed the icons on the acceleration site
+
+
+## [MARLIN-E3S1PROFORK-BYTT-v007] - 2023-08-20
+
+This release i call "The display features update".
+
+EDIT: 08/15/2023: I hotfixed the hotend offset function as it did not do what it should. it simply went in the wrong direction. Sorry!
+
+In this release the following additions/changes/fixes have been made:
+
+### Added
+- [MARLIN-E3S1PROFORK-BYTT-add51] added the ability to manipulate the abl probing margin (25-100, default is 45)
+- [MARLIN-E3S1PROFORK-BYTT-add52] prepared system for more dynamic manipulation
+
+### Changed
+- [MARLIN-E3S1PROFORK-BYTT-change31] changed MAX_FEEDRATE_EDIT_VALUES and MAX_ACCEL_EDIT_VALUES from 3000 to 9999 for x and y for input shaping calibration
+
+### Fixed
+nothing had to be fixed
+  
 ## [MARLIN-E3S1PROFORK-BYTT-v006] - 2023-08-13
 
 This release i call "The display features update".
