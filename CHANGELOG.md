@@ -32,9 +32,8 @@ In this release the following additions/changes/fixes have been made:
 ### Changed
 - [MARLIN-E3S1PROFORK-BYTT-change32] front, pause, resume sites changed to show gcode preview
 - [MARLIN-E3S1PROFORK-BYTT-change33] rearranged front, pause, resume sites functionaly (powerloss toggle, runout toggle)
-- [MARLIN-E3S1PROFORK-BYTT-change34] changed the icons on the acceleration site
-- [MARLIN-E3S1PROFORK-BYTT-change35] disabled G26 mesh validation test to save flash 
-- [MARLIN-E3S1PROFORK-BYTT-change36] reverted Ubl dynamic change prepare as it does not work like abl
+- [MARLIN-E3S1PROFORK-BYTT-change34] disabled G26 mesh validation test to save flash 
+- [MARLIN-E3S1PROFORK-BYTT-change35] reverted Ubl dynamic change prepare as it does not work like abl
 
 ### Fixed
 - [MARLIN-E3S1PROFORK-BYTT-fix27] changed the icons on the acceleration site
