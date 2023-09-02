@@ -109,7 +109,7 @@ class E3S1PROFORKBYTT_Thumbnail(Script):
                     "default_value": 250,
                     "minimum_value": "250",
                     "minimum_value_warning": "250",
-                    "maximum_value_warning": "200"
+                    "maximum_value_warning": "250"
                 }
             }
         }"""
