@@ -95,10 +95,10 @@ class E3S1PROFORKBYTT_Thumbnail(Script):
                     "description": "Width of the generated thumbnail",
                     "unit": "px",
                     "type": "int",
-                    "default_value": 200,
-                    "minimum_value": "200",
-                    "minimum_value_warning": "200",
-                    "maximum_value_warning": "200"
+                    "default_value": 250,
+                    "minimum_value": "250",
+                    "minimum_value_warning": "250",
+                    "maximum_value_warning": "250"
                 },
                 "height":
                 {
@@ -106,9 +106,9 @@ class E3S1PROFORKBYTT_Thumbnail(Script):
                     "description": "Height of the generated thumbnail",
                     "unit": "px",
                     "type": "int",
-                    "default_value": 200,
-                    "minimum_value": "200",
-                    "minimum_value_warning": "200",
+                    "default_value": 250,
+                    "minimum_value": "250",
+                    "minimum_value_warning": "250",
                     "maximum_value_warning": "200"
                 }
             }
