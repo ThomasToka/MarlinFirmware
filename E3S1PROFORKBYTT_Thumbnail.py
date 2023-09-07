@@ -3,6 +3,8 @@
 #
 # This script has been changed for E3S1PROFORKBYTT by Thomas Toka.
 #
+# Intruduced with v008 into E3S1PROFORKBYTT.
+#
 # It is based on the modification of:
 #
 # Professional firmware for Ender3v2
