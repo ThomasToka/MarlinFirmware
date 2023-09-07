@@ -4,7 +4,7 @@
 #
 # This script has been developed for E3S1PROFORKBYTT by Thomas Toka.
 #
-#
+# Intruduced with v008 into E3S1PROFORKBYTT.
 # ------------------------------------------------------------------------------
 
 import sys
