@@ -17,6 +17,27 @@ Patreon: https://www.patreon.com/ThomasToka
 
 Github Sponsors: https://github.com/sponsors/ThomasToka
 
+## [MARLIN-E3S1PROFORK-BYTT-v009] - 2023-09-12
+
+This release i call "The cr-touch measuring dynamic margin update".
+
+In this release the following additions/changes/fixes have been made:
+
+### Added
+- [MARLIN-E3S1PROFORK-BYTT-add57] I included all marlin upstream commits since the last release
+- [MARLIN-E3S1PROFORK-BYTT-add58] added new variable manual_crtouch_5position to unbind the crtouch positions from the manual_level_5position as they go further cause with those the nozzle moves to the set position. the cr-touch is not capable to reach this positions.
+- [MARLIN-E3S1PROFORK-BYTT-add59] gcode preview for supersclicer (working) and orca slicer (mostly not working. it seems the generated thumbnails are simply too big) in 250x250px
+
+### Changed
+- [MARLIN-E3S1PROFORK-BYTT-change36] dynamic probing margin for abl builds now is also respected for the cr-touch measuring site, so the points have the margin set from the edge
+- [MARLIN-E3S1PROFORK-BYTT-change37] changed ubl margins for Ender 3 S1 Pro to front 25 back 45 to cover more
+- [MARLIN-E3S1PROFORK-BYTT-change38] changed ubl margins for Ender 3 S1 Plus to most possible front 27 and back 45 to cover more 
+- [MARLIN-E3S1PROFORK-BYTT-change39] increased x_max_position for the Ender 3 S1 Pro from 241 to 242 to allow 25mm probing margin as 242-32(hotened offset x)=210. and that we need if we want to set 25 as probing margin as 235-25=210.
+
+### Fixed
+- [MARLIN-E3S1PROFORK-BYTT-fix28] fixed cr-touch autorun multiple starts. a variable prevents now a second run while running. after it finishes the variable is reset so a new run can be started.
+
+
 ## [MARLIN-E3S1PROFORK-BYTT-v008] - 2023-09-03
 
 This release i call "The gcode preview update".
