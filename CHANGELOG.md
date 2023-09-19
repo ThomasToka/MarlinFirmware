@@ -28,7 +28,7 @@ In this release the following additions/changes/fixes have been made:
 
 ### Changed
 - [MARLIN-E3S1PROFORK-BYTT-change40] replaced printing progress bar with a self developed version to have better visuality of the percentage.
-- [MARLIN-E3S1PROFORK-BYTT-change41] cardreader now supports/reads filenames up to 78 chars (incl.filextension)
+- [MARLIN-E3S1PROFORK-BYTT-change41] cardreader now supports/reads filenames up to 65 chars (incl.filextension)
 
 ### Fixed
 - nothing had to be fixed
