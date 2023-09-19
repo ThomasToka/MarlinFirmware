@@ -17,6 +17,38 @@ Patreon: https://www.patreon.com/ThomasToka
 
 Github Sponsors: https://github.com/sponsors/ThomasToka
 
+## [MARLIN-E3S1PROFORK-BYTT-v011] - 2023-09-19
+
+This release i call "The progress bar update".
+
+In this release the following additions/changes/fixes have been made:
+
+### Added
+- [MARLIN-E3S1PROFORK-BYTT-add62] changed scrolling behavior: it now stops if another button than the home button is pressed. pressing "print" invalidates scrolling also.
+
+### Changed
+- [MARLIN-E3S1PROFORK-BYTT-change40] replaced printing progress bar with a self developed version to have better visuality of the percentage.
+- [MARLIN-E3S1PROFORK-BYTT-change41] cardreader now supports/reads filenames up to 78 chars (incl.filextension)
+
+### Fixed
+- nothing had to be fixed
+
+## [MARLIN-E3S1PROFORK-BYTT-v010] - 2023-09-14
+
+This release i call "The printfile scrolling update".
+
+In this release the following additions/changes/fixes have been made:
+
+### Added
+- [MARLIN-E3S1PROFORK-BYTT-add60] selected printfile now scrolls if the filename is longer than 16 chars (incl. fileextension) once. pushing on "home" lets the filename scroll again. pushing once on "print" to enter the filelist invalidates scrolling for the already chosen file and also fileprint is then not possible. scrolling starts again if you load another file. starting print is also possible if you load another file after you entered "print" once with a loaded file.
+- [MARLIN-E3S1PROFORK-BYTT-add61] while scrolling the response of the display for other clicks may be blocked
+
+### Changed
+- nothing had to be changed
+
+### Fixed
+- nothing had to be fixed
+
 ## [MARLIN-E3S1PROFORK-BYTT-v009] - 2023-09-12
 
 This release i call "The cr-touch measuring dynamic margin update".
