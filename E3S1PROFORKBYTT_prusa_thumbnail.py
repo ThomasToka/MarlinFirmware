@@ -13,9 +13,15 @@ import os
 # Get the g-code source file name
 sourceFile = sys.argv[1]
 
-# Read the ENTIRE g-code file into memory
-with open(sourceFile, "r") as f:
-    lines = f.readlines()
+try:
+    # Read the ENTIRE g-code file into memory
+    with open(sourceFile, "r", encoding="utf8") as f:
+        lines = f.readlines()
+except Exception as e:
+    print("Error opening source file: {0}".format(str(e)))
+    input()
+finally:
+    f.close()
 
 new_lines = []
 remove_next_line = False
@@ -32,11 +38,10 @@ for line in lines:
         new_lines.append(line)
 
 try:
-    with open(sourceFile, "w+") as of:
+    with open(sourceFile, "w+", encoding="utf8") as of:
         of.write(''.join(new_lines))
-except:
-    print('Error writing output file')
+except Exception as e:
+    print("Error writing output file: {0}".format(str(e)))
     input()
 finally:
     of.close()
-    f.close()
