@@ -17,6 +17,25 @@ Patreon: https://www.patreon.com/ThomasToka
 
 Github Sponsors: https://github.com/sponsors/ThomasToka
 
+
+## [MARLIN-E3S1PROFORK-BYTT-v012] - 2023-09-25
+
+This release i call "The dynamic abl y margin update".
+
+In this release the following additions/changes/fixes have been made:
+
+### Added
+- [MARLIN-E3S1PROFORK-BYTT-add63] the y margin is now unbound of the x margin and can be set separately. it has a min of 10 if you for example use a 0 x offset.
+
+### Changed
+- [MARLIN-E3S1PROFORK-BYTT-change42] the x and y margins take the probe offsets into account and will adjust the set value to the maximum hardware boundries for each axis.
+- [MARLIN-E3S1PROFORK-BYTT-change43] the cardreader is now able to enter folders up to 65 chars. folders between 20 and 65 chars will be cropped to 20 chars but are still enterable.
+- [MARLIN-E3S1PROFORK-BYTT-change44] the mesh sites have been reworked to reflect the dynamic x and y margins
+- [MARLIN-E3S1PROFORK-BYTT-change45] the cr-touch measurement site has been reworked to reflect the dynamic x and y margins
+
+### Fixed
+- nothing had to be fixed
+
 ## [MARLIN-E3S1PROFORK-BYTT-v011] - 2023-09-19
 
 This release i call "The progress bar update".
