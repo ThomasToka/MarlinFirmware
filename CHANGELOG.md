@@ -17,6 +17,22 @@ Patreon: https://www.patreon.com/ThomasToka
 
 Github Sponsors: https://github.com/sponsors/ThomasToka
 
+## [MARLIN-E3S1PROFORK-BYTT-v013] - 2023-10-09
+
+This release i call "The pause at height update".
+
+In this release the following additions/changes/fixes have been made:
+
+### Added
+- [MARLIN-E3S1PROFORK-BYTT-add64] I included all marlin upstream commits since the last release
+
+### Changed
+- [MARLIN-E3S1PROFORK-BYTT-change46] powerloss recovery POWER_LOSS_MIN_Z_CHANGE 0.05 changed to POWER_LOSS_MIN_Z_CHANGE 0.1
+- [MARLIN-E3S1PROFORK-BYTT-change47] reworked several sites to show the power loss and runout sensor toggle
+
+### Fixed
+- [MARLIN-E3S1PROFORK-BYTT-change29] M0 aka "pause at height" is now functional and has its own wiki entry
+
 
 ## [MARLIN-E3S1PROFORK-BYTT-v012] - 2023-09-25
 
