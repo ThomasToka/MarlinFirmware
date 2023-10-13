@@ -17,6 +17,21 @@ Patreon: https://www.patreon.com/ThomasToka
 
 Github Sponsors: https://github.com/sponsors/ThomasToka
 
+## [MARLIN-E3S1PROFORK-BYTT-v014] - 2023-10-13
+
+This release i call "The mesh edit update".
+
+In this release the following additions/changes/fixes have been made:
+
+### Added
+- [MARLIN-E3S1PROFORK-BYTT-add65] mesh points are now editable (abl and ubl)
+
+### Changed
+- [MARLIN-E3S1PROFORK-BYTT-change48] reworked mesh sites to reflect mesh editing functions
+
+### Fixed
+- nothing had to be fixed
+
 ## [MARLIN-E3S1PROFORK-BYTT-v013] - 2023-10-09
 
 This release i call "The pause at height update".
