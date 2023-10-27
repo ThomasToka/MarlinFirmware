@@ -17,6 +17,24 @@ Patreon: https://www.patreon.com/ThomasToka
 
 Github Sponsors: https://github.com/sponsors/ThomasToka
 
+## [MARLIN-E3S1PROFORK-BYTT-v015] - 2023-10-27
+
+This release i call "The dynamic abl mesh size update".
+
+In this release the following additions/changes/fixes have been made:
+
+### Added
+- [MARLIN-E3S1PROFORK-BYTT-add66] I included all marlin upstream commits since the last release
+- [MARLIN-E3S1PROFORK-BYTT-add67] abl builds are now able to switch between mesh sizes (5x5,7x7,10x10) without reboot and loosing settings
+- [MARLIN-E3S1PROFORK-BYTT-add68] added min, max and dev to the mesh sites and calculate the mesh deviation after the autoleveling run
+
+### Changed
+- [MARLIN-E3S1PROFORK-BYTT-change49] reworked mesh sites to reflect mesh switch
+- [MARLIN-E3S1PROFORK-BYTT-change50] disabled GCODE_REPEAT_MARKERS to safe flash
+
+### Fixed
+- [MARLIN-E3S1PROFORK-BYTT-fix30] fixed power loss recovery in all builds
+
 ## [MARLIN-E3S1PROFORK-BYTT-v014] - 2023-10-13
 
 This release i call "The mesh edit update".
@@ -46,7 +64,7 @@ In this release the following additions/changes/fixes have been made:
 - [MARLIN-E3S1PROFORK-BYTT-change47] reworked several sites to show the power loss and runout sensor toggle
 
 ### Fixed
-- [MARLIN-E3S1PROFORK-BYTT-change29] M0 aka "pause at height" is now functional and has its own wiki entry
+- [MARLIN-E3S1PROFORK-BYTT-fix29] M0 aka "pause at height" is now functional and has its own wiki entry
 
 
 ## [MARLIN-E3S1PROFORK-BYTT-v012] - 2023-09-25
