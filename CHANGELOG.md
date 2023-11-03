@@ -17,6 +17,24 @@ Patreon: https://www.patreon.com/ThomasToka
 
 Github Sponsors: https://github.com/sponsors/ThomasToka
 
+## [MARLIN-E3S1PROFORK-BYTT-v016] - 2023-11-03
+
+This release i call "The dynamic ubl update".
+
+In this release the following additions/changes/fixes have been made:
+
+### Added
+- [MARLIN-E3S1PROFORK-BYTT-add69] ubl builds are now able to switch between mesh sizes (5x5,7x7,10x10) without reboot and loosing settings
+- [MARLIN-E3S1PROFORK-BYTT-add70] ubl builds are now able to change the margin for x and y like abl builds
+- [MARLIN-E3S1PROFORK-BYTT-add71] ubl builds now take also the probe offsets into account and maybe work with the 0 y offset (please report if it still fails!)
+
+### Changed
+- [MARLIN-E3S1PROFORK-BYTT-change51] reworked mesh sites to reflect mesh switch for ubl builds
+- [MARLIN-E3S1PROFORK-BYTT-change52] adjusted the following parameters: LA 0.05 to 0.03, Jerk X/Y 12 to 20, Jerk E to 0.4 to 0.6, Jerk Z 5 to 10, Default Max Acceleration E 1000 to 5000
+
+### Fixed
+- nothing had to be fixed
+
 ## [MARLIN-E3S1PROFORK-BYTT-v015] - 2023-10-27
 
 This release i call "The dynamic abl mesh size update".
