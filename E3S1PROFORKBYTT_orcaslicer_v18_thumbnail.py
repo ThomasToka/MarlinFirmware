@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 #
-# Orca Slicer remove headers before jpg and convert PNG to JPG.
+# Orca Slicer as of v18beta2 remove headers before jpg and convert PNG to JPG.
 #
 # This script has been developed for E3S1PROFORKBYTT by Thomas Toka.
 #
@@ -23,6 +23,11 @@ def main(source_file):
     # Remove the header block if both start and end are found
     if header_start is not None and header_end is not None:
         del lines[header_start:header_end + 1]
+
+    # Find and remove the '; THUMBNAIL_BLOCK_START' line
+    thumbnail_block_start_index = next((i for i, line in enumerate(lines) if line.strip() == '; THUMBNAIL_BLOCK_START'), None)
+    if thumbnail_block_start_index is not None:
+        del lines[thumbnail_block_start_index]
 
     # Convert the thumbnail from PNG to JPEG
     thumbnail_start = next((i for i, line in enumerate(lines) if '; thumbnail begin' in line), None)
@@ -56,7 +61,6 @@ def main(source_file):
             lines[thumbnail_start + 1:thumbnail_end] = [line + "\n" for line in injected_jpg_data]
 
     # Remove all lines before '; thumbnail_JPG begin'
-    # This will also remove the newlines and the solitary ';' character
     lines = [line for line in lines if not line.strip() == ';' and not line.strip() == '']
     thumbnail_jpg_index = next((i for i, line in enumerate(lines) if line.startswith('; thumbnail_JPG begin')), None)
     if thumbnail_jpg_index is not None and thumbnail_jpg_index > 0:
