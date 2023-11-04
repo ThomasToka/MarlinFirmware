@@ -31,6 +31,7 @@ In this release the following additions/changes/fixes have been made:
 ### Changed
 - [MARLIN-E3S1PROFORK-BYTT-change51] reworked mesh sites to reflect mesh switch for ubl builds
 - [MARLIN-E3S1PROFORK-BYTT-change52] adjusted the following parameters: LA 0.05 to 0.03, Jerk X/Y 12 to 20, Jerk E to 0.4 to 0.6, Jerk Z 5 to 10, Default Max Acceleration E 1000 to 5000
+- [MARLIN-E3S1PROFORK-BYTT-change53] changed nameing of "Hotend offsets" to the better matching term "Probe offsets"
 
 ### Fixed
 - nothing had to be fixed
