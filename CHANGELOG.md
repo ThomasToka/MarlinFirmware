@@ -17,6 +17,24 @@ Patreon: https://www.patreon.com/ThomasToka
 
 Github Sponsors: https://github.com/sponsors/ThomasToka
 
+## [MARLIN-E3S1PROFORK-BYTT-v017] - 2023-11-15
+
+This release i call "The file and folder icons update".
+
+In this release the following additions/changes/fixes have been made:
+
+### Added
+- [MARLIN-E3S1PROFORK-BYTT-add72] I included all marlin upstream commits since the last release
+- [MARLIN-E3S1PROFORK-BYTT-add73] folders and files icons
+- [MARLIN-E3S1PROFORK-BYTT-add74] folders and files colors (folders blue, files white)
+
+### Changed
+- [MARLIN-E3S1PROFORK-BYTT-change54] stripping of the gcode preview class to save flash without interferance of our functionality
+- [MARLIN-E3S1PROFORK-BYTT-change55] BLTOUCH_HS_MODE default on removed as it is enabled on mesh change on request and saves flash
+
+### Fixed
+- [MARLIN-E3S1PROFORK-BYTT-fix31] probe pull up after reboot fix
+
 ## [MARLIN-E3S1PROFORK-BYTT-v016] - 2023-11-03
 
 This release i call "The dynamic ubl update".
