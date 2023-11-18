@@ -17,6 +17,26 @@ Patreon: https://www.patreon.com/ThomasToka
 
 Github Sponsors: https://github.com/sponsors/ThomasToka
 
+## [MARLIN-E3S1PROFORK-BYTT-v018] - 2023-11-18
+
+This release i call "The mesh colors update".
+
+In this release the following additions/changes/fixes have been made:
+
+### Added
+- [MARLIN-E3S1PROFORK-BYTT-add75] I included all marlin upstream commits since the last release
+- [MARLIN-E3S1PROFORK-BYTT-add76] mesh viewer now shows a coloured mesh after generation
+- [MARLIN-E3S1PROFORK-BYTT-add77] folders and files colors (folders blue, files white)
+
+### Changed
+- [MARLIN-E3S1PROFORK-BYTT-change56] reduced variables on startup
+- [MARLIN-E3S1PROFORK-BYTT-change57] rearranged the plus tramming point 1 to be in the middle of 310x310 size
+- [MARLIN-E3S1PROFORK-BYTT-change58] lots of unused variables deleted
+
+### Fixed
+- [MARLIN-E3S1PROFORK-BYTT-fix32] fixed default preview pic reset on sd card pull
+- [MARLIN-E3S1PROFORK-BYTT-fix33] fixed folders and files icons reset on sd card pull
+
 ## [MARLIN-E3S1PROFORK-BYTT-v017] - 2023-11-15
 
 This release i call "The file and folder icons update".
