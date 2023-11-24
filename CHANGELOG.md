@@ -17,6 +17,28 @@ Patreon: https://www.patreon.com/ThomasToka
 
 Github Sponsors: https://github.com/sponsors/ThomasToka
 
+## [MARLIN-E3S1PROFORK-BYTT-v019] - 2023-11-24
+
+This release i call "The rectangle update".
+
+In this release the following additions/changes/fixes have been made:
+
+### Added
+- [MARLIN-E3S1PROFORK-BYTT-add78] I included all marlin upstream commits since the last release
+- [MARLIN-E3S1PROFORK-BYTT-add79] active mesh points have now a rectangle
+- [MARLIN-E3S1PROFORK-BYTT-add80] secured mesh edit on leveling
+- [MARLIN-E3S1PROFORK-BYTT-add81] secured mesh size change on leveling
+
+
+### Changed
+- [MARLIN-E3S1PROFORK-BYTT-change59] screen updates to reflect the rectangles
+- [MARLIN-E3S1PROFORK-BYTT-change60] stripped code down and removed unneeded code
+
+### Fixed
+- [MARLIN-E3S1PROFORK-BYTT-fix34] screen fixed to have a consistent output on page change
+- [MARLIN-E3S1PROFORK-BYTT-fix35] 7x7 mesh site on dacai displays now shows all rows consistent
+- [MARLIN-E3S1PROFORK-BYTT-fix36] mainboard firmware fixed to not show a wrong mesh size site on autoleveling start
+
 ## [MARLIN-E3S1PROFORK-BYTT-v018] - 2023-11-18
 
 This release i call "The mesh colors update".
