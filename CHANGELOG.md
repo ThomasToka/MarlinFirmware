@@ -17,6 +17,29 @@ Patreon: https://www.patreon.com/ThomasToka
 
 Github Sponsors: https://github.com/sponsors/ThomasToka
 
+## [MARLIN-E3S1PROFORK-BYTT-v020] - 2023-11-26
+
+This release i call "The instructions update".
+
+In this release the following additions/changes/fixes have been made:
+
+### Added
+- [MARLIN-E3S1PROFORK-BYTT-add82] added hints on cr-touch measuring site
+- [MARLIN-E3S1PROFORK-BYTT-add83] added hints on manual tramming site
+- [MARLIN-E3S1PROFORK-BYTT-add84] added a guard to not overflow the display on loading a too big gcode preview image
+- [MARLIN-E3S1PROFORK-BYTT-add85] secured mesh size change on leveling
+
+
+### Changed
+- [MARLIN-E3S1PROFORK-BYTT-change61] changed behavior of the home button on cr-touch measuring site
+- [MARLIN-E3S1PROFORK-BYTT-change62] changed behavior of the home button on the manual tramming site
+- [MARLIN-E3S1PROFORK-BYTT-change63] changed linear advance to 3 digits.
+- [MARLIN-E3S1PROFORK-BYTT-change64] changed default linear advance K value to 0.035
+- [MARLIN-E3S1PROFORK-BYTT-change65] increased gcode preview image size to 24KB by moving it from 0xB000 to 0xA000
+
+### Fixed
+- nothing had to be fixed
+
 ## [MARLIN-E3S1PROFORK-BYTT-v019] - 2023-11-24
 
 This release i call "The rectangle update".
