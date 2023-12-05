@@ -17,6 +17,28 @@ Patreon: https://www.patreon.com/ThomasToka
 
 Github Sponsors: https://github.com/sponsors/ThomasToka
 
+## [MARLIN-E3S1PROFORK-BYTT-v021] - 2023-12-05
+
+This release i call "The mesh colors update part 2".
+
+In this release the following additions/changes/fixes have been made:
+
+### Added
+- [MARLIN-E3S1PROFORK-BYTT-add86] added main site preheat shortcuts (inactive during print)
+- [MARLIN-E3S1PROFORK-BYTT-add87] added main site cool and off toggle for temps/fans (inactive during print)
+- [MARLIN-E3S1PROFORK-BYTT-add88] added optional M73 functionality toggle to show slicer time
+- [MARLIN-E3S1PROFORK-BYTT-add89] added M600 on demand functionality (active during print)
+- [MARLIN-E3S1PROFORK-BYTT-add90] added mesh status on main site
+- [MARLIN-E3S1PROFORK-BYTT-add91] added in and out extrusion on the pause sites
+- [MARLIN-E3S1PROFORK-BYTT-add92] introduced new classes to save flash space
+
+### Changed
+- [MARLIN-E3S1PROFORK-BYTT-change66] meshes are now colored
+- [MARLIN-E3S1PROFORK-BYTT-change67] reworked about site for qrcode display
+
+### Fixed
+- nothing had to be fixed
+
 ## [MARLIN-E3S1PROFORK-BYTT-v020] - 2023-11-26
 
 This release i call "The instructions update".
