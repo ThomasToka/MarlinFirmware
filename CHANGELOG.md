@@ -34,7 +34,7 @@ In this release the following additions/changes/fixes have been made:
 ### Changed
 - [MARLIN-E3S1PROFORK-BYTT-change68] removed select print file scrolling on mainsite
 - [MARLIN-E3S1PROFORK-BYTT-change69] rearranged main site with new select file field
-- [MARLIN-E3S1PROFORK-BYTT-change70] - selected print file shown on main site has now three visibility functions 
+- [MARLIN-E3S1PROFORK-BYTT-change70] selected print file shown on main site has now three visibility functions 
   1) under 25 chars centered and bigger 
   2) from 26 to 55 chars left arranged and in two rows.
   3) over 55 chars like 2 but cropped to 55 chars
@@ -48,7 +48,7 @@ In this release the following additions/changes/fixes have been made:
 
 ### Fixed
 - [MARLIN-E3S1PROFORK-BYTT-fix37] fixed folders and files accounting so always the correct site number is shown
-- [MARLIN-E3S1PROFORK-BYTT-fix38]fixed inability to enter the adjust site during printing when G29 was in the start Gcode due to a wrong routing in g29cpp and ubl_g29.cpp
+- [MARLIN-E3S1PROFORK-BYTT-fix38] fixed inability to enter the adjust site during printing when G29 was in the start Gcode due to a wrong routing in g29cpp and ubl_g29.cpp
 
 ## [MARLIN-E3S1PROFORK-BYTT-v021] - 2023-12-05
 
