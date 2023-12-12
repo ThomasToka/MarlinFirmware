@@ -13,9 +13,42 @@ I have created a discord server for faster communication https://discord.gg/Fh4j
 
 If you like my work please support me with a donation:
 
+Paypal: https://www.paypal.me/ThomasToka
+
 Patreon: https://www.patreon.com/ThomasToka
 
 Github Sponsors: https://github.com/sponsors/ThomasToka
+
+## [MARLIN-E3S1PROFORK-BYTT-v022] - 2023-12-12
+
+This release i call "The dynamic probes update".
+
+Santa Claus was early this year. I wish you great winter holidays and merrry christmas.
+
+In this release the following additions/changes/fixes have been made:
+
+### Added
+- [MARLIN-E3S1PROFORK-BYTT-add93] added dynamic probes. you can now choose 1-5 probes for autoleveling, cr-touch measuring and assisted tramming
+- [MARLIN-E3S1PROFORK-BYTT-add94] added assisted tramming on the cr-touch site
+
+### Changed
+- [MARLIN-E3S1PROFORK-BYTT-change68] removed select print file scrolling on mainsite
+- [MARLIN-E3S1PROFORK-BYTT-change69] rearranged main site with new select file field
+- [MARLIN-E3S1PROFORK-BYTT-change70] - selected print file shown on main site has now three visibility functions 
+  1) under 25 chars centered and bigger 
+  2) from 26 to 55 chars left arranged and in two rows.
+  3) over 55 chars like 2 but cropped to 55 chars
+- [MARLIN-E3S1PROFORK-BYTT-change71] cardreader now supports filenames up to 55 chars shown in 2 lines
+- [MARLIN-E3S1PROFORK-BYTT-change72] adjusted M117 messages to be shown like a select file with the 3 mentioned options
+- [MARLIN-E3S1PROFORK-BYTT-change73] restructured lcd_rts code with new classes. it saved around 4k flash space
+- [MARLIN-E3S1PROFORK-BYTT-change74] rearranged address space for cardreader update
+- [MARLIN-E3S1PROFORK-BYTT-change75] with this release the firmware is not more backward compatible to the stock firmware. 
+  this means you cant mix screen of stock and my firmware anymore. 
+  naturally a downgrade to both stock mainboard and stock screen firmware is still possible.
+
+### Fixed
+- [MARLIN-E3S1PROFORK-BYTT-fix37] fixed folders and files accounting so always the correct site number is shown
+- [MARLIN-E3S1PROFORK-BYTT-fix38]fixed inability to enter the adjust site during printing when G29 was in the start Gcode due to a wrong routing in g29cpp and ubl_g29.cpp
 
 ## [MARLIN-E3S1PROFORK-BYTT-v021] - 2023-12-05
 
