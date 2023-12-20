@@ -24,14 +24,14 @@ from cura.Snapshot import Snapshot
 from cura.CuraVersion import CuraVersion
 from ..Script import Script
 
-class E3S1PROFORKBYTT_Thumbnail(Script):
+class E3S1PROFORKBYTT_printdata_cura_v5_thumbnail(Script):
     def __init__(self):
         super().__init__()
 
     def getSettingDataString(self):
         return """{
             "name": "E3S1PROFORKBYTT Thumbnail",
-            "key": "E3S1PROFORKBYTT_Thumbnail",
+            "key": "E3S1PROFORKBYTT_printdata_cura_v5_thumbnail",
             "metadata": {},
             "version": 2,
             "settings": {
@@ -222,7 +222,7 @@ class E3S1PROFORKBYTT_Thumbnail(Script):
                                     # Find the first G0 move with Z0.28 for Layer 0 and add M117 and M73 commands after it
                                     for sub_line_index, sub_line in enumerate(lines[line_index:], start=line_index):
                                         if sub_line.startswith("G0 ") and f"Z{layer_height_value}" in sub_line:
-                                            m117_line = "M117 L{} M{} G{}".format(layer_number, math.ceil(remaining_filament_m), math.ceil(remaining_filament_g))
+                                            m117_line = "M117 L{} M{} G{} Z{} Q{}".format(layer_number, math.ceil(remaining_filament_m), math.ceil(remaining_filament_g), layer_height_value, layers)
                                             m73_line = "M73 P{} R{}".format(0, total_time)
                                             lines.insert(sub_line_index + 1, m117_line)
                                             lines.insert(sub_line_index + 2, m73_line)
