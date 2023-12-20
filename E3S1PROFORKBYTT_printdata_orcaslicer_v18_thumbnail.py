@@ -119,7 +119,10 @@ def main(source_file):
                             simplified_z_value = '.' + simplified_z_value
                         g1_z_regex = fr"G1 Z{simplified_z_value}(?=\s|$)"
                     if re.search(g1_z_regex, lines[next_g1_z_index]):
-                        m117_line = "M117 L{} M{} G{}".format(layer_number, math.ceil(remaining_filament_m), math.ceil(remaining_filament_g))
+                        if layer_number == 1:
+                            m117_line = "M117 L1 M{} G{} Z{} Q{}".format(math.ceil(remaining_filament_m), math.ceil(remaining_filament_g), layers, layer_height)
+                        else:
+                            m117_line = "M117 L{} M{} G{}".format(layer_number, math.ceil(remaining_filament_m), math.ceil(remaining_filament_g))
                         lines.insert(next_g1_z_index + 1, m117_line + '\n')
                         remaining_filament_m -= filament_used_m_per_layer
                         remaining_filament_g -= filament_used_g_per_layer
@@ -127,11 +130,16 @@ def main(source_file):
                         break
                     next_g1_z_index += 1
 
+    # Add M117 for the very first layer
+    if m117_added == 0:
+        m117_line = "M117 L1 M{} G{} Z{} Q{}".format(math.ceil(remaining_filament_m), math.ceil(remaining_filament_g), layers, layer_height)
+        lines.insert(0, m117_line + '\n')
+
     # Write the modified content back to the original file
     with open(source_file, "w") as f:
         f.writelines(lines)
 
-    print(f"Added {m117_added} M117 commands.")
+    print(f"Added {m117_added + 1} M117 commands.")
 
 if __name__ == "__main__":
     if len(sys.argv) < 2:
