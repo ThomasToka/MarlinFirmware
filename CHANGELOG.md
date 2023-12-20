@@ -19,6 +19,32 @@ Patreon: https://www.patreon.com/ThomasToka
 
 Github Sponsors: https://github.com/sponsors/ThomasToka
 
+## [MARLIN-E3S1PROFORK-BYTT-v023] - 2023-12-20
+
+This release i call "The print data update".
+
+Well i had a talk with Santa Claus again.. He said i should gift you another release this year.
+I wish you great winter holidays and merrry christmas.
+
+In this release the following additions/changes/fixes have been made:
+
+### Added
+- [MARLIN-E3S1PROFORK-BYTT-add95] added new thumbnail preview scripts for Orca v1.8.x, Prusa v2.7.x, Cura 5.x
+- [MARLIN-E3S1PROFORK-BYTT-add96] added printdata (layer, material usage, z height, z_layer height) if a the thumbnail preview script is used
+- [MARLIN-E3S1PROFORK-BYTT-add97] added material usage during print in g (gram) and m (meter)
+- [MARLIN-E3S1PROFORK-BYTT-add98] added M84 toggle on the main, pause, finish and resume site (not active during print)
+- [MARLIN-E3S1PROFORK-BYTT-add99] added G28 home button on the main, pause, finish and resume site (not active during print)
+- [MARLIN-E3S1PROFORK-BYTT-add100] M73 is now automatically added if the new thumbnail preview script is used and can be activated on the main. no other plugin is now needed for this
+
+### Changed
+- [MARLIN-E3S1PROFORK-BYTT-change76] slightly adjusted the y park position from (Y_MAX_POS - 10) to (Y_MAX_POS - 50)
+- [MARLIN-E3S1PROFORK-BYTT-change77] code clean up and variables missspelling corrected in preview.cpp
+- [MARLIN-E3S1PROFORK-BYTT-change78] changed qr code to pic to preserve some variables from beeing overwritten
+
+### Fixed
+- [MARLIN-E3S1PROFORK-BYTT-fix39] fixed a bug on print stop so the print data and time will be resetted correctly
+- [MARLIN-E3S1PROFORK-BYTT-fix40] fixed a bug where M73 time and ui.time interfered
+
 ## [MARLIN-E3S1PROFORK-BYTT-v022] - 2023-12-12
 
 This release i call "The dynamic probes update".
@@ -48,7 +74,7 @@ In this release the following additions/changes/fixes have been made:
 
 ### Fixed
 - [MARLIN-E3S1PROFORK-BYTT-fix37] fixed folders and files accounting so always the correct site number is shown
-- [MARLIN-E3S1PROFORK-BYTT-fix38] fixed inability to enter the adjust site during printing when G29 was in the start Gcode due to a wrong routing in g29cpp and ubl_g29.cpp
+- [MARLIN-E3S1PROFORK-BYTT-fix38] fixed inability to enter the adjust site during printing when G29 was in the start Gcode due to a wrong routing in g29.cpp and ubl_g29.cpp
 
 ## [MARLIN-E3S1PROFORK-BYTT-v021] - 2023-12-05
 
