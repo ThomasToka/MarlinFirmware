@@ -29,7 +29,7 @@ I wish you great winter holidays and merrry christmas.
 In this release the following additions/changes/fixes have been made:
 
 ### Added
-- [MARLIN-E3S1PROFORK-BYTT-add95] added new thumbnail preview scripts for Orca v1.8.x, Prusa v2.7.x, Cura 5.x
+- [MARLIN-E3S1PROFORK-BYTT-add95] added new thumbnail preview scripts for Orca v1.8.x, Prusa v2.7.x, Cura 5.x, Superslicer
 - [MARLIN-E3S1PROFORK-BYTT-add96] added printdata (layer, material usage, z height, z_layer height) if a the thumbnail preview script is used
 - [MARLIN-E3S1PROFORK-BYTT-add97] added material usage during print in g (gram) and m (meter)
 - [MARLIN-E3S1PROFORK-BYTT-add98] added M84 toggle on the main, pause, finish and resume site (not active during print)
@@ -40,6 +40,7 @@ In this release the following additions/changes/fixes have been made:
 - [MARLIN-E3S1PROFORK-BYTT-change76] slightly adjusted the y park position from (Y_MAX_POS - 10) to (Y_MAX_POS - 50)
 - [MARLIN-E3S1PROFORK-BYTT-change77] code clean up and variables missspelling corrected in preview.cpp
 - [MARLIN-E3S1PROFORK-BYTT-change78] changed qr code to pic to preserve some variables from beeing overwritten
+- [MARLIN-E3S1PROFORK-BYTT-change79] adjusted probe offset setting. if the x or y margin is too small it will be automatically adjusted if set over the touchscreen.
 
 ### Fixed
 - [MARLIN-E3S1PROFORK-BYTT-fix39] fixed a bug on print stop so the print data and time will be resetted correctly
