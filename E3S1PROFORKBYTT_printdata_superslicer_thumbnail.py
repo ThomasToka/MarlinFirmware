@@ -21,7 +21,7 @@ import re
 sourceFile = sys.argv[1]
 
 # Read the ENTIRE g-code file into memory
-with open(sourceFile, "r") as f:
+with open(sourceFile, "r", encoding='utf-8') as f:
     lines = f.readlines()
 
 new_lines = []
@@ -126,7 +126,7 @@ for i, line in enumerate(new_lines):
         m117_added += 1
 
 # Write the modified content back to the original file
-with open(sourceFile, "w") as f:
+with open(sourceFile, "w", encoding='utf-8') as f:
     f.writelines(new_lines)
 
 print(f"Added {m117_added} M117 commands and M73 with time information.")
