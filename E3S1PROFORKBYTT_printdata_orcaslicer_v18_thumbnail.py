@@ -15,7 +15,7 @@ import re
 
 def main(source_file):
     # Read the entire G-code file into memory
-    with open(source_file, "r") as f:
+    with open(source_file, "r", encoding='utf-8') as f:
         lines = f.readlines()
 
     # Extract additional information
@@ -136,7 +136,7 @@ def main(source_file):
         lines.insert(0, m117_line + '\n')
 
     # Write the modified content back to the original file
-    with open(source_file, "w") as f:
+    with open(source_file, "w", encoding='utf-8') as f:
         f.writelines(lines)
 
     print(f"Added {m117_added + 1} M117 commands.")
