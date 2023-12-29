@@ -25,26 +25,30 @@ def main(source_file):
     layers = 0
     for line in lines:
         if line.startswith("; filament used [mm] ="):
-            filament_used_mm = float(line.split("=")[1].strip())
-            filament_used_m = round(filament_used_mm / 1000, 2)
+            filament_used_mm_values = [float(value.strip()) for value in line.split("=")[1].strip().split(',')]
+            filament_used_m = round(sum(filament_used_mm_values) / 1000, 2)  # Convert mm to meters
             if filament_used_m > 0:
                 filament_used_m = math.ceil(filament_used_m)
             else:
                 filament_used_m = 0
         elif line.startswith("; filament used [g] ="):
-            filament_used_g = float(line.split("=")[1].strip())
-            filament_used_g = round(filament_used_g, 2)
+            filament_used_g_values = [float(value.strip()) for value in line.split("=")[1].strip().split(',')]
+            filament_used_g = round(sum(filament_used_g_values), 2)
             if filament_used_g > 0:
                 filament_used_g = math.ceil(filament_used_g)
             else:
                 filament_used_g = 0
         elif line.startswith("; filament_diameter ="):
-            filament_diameter = float(line.split("=")[1].strip())
+            filament_diameter_values = [float(value.strip()) for value in line.split("=")[1].strip().split(',')]
+            filament_diameter = round(sum(filament_diameter_values) / len(filament_diameter_values), 2)
+            filament_diameter = "{:.2f}".format(filament_diameter)
         elif line.startswith("; filament_density ="):
-            filament_density = float(line.split("=")[1].strip())
+            filament_density_values = [float(value.strip()) for value in line.split("=")[1].strip().split(',')]
+            filament_density = round(sum(filament_density_values) / len(filament_density_values), 2)  # Calculate the median
+            filament_density = "{:.2f}".format(filament_density)
         elif line.startswith("; layer_height ="):
-            layer_height = line.split("=")[1].strip()
-            layer_height = round(float(layer_height), 2)
+            layer_height_values = [float(value.strip()) for value in line.split("=")[1].strip().split(',')]
+            layer_height = round(sum(layer_height_values) / len(layer_height_values), 2)  # Calculate the median
             layer_height = "{:.2f}".format(layer_height)
         elif line.startswith(";AFTER_LAYER_CHANGE"):
             layers += 1
