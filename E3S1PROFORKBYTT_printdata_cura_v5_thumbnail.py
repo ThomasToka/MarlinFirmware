@@ -146,11 +146,12 @@ class E3S1PROFORKBYTT_printdata_cura_v5_thumbnail(Script):
                         if line.startswith(";LAYER:"):
                             layer_number = int(line.split(":")[1]) + 1
                         elif line.startswith(";Filament used:"):
-                            filament_used_m = float(line.split(":")[1].split('m')[0].strip())
-                            filament_used_cm = filament_used_m * 100
+                            filament_used_values = [float(value.strip("m").strip()) for value in line.split(":")[1].strip().split(",")]
+                            filament_used_m = sum(filament_used_values)  # Total filament used in meters
                             filament_used_m = math.ceil(filament_used_m) if filament_used_m > 0 else 0
-                            volume_cm3 = math.pi * (diameter_cm / 2) ** 2 * filament_used_cm
-                            filament_used_g = math.ceil(volume_cm3 * density) if volume_cm3 * density > 0 else 0
+                            filament_used_cm = filament_used_m * 100  # Total filament used in centimeters
+                            volume_cm3 = math.pi * (diameter_cm / 2) ** 2 * filament_used_cm  # Volume in cm^3
+                            filament_used_g = math.ceil(volume_cm3 * density) if volume_cm3 * density > 0 else 0  # Total filament used in grams
                         elif line.startswith(";Layer height:"):
                             layer_height_value = round(float(line.split(":")[1].strip()), 2)
                         elif line.startswith(";MAXZ:"):
@@ -159,7 +160,7 @@ class E3S1PROFORKBYTT_printdata_cura_v5_thumbnail(Script):
                         elif line.startswith(";TIME:") and total_time == -1:
                             total_time = self.getTimeValue(line)
 
-                    data[layer_index] = "\n".join(lines)
+                data[layer_index] = "\n".join(lines)
 
                 # Insert the snapshot thumbnail G-code
                 flavor_line_index = None
@@ -221,7 +222,7 @@ class E3S1PROFORKBYTT_printdata_cura_v5_thumbnail(Script):
                                 if layer_number == 1 and not m117_added_1:
                                     # Find the first G0 move with Z0.28 for Layer 0 and add M117 and M73 commands after it
                                     for sub_line_index, sub_line in enumerate(lines[line_index:], start=line_index):
-                                        if sub_line.startswith("G0 ") and f"Z{layer_height_value}" in sub_line:
+                                        if sub_line.startswith("G0 ") and f"F" and f"X" and f"Y" and f"Z" in sub_line:
                                             m117_line = "M117 L{} M{} G{} Z{} Q{}".format(layer_number, math.ceil(remaining_filament_m), math.ceil(remaining_filament_g), layer_height_value, layers)
                                             m73_line = "M73 P{} R{}".format(0, total_time)
                                             lines.insert(sub_line_index + 1, m117_line)
