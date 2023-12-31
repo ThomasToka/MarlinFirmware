@@ -148,8 +148,8 @@ class E3S1PROFORKBYTT_printdata_cura_v5_thumbnail(Script):
                         elif line.startswith(";Filament used:"):
                             filament_used_values = [float(value.strip("m").strip()) for value in line.split(":")[1].strip().split(",")]
                             filament_used_m = sum(filament_used_values)  # Total filament used in meters
-                            filament_used_m = math.ceil(filament_used_m) if filament_used_m > 0 else 0
                             filament_used_cm = filament_used_m * 100  # Total filament used in centimeters
+                            filament_used_m = math.ceil(filament_used_m) if filament_used_m > 0 else 0
                             volume_cm3 = math.pi * (diameter_cm / 2) ** 2 * filament_used_cm  # Volume in cm^3
                             filament_used_g = math.ceil(volume_cm3 * density) if volume_cm3 * density > 0 else 0  # Total filament used in grams
                         elif line.startswith(";Layer height:"):
