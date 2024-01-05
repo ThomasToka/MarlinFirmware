@@ -224,7 +224,7 @@ class E3S1PROFORKBYTT_printdata_cura_v5_thumbnail(Script):
                                     for sub_line_index, sub_line in enumerate(lines[line_index:], start=line_index):
                                         if sub_line.startswith("G0 ") and f"F" and f"X" and f"Y" and f"Z" in sub_line:
                                             m117_line = "M117 L{} M{} G{} Z{} Q{}".format(layer_number, math.ceil(remaining_filament_m), math.ceil(remaining_filament_g), layer_height_value, layers)
-                                            m73_line = "M73 P{} R{}".format(0, total_time)
+                                            m73_line = "M73 P{} R{}".format(int((layer_number / layers) * 100), int(total_time * (1 - layer_number / layers) / 60))
                                             lines.insert(sub_line_index + 1, m117_line)
                                             lines.insert(sub_line_index + 2, m73_line)
                                             m117_added_1 = True  # Set the flag to True after adding M117 and M73 commands for Layer 0
