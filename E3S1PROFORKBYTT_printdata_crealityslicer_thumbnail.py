@@ -16,7 +16,6 @@
 # https://github.com/Ultimaker/Cura/blob/master/plugins/PostProcessingPlugin/scripts/CreateThumbnail.py
 #------------------------------------------------------------------------------
 
-
 import base64
 import math
 import re
@@ -24,66 +23,15 @@ from UM.Logger import Logger
 from cura.Snapshot import Snapshot
 from cura.CuraVersion import CuraVersion
 from ..Script import Script
-from UM.Application import Application
-from PyQt5.QtCore import QByteArray, QIODevice, QBuffer
-from PyQt5.QtGui import QDesktopServices
 
-class E3S1PROFORKBYTT_printdata_crealityslicer_thumbnail(Script):
+class E3S1PROFORKBYTT_printdata_cura_v5_thumbnail(Script):
     def __init__(self):
         super().__init__()
-
-    def _createSnapshot(self, width, height):
-        Logger.log("d", "Creating thumbnail image...")
-        try:
-            return Snapshot.snapshot(width, height)
-        except Exception as e:
-            Logger.logException("w", "Failed to create snapshot image. Error: {}".format(str(e)))
-
-    def _encodeSnapshot(self, snapshot):
-        #from PyQt5.QtCore import QByteArray, QBuffer
-        Major=0
-        try:
-          Major = int(CuraVersion.split(".")[0])
-        except:
-          pass
-
-        if Major < 5 :
-          from PyQt5.QtCore import QByteArray, QIODevice, QBuffer
-        else :
-          from PyQt6.QtCore import QByteArray, QIODevice, QBuffer
-
-        Logger.log("d", "Encoding thumbnail image...")
-        try:
-            thumbnail_buffer = QBuffer()
-            if Major < 5 :
-              thumbnail_buffer.open(QBuffer.ReadWrite)
-            else:
-              thumbnail_buffer.open(QBuffer.OpenModeFlag.ReadWrite)
-            snapshot.save(thumbnail_buffer, "JPG")
-            base64_bytes = base64.b64encode(thumbnail_buffer.data())
-            base64_message = base64_bytes.decode('ascii')
-            thumbnail_buffer.close()
-            return base64_message
-        except Exception as e:
-            Logger.logException("w", "Failed to encode snapshot image. Error: {}".format(str(e)))
-
-    def _convertSnapshotToGcode(self, encoded_snapshot, width, height, chunk_size=58):
-        gcode = ["; jpg begin {}x{} {}".format(width, height, len(encoded_snapshot))]
-        chunks = ["; {}".format(encoded_snapshot[i:i + chunk_size]) for i in range(0, len(encoded_snapshot), chunk_size)]
-        gcode.extend(chunks)
-        gcode.append("; jpg end")
-        gcode.append(";")
-        return gcode
-
-    # Get the time value from a line as a float.
-    def getTimeValue(self, line):
-        list_split = re.split(":", line)
-        return float(list_split[1])
 
     def getSettingDataString(self):
         return """{
             "name": "E3S1PROFORKBYTT Thumbnail",
-            "key": "E3S1PROFORKBYTT_printdata_crealityslicer_thumbnail",
+            "key": "E3S1PROFORKBYTT_printdata_cura_v5_thumbnail",
             "metadata": {},
             "version": 2,
             "settings": {
@@ -126,6 +74,53 @@ class E3S1PROFORKBYTT_printdata_crealityslicer_thumbnail(Script):
             }
         }"""
 
+    def _createSnapshot(self, width, height):
+        Logger.log("d", "Creating thumbnail image...")
+        try:
+            return Snapshot.snapshot(width, height)
+        except Exception as e:
+            Logger.logException("w", "Failed to create snapshot image. Error: {}".format(str(e)))
+
+    def _encodeSnapshot(self, snapshot):
+        Major, Minor = 0, 0
+        try:
+            Major = int(CuraVersion.split(".")[0])
+            Minor = int(CuraVersion.split(".")[1])
+        except:
+            pass
+
+        if Major < 5:
+            from PyQt5.QtCore import QByteArray, QBuffer
+        else:
+            from PyQt6.QtCore import QByteArray, QBuffer
+
+        Logger.log("d", "Encoding thumbnail image...")
+        try:
+            thumbnail_buffer = QBuffer()
+            if Major < 5:
+                thumbnail_buffer.open(QBuffer.ReadWrite)
+            else:
+                thumbnail_buffer.open(QBuffer.OpenModeFlag.ReadWrite)
+            snapshot.save(thumbnail_buffer, "JPG")
+            base64_bytes = base64.b64encode(thumbnail_buffer.data())
+            base64_message = base64_bytes.decode('ascii')
+            thumbnail_buffer.close()
+            return base64_message
+        except Exception as e:
+            Logger.logException("w", "Failed to encode snapshot image. Error: {}".format(str(e)))
+
+    def _convertSnapshotToGcode(self, encoded_snapshot, width, height, chunk_size=58):
+        gcode = ["; jpg begin {}x{} {}".format(width, height, len(encoded_snapshot))]
+        chunks = ["; {}".format(encoded_snapshot[i:i + chunk_size]) for i in range(0, len(encoded_snapshot), chunk_size)]
+        gcode.extend(chunks)
+        gcode.append("; jpg end")
+        gcode.append(";")
+        return gcode
+
+    # Get the time value from a line as a float.
+    def getTimeValue(self, line):
+        list_split = re.split(":", line)
+        return float(list_split[1])
 
     def execute(self, data):
         try:
@@ -213,30 +208,41 @@ class E3S1PROFORKBYTT_printdata_crealityslicer_thumbnail(Script):
                     remaining_filament_g = filament_used_g
 
                     m117_added_1 = False  # Flag to check if M117 and M73 commands were added for Layer 0
-                    for index, layer_data in enumerate(data):
+                    #m117_added_all = False
+                    for layer_index, layer_data in enumerate(data):
                         lines = layer_data.split("\n")
                         for line_index, line in enumerate(lines):
                             if line.startswith(";LAYER:"):
                                 layer_number = int(line.split(":")[1]) + 1
+                                remaining_filament_m -= filament_used_m_per_layer
+                                remaining_filament_g -= filament_used_g_per_layer
+
                                 # Check if this is Layer 1 and M117/M73 commands have not been added yet
                                 if layer_number == 1 and not m117_added_1:
-                                    for sub_line_index, sub_line in enumerate(lines):
-                                        if sub_line.startswith("G0 ") and "Z{}".format(layer_height_value) in sub_line:
+                                    # Find the first G0 move with Z0.28 for Layer 0 and add M117 and M73 commands after it
+                                    for sub_line_index, sub_line in enumerate(lines[line_index:], start=line_index):
+                                        if sub_line.startswith("G0 ") and f"Z{layer_height_value}" in sub_line:
                                             m117_line = "M117 L{} M{} G{} Z{} Q{}".format(layer_number, math.ceil(remaining_filament_m), math.ceil(remaining_filament_g), layer_height_value, layers)
-                                            m73_line = "M73 P{} R{}".format(0, int(total_time * (1 - layer_number / layers) / 60))
+                                            m73_line_r = "M73 R{}".format(total_time)
+                                            m73_line_p = "M73 P{}".format(0)
                                             lines.insert(sub_line_index + 1, m117_line)
-                                            lines.insert(sub_line_index + 2, m73_line)
+                                            lines.insert(sub_line_index + 2, m73_line_r)
+                                            lines.insert(sub_line_index + 3, m73_line_p)
                                             m117_added_1 = True  # Set the flag to True after adding M117 and M73 commands for Layer 0
                                             break
+
                                 # For all other layers, including Layer 1 if M117/M73 commands have not been added
                                 if layer_number != 1 and not line.startswith("M117") and not line.startswith("M73"):
                                     m117_line = "M117 L{} M{} G{}".format(layer_number, math.ceil(remaining_filament_m), math.ceil(remaining_filament_g))
-                                    m73_line = "M73 P{} R{}".format(int((layer_number / layers) * 100), int(total_time * (1 - layer_number / layers) / 60))
-                                    lines.insert(line_index + 1, m117_line)
-                                    lines.insert(line_index + 2, m73_line)
+                                    m73_line_r = "M73 R{}".format(int(total_time * (1 - layer_number / layers) / 60))
+                                    m73_line_p = "M73 P{}".format(int((layer_number / layers) * 100))
+                                    lines.insert(line_index, m117_line)
+                                    lines.insert(line_index + 1, m73_line_r)
+                                    lines.insert(line_index + 2, m73_line_p)
+                                    #m117_added_all = True
                                     break  # Add the commands once and then break out of the loop
-                                      
-                        data[index] = "\n".join(lines)
+
+                        data[layer_index] = "\n".join(lines)
 
                     if not m117_added:
                         Logger.log("w", "No M117 and M73 commands were added for Layer 0. Check the G-code for ';LAYER:' markers.")

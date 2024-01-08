@@ -98,11 +98,41 @@ for i, line in enumerate(new_lines):
     elif line.startswith('; thumbnail_JPG end'):
         thumbnail_end = i
 
-# Modify the existing thumbnail header
-if thumbnail_start is not None:
-    thumbnail_header_info = f'250x250 1 {thumbnail_end - thumbnail_start + 1} {filament_used_m} {filament_used_g} {layer_height} {filament_diameter} {filament_density} {layers}'
-    new_thumbnail_header = f'; thumbnail_JPG begin {thumbnail_header_info}\n'
-    new_lines[thumbnail_start] = new_thumbnail_header
+if thumbnail_start is not None and thumbnail_end is not None:
+    # Extract the PNG data without decoding
+    original_png_data = "".join(new_lines[thumbnail_start + 1:thumbnail_end]).replace("; ", "")
+
+    # Define a maximum line length for the PNG data
+    max_line_length = 75 - len("; ")
+
+    # Split the PNG data into lines with a maximum length
+    num_lines = 0
+    while original_png_data:
+        if len(original_png_data) <= max_line_length:
+            line = original_png_data
+            original_png_data = ""
+        else:
+            line = original_png_data[:max_line_length]
+            original_png_data = original_png_data[max_line_length:]
+
+        # Add the line to the list of lines
+        lines.append(line)
+        num_lines += 1
+
+    # Calculate the number of lines in the thumbnail data
+    # (this was already done but not used)
+    num_lines = len(lines)
+
+    # Replace the old PNG lines with the new PNG lines
+    new_lines[thumbnail_start + 1:thumbnail_end] = [line + "\n" for line in lines]
+
+    # Update the '; thumbnail_JPG begin' line
+    start_line_number = 1
+    end_line_number = start_line_number + num_lines
+    new_lines[thumbnail_start] = (
+        f"; thumbnail_JPG begin 250x250 {len(''.join(lines))} {start_line_number} {end_line_number}"
+        f" {filament_used_m} {filament_used_g} {layer_height} {filament_diameter} {filament_density} {layers}\n"
+    )
 
 # Find the ';AFTER_LAYER_CHANGE' line and add 'M117' after it
 for i, line in enumerate(new_lines):
@@ -110,16 +140,24 @@ for i, line in enumerate(new_lines):
         if first_layer:
             m117_line = "M117 L1 M{} G{} Z{} Q{}".format(math.ceil(remaining_filament_m), math.ceil(remaining_filament_g), layers, layer_height)
             new_lines.insert(i + 1, m117_line + '\n')
-            m73_line = "M73 P{} R{}".format(int((m117_added / layers) * 100), int(total_time_minutes * (1 - m117_added / layers)))
-            new_lines.insert(i + 2, m73_line + '\n')
+            m73_line_r = "M73 R{}".format(int(total_time_minutes * (1 - m117_added / layers)))
+            new_lines.insert(i + 2, m73_line_r + '\n')
+            m73_line_p = "M73 P{}".format(int((m117_added / layers) * 100))
+            new_lines.insert(i + 3, m73_line_p + '\n')
             first_layer = False
         else:
             m117_line = "M117 L{} M{} G{}".format(m117_added + 1, math.ceil(remaining_filament_m), math.ceil(remaining_filament_g))
             new_lines.insert(i + 1, m117_line + '\n')
             if m117_added == layers - 1:
-                m73_line = "M73 P{} R{}".format(100, int(total_time_minutes * (1 - m117_added / layers)))
+                m73_line_r = "M73 R{}".format(int(total_time_minutes * (1 - m117_added / layers)))
+                new_lines.insert(i + 2, m73_line_r + '\n')
+                m73_line_p = "M73 P{}".format(100)
+                new_lines.insert(i + 3, m73_line_p + '\n')
             else:
-                m73_line = "M73 P{} R{}".format(int((m117_added / layers) * 100), int(total_time_minutes * (1 - m117_added / layers)))
+                m73_line_r = "M73 R{}".format(int(total_time_minutes * (1 - m117_added / layers)))
+                new_lines.insert(i + 2, m73_line_r + '\n')
+                m73_line_p = "M73 P{}".format(int((m117_added / layers) * 100))
+                new_lines.insert(i + 3, m73_line_p + '\n')
             new_lines.insert(i + 2, m73_line + '\n')
         remaining_filament_m -= filament_used_m_per_layer
         remaining_filament_g -= filament_used_g_per_layer
