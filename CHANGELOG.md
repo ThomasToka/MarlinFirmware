@@ -19,6 +19,30 @@ Patreon: https://www.patreon.com/ThomasToka
 
 Github Sponsors: https://github.com/sponsors/ThomasToka
 
+## [MARLIN-E3S1PROFORK-BYTT-v024] - 2024-01-08
+
+This release i call "The octoprint thumbnail update".
+
+Happy new year everyone. I invested again +150h development time to bring you the next major
+E3S1PROFORKBYTT update.
+
+In this release the following additions/changes/fixes have been made:
+
+### Added
+- [MARLIN-E3S1PROFORK-BYTT-add101] octoprint support added including actions on the printer screen on octoprint actions
+- [MARLIN-E3S1PROFORK-BYTT-add102] cardreader extended to support new thumbnail functionality
+- [MARLIN-E3S1PROFORK-BYTT-add103] custom M19 function added to transfer the thumbnail and do the actions
+- [MARLIN-E3S1PROFORK-BYTT-add104] OctoPrint-E3S1PROFORKBYTT_Thumbnails is now able to send thumbnails to the display
+(You still need a working sd card in your printer as it is needed as temporary storage for the thumbnail. OCTODGUS.GCO and TEMP.GCO will be overwritten in case of beeing on the sd card when a thumbnail is send. So do not call anything with this two names!
+- new font for dacai displays roboto-regular
+
+### Changed
+- [MARLIN-E3S1PROFORK-BYTT-change80] reduced jerk to 12x 12y 8e
+
+### Fixed
+- [MARLIN-E3S1PROFORK-BYTT-fix41] fixed laser after g28
+- [MARLIN-E3S1PROFORK-BYTT-fix42] fixed exit of adjust page during printing cause lag while saving. saving removed.
+
 ## [MARLIN-E3S1PROFORK-BYTT-v023] - 2023-12-20
 
 This release i call "The print data update".
