@@ -24,14 +24,14 @@ from cura.Snapshot import Snapshot
 from cura.CuraVersion import CuraVersion
 from ..Script import Script
 
-class E3S1PROFORKBYTT_printdata_cura_v5_thumbnail(Script):
+class E3S1PROFORKBYTT_printdata_crealityslicer_thumbnail(Script):
     def __init__(self):
         super().__init__()
 
     def getSettingDataString(self):
         return """{
             "name": "E3S1PROFORKBYTT Thumbnail",
-            "key": "E3S1PROFORKBYTT_printdata_cura_v5_thumbnail",
+            "key": "E3S1PROFORKBYTT_printdata_crealityslicer_thumbnail",
             "metadata": {},
             "version": 2,
             "settings": {
