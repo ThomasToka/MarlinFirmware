@@ -148,5 +148,7 @@ if __name__ == "__main__":
     if len(sys.argv) < 2:
         print("Usage: python3 script.py <gcode-file>")
         sys.exit(1)
-
-    main(sys.argv[1])
+    if platform.system() == "Darwin":
+        main(source_file)
+    else:
+        main(sys.argv[1])
