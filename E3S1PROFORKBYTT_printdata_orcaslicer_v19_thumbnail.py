@@ -12,6 +12,21 @@ import base64
 from PIL import Image
 from io import BytesIO
 import re
+import os
+import platform
+
+if platform.system() == "Darwin":
+    print("Running on macOS")
+    script_directory = os.path.dirname(os.path.abspath(__file__))
+    source_file  = sys.argv[1]
+    source_file = os.path.join(script_directory, source_file)
+    if not os.path.exists(source_file):
+        print(f"The file '{source_file}' does not exist.")
+        sys.exit(1)
+    else:
+        print(f"The file '{source_file}' exists.")
+else:
+    print("Not running on macOS")
 
 def main(source_file):
     # Read the entire G-code file into memory
