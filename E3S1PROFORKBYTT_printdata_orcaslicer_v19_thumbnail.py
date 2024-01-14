@@ -7,18 +7,17 @@
 # ------------------------------------------------------------------------------
 
 import sys
-import math
 import base64
+import math
 from PIL import Image
 from io import BytesIO
-import re
 import os
 import platform
 
 if platform.system() == "Darwin":
     print("Running on macOS")
     script_directory = os.path.dirname(os.path.abspath(__file__))
-    source_file  = sys.argv[1]
+    source_file = sys.argv[1]
     source_file = os.path.join(script_directory, source_file)
     if not os.path.exists(source_file):
         print(f"The file '{source_file}' does not exist.")
@@ -33,8 +32,12 @@ def main(source_file):
     with open(source_file, "r", encoding='utf-8') as f:
         lines = f.readlines()
 
+    # Remove any empty lines and lines that are just a semicolon
+    lines = [line for line in lines if line.strip() and not line == ';\n']
+
     # Extract additional information
-    filament_used_m, filament_used_g, filament_diameter, filament_density, layer_height, layers = "0", "0", "0", "0", "0", "0"
+    filament_used_m, filament_used_g, filament_diameter, filament_density, layer_height = "0", "0", "0", "0", "0"
+    layers = 0
     for line in lines:
         if line.startswith("; filament used [mm] ="):
             filament_used_mm_values = [float(value.strip()) for value in line.split("=")[1].strip().split(',')]
@@ -62,10 +65,9 @@ def main(source_file):
             layer_height_values = [float(value.strip()) for value in line.split("=")[1].strip().split(',')]
             layer_height = round(sum(layer_height_values) / len(layer_height_values), 2)  # Calculate the median
             layer_height = "{:.2f}".format(layer_height)
-        elif line.startswith("; total layers count ="):
-            layers = line.split("=")[1].strip()
+        elif line.startswith(";AFTER_LAYER_CHANGE"):
+            layers += 1
 
-    layers = int(layers)
     filament_used_m_per_layer = filament_used_m / max(layers, 1)  # Avoid division by zero
     remaining_filament_m = filament_used_m
 
@@ -74,97 +76,99 @@ def main(source_file):
 
     m117_added = 0  # Counter for added M117 commands
 
-    # Convert the thumbnail from PNG to JPEG
-    thumbnail_start = None
+    # Counting AFTER_LAYER_CHANGE occurrences
+    after_layer_change_count = sum(';AFTER_LAYER_CHANGE' in line for line in lines) - 1
+
+    # Find the thumbnail start and end lines
+    thumbnail_start, thumbnail_end = None, None
     for i, line in enumerate(lines):
         if '; thumbnail begin' in line:
             thumbnail_start = i
+        elif '; thumbnail end' in line:
+            thumbnail_end = i
             break
 
-    if thumbnail_start is not None:
-        # Find the thumbnail end line
-        thumbnail_end = next((i for i, line in enumerate(lines[thumbnail_start:], start=thumbnail_start) if '; thumbnail end' in line), None)
+    if thumbnail_start is not None and thumbnail_end is not None:
+        # Extract and decode the PNG data
+        original_png_data = "".join(lines[thumbnail_start + 1:thumbnail_end]).replace("; ", "")
+        png_data_bytes = base64.b64decode(original_png_data)
+        image = Image.open(BytesIO(png_data_bytes))
+        image = image.convert("RGB")
 
-        if thumbnail_end is not None:
-            # Extract and decode the PNG data
-            original_png_data = "".join(lines[thumbnail_start + 1:thumbnail_end]).replace("; ", "")
-            png_data_bytes = base64.b64decode(original_png_data)
-            image = Image.open(BytesIO(png_data_bytes))
-            image = image.convert("RGB")
+        # Encode the image as JPEG
+        buffer = BytesIO()
+        image.save(buffer, format="JPEG")
+        image_jpg_data = buffer.getvalue()
 
-            # Encode the image as JPEG
-            buffer = BytesIO()
-            image.save(buffer, format="JPEG")
-            image_jpg_data = buffer.getvalue()
+        # Base64 encode the JPEG data
+        image_jpg_base64 = base64.b64encode(image_jpg_data).decode('utf-8')
 
-            # Base64 encode the JPEG data
-            image_jpg_base64 = base64.b64encode(image_jpg_data).decode('utf-8')
+        # Split the base64 string into formatted lines
+        max_line_length = 79 - len("; ")
+        injected_jpg_data = ["; " + image_jpg_base64[i:i + max_line_length] for i in range(0, len(image_jpg_base64), max_line_length)]
 
-            # Split the base64 string into formatted lines
-            max_line_length = 74 - len("; ")
-            injected_jpg_data = ["; " + image_jpg_base64[i:i + max_line_length] for i in range(0, len(image_jpg_base64), max_line_length)]
+        lines = lines[thumbnail_start:]
 
-            # Remove everything before the '; thumbnail_JPG begin' line
-            lines = lines[thumbnail_start:]
+        # Replace the old PNG lines with the new JPEG lines
+        lines[1:thumbnail_end - thumbnail_start] = [line + "\n" for line in injected_jpg_data]
 
-            # Replace the old PNG lines with the new JPEG lines
-            lines[1:thumbnail_end - thumbnail_start] = [line + "\n" for line in injected_jpg_data]
+        # Update the '; thumbnail_JPG begin' line using 'after_layer_change_count'
+        start_line_number = 1
+        end_line_number = start_line_number + len(injected_jpg_data) + 1
+        lines[0] = f'; thumbnail_JPG begin 250x250 {len(image_jpg_data)} {start_line_number} {end_line_number} {filament_used_m} {filament_used_g} {layer_height} {filament_diameter} {filament_density} {after_layer_change_count}\n'
 
-            # Update start and end line numbers
-            start_line_number = 1  # The line immediately after '; thumbnail_JPG begin'
-            end_line_number = start_line_number + len(injected_jpg_data) + 1
-
-            # Update the '; thumbnail_JPG begin' line
-            lines[0] = f'; thumbnail_JPG begin 250x250 {len(image_jpg_data)} {start_line_number} {end_line_number} {filament_used_m} {filament_used_g} {layer_height} {filament_diameter} {filament_density} {layers}\n'
-
-    # Find the ';LAYER_CHANGE' line and add 'M117' after the next 'G1 Z' line with the corresponding 'Z' value
+    # Insert 'M117 Pxxx Qxxx' before each ';AFTER_LAYER_CHANGE'
     layer_number = 0
-    layer_change_found = False
+
     for i in range(len(lines)):
-        if lines[i].strip() == ";LAYER_CHANGE":
-            layer_number += 1
-            layer_change_found = True
-        elif layer_change_found:
-            match = re.search(r";Z:([\d.]+)", lines[i])
-            if match:
-                z_value = match.group(1)  # Extract the Z value
-                next_g1_z_index = i + 1
-                while next_g1_z_index < len(lines):
-                    if float(z_value) >= 1:
-                        g1_z_regex = fr"G1 Z{z_value}(?=\s|$)"
-                    else:
-                        # Adjust regex for Z values less than 1
-                        simplified_z_value = z_value.lstrip('0').rstrip('0').rstrip('.')
-                        if '.' in z_value and not simplified_z_value.startswith('.'):
-                            simplified_z_value = '.' + simplified_z_value
-                        g1_z_regex = fr"G1 Z{simplified_z_value}(?=\s|$)"
-                    if re.search(g1_z_regex, lines[next_g1_z_index]):
-                        if layer_number == 1:
-                            m117_line = "M117 L1 M{} G{} Z{} Q{}".format(math.ceil(remaining_filament_m), math.ceil(remaining_filament_g), layers, layer_height)
-                        else:
-                            m117_line = "M117 L{} M{} G{}".format(layer_number, math.ceil(remaining_filament_m), math.ceil(remaining_filament_g))
-                        lines.insert(next_g1_z_index + 1, m117_line + '\n')
-                        remaining_filament_m -= filament_used_m_per_layer
-                        remaining_filament_g -= filament_used_g_per_layer
-                        m117_added += 1
+        if lines[i].startswith(';AFTER_LAYER_CHANGE'):
+            z_value_line = lines[i + 1].strip()
+            
+            # Look for a part that appears to be a Z value and remove leading semicolons
+            z_value_parts = next((part for part in [z_value_line.lstrip(';')] if part.replace('.', '', 1).isdigit()), None)
+            
+            if z_value_parts:
+                z_value = z_value_parts
+                if z_value.startswith('0'):
+                    z_value = z_value.lstrip('0')
+                # Search for the corresponding G1 Z line within a range of lines
+                found_g1_z = False
+                j = i + 2  # Start searching from the line after ';AFTER_LAYER_CHANGE'
+                max_search_lines = 20  # Adjust this value as needed
+                
+                while j < min(len(lines), i + max_search_lines):
+                    line = lines[j].strip()
+                    if line.startswith(f'G1 Z{z_value}'):
+                        found_g1_z = True
                         break
-                    next_g1_z_index += 1
+                    j += 1
 
-    # Add M117 for the very first layer
-    if m117_added == 0:
-        m117_line = "M117 L1 M{} G{} Z{} Q{}".format(math.ceil(remaining_filament_m), math.ceil(remaining_filament_g), layers, layer_height)
-        lines.insert(0, m117_line + '\n')
+                if found_g1_z:
+                    if layer_number == 0:
+                        m117_line = "M117 L1 M{} G{} Z{} Q{}".format(math.ceil(remaining_filament_m), math.ceil(remaining_filament_g), layers, layer_height)
+                    else:
+                        m117_line = "M117 L{} M{} G{}".format(layer_number + 1, math.ceil(remaining_filament_m), math.ceil(remaining_filament_g))
+                    lines.insert(j + 1, m117_line + '\n')
+                    remaining_filament_m -= filament_used_m_per_layer
+                    remaining_filament_g -= filament_used_g_per_layer
+                    m117_added += 1  # Increment counter
+                    layer_number += 1
+                else:
+                    print(f"Warning: No matching G1 Z line found for Z{z_value} after ';AFTER_LAYER_CHANGE'.")
+            else:
+                print(f"Warning: No Z value found after ';AFTER_LAYER_CHANGE'.")
 
-    # Write the modified content back to the original file
     with open(source_file, "w", encoding='utf-8') as f:
         f.writelines(lines)
 
-    print(f"Added {m117_added + 1} M117 commands.")
+    print(f"Added {m117_added} M117 commands.")
+
 
 if __name__ == "__main__":
-    if len(sys.argv) < 2:
-        print("Usage: python3 script.py <gcode-file>")
+    if len(sys.argv) != 2:
+        print("Usage: python3 E3S1PROFORKBYTT_printdata_orcaslicer_v19_thumbnail.py <input.gcode>")
         sys.exit(1)
+
     if platform.system() == "Darwin":
         main(source_file)
     else:
