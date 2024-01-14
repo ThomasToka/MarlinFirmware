@@ -138,7 +138,7 @@ def main(source_file):
                 
                 while j < min(len(lines), i + max_search_lines):
                     line = lines[j].strip()
-                    if line.startswith(f'G1 Z{z_value}'):
+                    if 'G1' in line and f'Z{z_value}' in line:
                         found_g1_z = True
                         break
                     j += 1
