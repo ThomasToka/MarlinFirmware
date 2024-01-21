@@ -221,7 +221,7 @@ class E3S1PROFORKBYTT_printdata_crealityslicer_thumbnail(Script):
                                 if layer_number == 1 and not m117_added_1:
                                     # Find the first G0 move with Z0.28 for Layer 0 and add M117 and M73 commands after it
                                     for sub_line_index, sub_line in enumerate(lines[line_index:], start=line_index):
-                                        if sub_line.startswith("G0 ") and f"Z{layer_height_value}" in sub_line:
+                                        if sub_line.startswith("G0 ") and "Z{}".format(layer_height_value) in sub_line:
                                             m117_line = "M117 L{} M{} G{} Z{} Q{}".format(layer_number, math.ceil(remaining_filament_m), math.ceil(remaining_filament_g), layer_height_value, layers)
                                             m73_line_r = "M73 R{}".format(total_time)
                                             m73_line_p = "M73 P{}".format(0)
