@@ -19,6 +19,26 @@ Patreon: https://www.patreon.com/ThomasToka
 
 Github Sponsors: https://github.com/sponsors/ThomasToka
 
+## [MARLIN-E3S1PROFORK-BYTT-v025] - 2024-01-23
+
+This release i call "The save and load settings update".
+
+Happy new year everyone. I invested again +150h development time to bring you the next major
+E3S1PROFORKBYTT update.
+
+In this release the following additions/changes/fixes have been made:
+
+### Added
+- [MARLIN-E3S1PROFORK-BYTT-add105] on the restore site you can now save and load settings from a file on your sd card after a update
+(You can prepare a load file before the upgrade and load it after you upgraded. The instructions are here: https://github.com/ThomasToka/MarlinFirmware/wiki/Save-and-load-settings)
+
+### Changed
+- [MARLIN-E3S1PROFORK-BYTT-change81] y margins are now accounted for front and back better. 0 y offset mod users will reach the front and back. min margin is 10 for y.
+
+### Fixed
+- [MARLIN-E3S1PROFORK-BYTT-fix43] several smaller fixes
+
+
 ## [MARLIN-E3S1PROFORK-BYTT-v024] - 2024-01-08
 
 This release i call "The octoprint thumbnail update".
