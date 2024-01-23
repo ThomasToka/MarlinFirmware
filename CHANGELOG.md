@@ -23,7 +23,7 @@ Github Sponsors: https://github.com/sponsors/ThomasToka
 
 This release i call "The save and load settings update".
 
-Happy new year everyone. I invested again +150h development time to bring you the next major
+I invested again +150h development time to bring you the next major
 E3S1PROFORKBYTT update.
 
 In this release the following additions/changes/fixes have been made:
