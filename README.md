@@ -13,7 +13,9 @@ It has its own screen firmware for DWIN and Dacai displays.
 I hope you like it.
 
 -------------------------------------------------------------------------------------------------------------------
+
 Please read the installation.txt in the release for full update instructions!
+
 -------------------------------------------------------------------------------------------------------------------
 
 Be carefully with your printer. Mine works fine. But this is a new build. 
