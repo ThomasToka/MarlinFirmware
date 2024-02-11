@@ -2,6 +2,8 @@
 
 # MarlinFirmware fork MARLIN-E3S1PROFORK-BYTT
 
+![302098425-07694375-88f7-4a9b-be8b-4988bd069463](https://github.com/ThomasToka/MarlinFirmware/assets/117008525/e220d63a-dd3b-49b3-bcb3-32e141a94ad9)
+
 Source code is here: [https://github.com/ThomasToka/Marlin/tree/MARLIN-E3S1PROFORK-BYTT]
 
 The official pull request is here: https://github.com/MarlinFirmware/Marlin/pull/25948
