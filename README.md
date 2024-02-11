@@ -20,7 +20,9 @@ But hej. I will release the fixes. :-)
 Please read the installation.txt in the release for full update instructions!
 -------------------------------------------------------------------------------------------------------------------
 
-Be carefully with your printer. Mine works fine. But this is a new build. So have your fingers near the power button when lowering your z-axis and starting print for the first time.
+Be carefully with your printer. Mine works fine. But this is a new build. 
+
+So have your fingers near the power button when lowering your z-axis and starting print for the first time.
 
 Please open an issue if there is something wrong.
 
