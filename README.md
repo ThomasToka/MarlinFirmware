@@ -8,13 +8,9 @@ The official pull request is here: https://github.com/MarlinFirmware/Marlin/pull
 
 This firmware is for the Creality Ender 3 S1 Pro and Ender 3 S1 Plus.
 
-It has its own screen firmware for DWIN and Dacai displays. This firmware is backward compatible with the stock
-screen display firmware. Naturally then only the stock features are available.
+It has its own screen firmware for DWIN and Dacai displays.
 
-Expect updates of other non patched firmwares with this fixes then.. lol
-
-But hej. I will release the fixes. :-)
-
+I hope you like it.
 
 -------------------------------------------------------------------------------------------------------------------
 Please read the installation.txt in the release for full update instructions!
