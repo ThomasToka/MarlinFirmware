@@ -45,7 +45,6 @@ Features Ender 3 S1 Pro:
 - G12 clean the nozzle
 - include adc values when reporting temperature
 - emergency parser
-- auto report position
 - host action commands
 - host prompt support enabled
 - M486 cancel objects
