@@ -1,5 +1,5 @@
 #------------------------------------------------------------------------------
-# Cura 5.4 JPEG Thumbnail creator
+# Cura 5.x JPEG Thumbnail creator
 #
 # This script has been changed for E3S1PROFORKBYTT by Thomas Toka.
 #
