@@ -153,9 +153,8 @@ class E3S1PROFORKBYTT_printdata_crealityslicer_thumbnail(Script):
                             filament_used_g = math.ceil(volume_cm3 * density) if volume_cm3 * density > 0 else 0
                         elif line.startswith(";Layer height:"):
                             layer_height_value = round(float(line.split(":")[1].strip()), 2)
-                        elif line.startswith(";MAXZ:"):
-                            maxz_value = round(float(line.split(":")[1].strip()), 2)
-                            layers = int(maxz_value / layer_height_value)
+                        elif line.startswith(";LAYER_COUNT:"):
+                            layers = int(line.split(":")[1])
                         elif line.startswith(";TIME:") and total_time == -1:
                             total_time = self.getTimeValue(line)
 
