@@ -19,6 +19,25 @@ Patreon: https://www.patreon.com/ThomasToka
 
 Github Sponsors: https://github.com/sponsors/ThomasToka
 
+## [MARLIN-E3S1PROFORK-BYTT-v026] - 2024-04-21
+
+This release i call "The service release".
+
+This is a short update to pace up with marlin upstream and fix some minor bugs.
+
+In this release the following additions/changes/fixes have been made:
+
+### Added
+- [MARLIN-E3S1PROFORK-BYTT-add106] I included all marlin upstream commits since the last release
+
+### Changed
+- [MARLIN-E3S1PROFORK-BYTT-change82] changed steps for x and y back to 80.0
+- [MARLIN-E3S1PROFORK-BYTT-change83] shrinked lcd_rts code to fit flash space
+
+### Fixed
+- [MARLIN-E3S1PROFORK-BYTT-fix44] fixed adjust of z offset while printing. it now saves when the checkmark is pressed to the eeprom on the adjust site. going "back" does not save it permanently.
+- [MARLIN-E3S1PROFORK-BYTT-fix45] fixed a selden visual bug where on starting the same mesh again shortly a wrong mesh site was shown
+
 ## [MARLIN-E3S1PROFORK-BYTT-v025] - 2024-01-23
 
 This release i call "The save and load settings update".
