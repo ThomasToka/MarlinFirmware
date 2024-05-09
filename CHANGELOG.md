@@ -19,6 +19,27 @@ Patreon: https://www.patreon.com/ThomasToka
 
 Github Sponsors: https://github.com/sponsors/ThomasToka
 
+## [MARLIN-E3S1PROFORK-BYTT-v027] - 2024-05-09
+
+This release i call "The save and load update part 2".
+
+This is a short update to pace up with marlin upstream and fix some minor bugs.
+
+In this release the following additions/changes/fixes have been made:
+
+### Added
+- [MARLIN-E3S1PROFORK-BYTT-add107] I included all marlin upstream commits since the last release
+- [MARLIN-E3S1PROFORK-BYTT-add108] add M19 S7 functionality for mesh_size (F), marginx (X), marginy (Y), probescount (P) ex. M19 S7 X0 Y0 F7 P1
+- [MARLIN-E3S1PROFORK-BYTT-add109] added M19 to load and save function on the restore site. you can set X0 and Y0 and it will reaccount based on the probe offsets set earlier. execute M19 always as last in your SETTINGS.GCO
+
+### Changed
+- [MARLIN-E3S1PROFORK-BYTT-change84] shrinked lcd_rts code again
+- [MARLIN-E3S1PROFORK-BYTT-change85] changed some lcd and marlin ids for some sites and realligned in marlin code
+- [MARLIN-E3S1PROFORK-BYTT-change86] changed probe offsets blue writing in the fields to white as here the pads must be used
+### Fixed
+- [MARLIN-E3S1PROFORK-BYTT-fix46] fixed unwanted save on entering the device site
+
+
 ## [MARLIN-E3S1PROFORK-BYTT-v026] - 2024-04-21
 
 This release i call "The service release".
