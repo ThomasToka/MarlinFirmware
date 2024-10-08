@@ -19,6 +19,28 @@ Patreon: https://www.patreon.com/ThomasToka
 
 Github Sponsors: https://github.com/sponsors/ThomasToka
 
+## [MARLIN-E3S1PROFORK-BYTT-v028] - 2024-10-08
+
+This release i call "The service update part 2"
+
+In this release the following additions/changes/fixes have been made:
+
+### Added
+- [MARLIN-E3S1PROFORK-BYTT-add110] included all upstream commits till 07.Oct.2024
+- [MARLIN-E3S1PROFORK-BYTT-add111] fixed/added M25 functionality for Prusa/Orca/all other slicers. M25 is now implemented to interact with our display when send from gcode.
+- [MARLIN-E3S1PROFORK-BYTT-add112] power loss recovery now restores the display printdata and printed filename on recovery
+- [MARLIN-E3S1PROFORK-BYTT-add113] added M19 S8 F$value for the plr_offset. This you can use if you powerloss recovery position has a z_offset. But this should not be needed at all. Its only included to have it configurable on runtime.
+
+### Changed
+- nothing had to be changed of the non fixed things.
+
+### Fixed
+- [MARLIN-E3S1PROFORK-BYTT-fix47] probably fixed the selden "probe error on point 1 of the auto leveling run but finish and save correctly" bug
+- [MARLIN-E3S1PROFORK-BYTT-fix48] fixed powerloss recovery after upstream broke it in v015
+- [MARLIN-E3S1PROFORK-BYTT-fix49] power recovery save fix on pause sites while printing fixed
+- [MARLIN-E3S1PROFORK-BYTT-fix50] laser screen and site ids fixed to match the in v027 introduced changes 
+
+
 ## [MARLIN-E3S1PROFORK-BYTT-v027] - 2024-05-09
 
 This release i call "The save and load update part 2".
@@ -36,6 +58,7 @@ In this release the following additions/changes/fixes have been made:
 - [MARLIN-E3S1PROFORK-BYTT-change84] shrinked lcd_rts code again
 - [MARLIN-E3S1PROFORK-BYTT-change85] changed some lcd and marlin ids for some sites and realligned in marlin code
 - [MARLIN-E3S1PROFORK-BYTT-change86] changed probe offsets blue writing in the fields to white as here the pads must be used
+
 ### Fixed
 - [MARLIN-E3S1PROFORK-BYTT-fix46] fixed unwanted save on entering the device site
 
