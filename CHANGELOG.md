@@ -26,7 +26,7 @@ This release i call "The unwanted z raise update"
 In this release the following additions/changes/fixes have been made:
 
 ### Added
-- [MARLIN-E3S1PROFORK-BYTT-add114] M19 S9 F0|1 is now capable of disabling the z raise on startup of the printer. Disable: M19 S9 F0 Enable: Disable: M19 S9 F1 Default it is still enabled. So if you want to disable you have to set it via gcode. Or save the settings to SETTINGS.GCO and modify M19 S9 F1 to M19 F9 F0 and load the settings again on your printer.
+- [MARLIN-E3S1PROFORK-BYTT-add114] M19 S9 F0|1 is now capable of disabling the z raise on startup of the printer. Disable: M19 S9 F0 Enable: M19 S9 F1 Default it is still enabled. So if you want to disable you have to set it via gcode. Or save the settings to SETTINGS.GCO and modify M19 S9 F1 to M19 F9 F0 and load the settings again on your printer.
 - [MARLIN-E3S1PROFORK-BYTT-add115] M19 S8 S5 is the new default for the raise on power loss recovery. It is now dynamic you dont need to set or change it. this defines the lift height after heatup of the power loss recovery run. So if you dont want to lift it at all in case of power loss recovery you set M19 S8 S0. It will be saved to eeprom and used.
 
 ### Changed
