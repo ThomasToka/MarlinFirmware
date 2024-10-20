@@ -19,6 +19,23 @@ Patreon: https://www.patreon.com/ThomasToka
 
 Github Sponsors: https://github.com/sponsors/ThomasToka
 
+## [MARLIN-E3S1PROFORK-BYTT-v029] - 2024-10-20
+
+This release i call "The unwanted z raise update"
+
+In this release the following additions/changes/fixes have been made:
+
+### Added
+- [MARLIN-E3S1PROFORK-BYTT-add114] M19 S9 F0|1 is now capable of disabling the z raise on startup of the printer. Disable: M19 S9 F0 Enable: Disable: M19 S9 F1 Default it is still enabled. So if you want to disable you have to set it via gcode. Or save the settings to SETTINGS.GCO and modify M19 S9 F1 to M19 F9 F0 and load the settings again on your printer.
+- [MARLIN-E3S1PROFORK-BYTT-add115] M19 S8 S5 is the new default for the raise on power loss recovery. It is now dynamic you dont need to set or change it. this defines the lift height after heatup of the power loss recovery run. So if you dont want to lift it at all in case of power loss recovery you set M19 S8 S0. It will be saved to eeprom and used.
+
+### Changed
+- [MARLIN-E3S1PROFORK-BYTT-change87] you may see the unwanted z-raise on SETTINGS.GCO load as far as it is enabled.
+- [MARLIN-E3S1PROFORK-BYTT-change88] code optimizations and changes to follow the upstream lsd_rts class implementations.
+
+### Fixed
+- [MARLIN-E3S1PROFORK-BYTT-fix51] again the power loss recovery had to be touched cause i found the real reason - besides the other upstream fixes that not worked - for the postitioning problems. it was also caused by a M402 command which lead to initializing wrong heights. my last fixes did not respect this. so it only worked if two conditions were met, but not all possible.. now its hopefully fixed.
+
 ## [MARLIN-E3S1PROFORK-BYTT-v028] - 2024-10-08
 
 This release i call "The service update part 2"
