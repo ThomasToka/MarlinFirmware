@@ -19,6 +19,22 @@ Patreon: https://www.patreon.com/ThomasToka
 
 Github Sponsors: https://github.com/sponsors/ThomasToka
 
+## [MARLIN-E3S1PROFORK-BYTT-v030] - 2024-12-21
+
+This release i call "The first layer optimization update"
+
+In this release the following additions/changes/fixes have been made:
+
+### Added
+- [MARLIN-E3S1PROFORK-BYTT-add116] included all Marlin upstream commits till 20.Dec.2025
+- [MARLIN-E3S1PROFORK-BYTT-add117] probing with cr-touch with probes from 3 to 5 optimized for better first layer results.
+
+### Changed
+- nothing had to be changed of the non fixed things.
+
+### Fixed
+- [MARLIN-E3S1PROFORK-BYTT-fix52] developed fallback code for the "probe error on point 1 of the auto leveling run but finish and save correctly" bug (it had to be touched again!)
+
 ## [MARLIN-E3S1PROFORK-BYTT-v029] - 2024-10-20
 
 This release i call "The unwanted z raise update"
