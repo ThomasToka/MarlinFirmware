@@ -19,6 +19,23 @@ Patreon: https://www.patreon.com/ThomasToka
 
 Github Sponsors: https://github.com/sponsors/ThomasToka
 
+## [MARLIN-E3S1PROFORK-BYTT-v031] - 2024-12-27
+
+This release i call "The uncommon functions fixes"
+
+In this release the following additions/changes/fixes have been made:
+
+### Added
+- [MARLIN-E3S1PROFORK-BYTT-add118] prevent negative layer numbers in M117 to reach the display
+
+### Changed
+- [MARLIN-E3S1PROFORK-BYTT-change89] remove software_autoscroll and clean up
+- [MARLIN-E3S1PROFORK-BYTT-change90] update filament sensor stop redirect page
+
+### Fixed
+- [MARLIN-E3S1PROFORK-BYTT-fix53] fix settingsload on triggered filament runout sensor
+- [MARLIN-E3S1PROFORK-BYTT-fix54] fix stop on filament runout
+
 ## [MARLIN-E3S1PROFORK-BYTT-v030] - 2024-12-21
 
 This release i call "The first layer optimization update"
