@@ -19,6 +19,25 @@ Patreon: https://www.patreon.com/ThomasToka
 
 Github Sponsors: https://github.com/sponsors/ThomasToka
 
+## [MARLIN-E3S1PROFORK-BYTT-v032] - 2025-05-20
+
+This release i call "The uncommon functions fixes"
+
+In this release the following additions/changes/fixes have been made:
+
+### Added
+- [MARLIN-E3S1PROFORK-BYTT-add119] included all Marlin upstream commits till 20.Feb.2025
+
+### Changed
+- [MARLIN-E3S1PROFORK-BYTT-change91] changed behavior of a stop when laser mode is activated
+- [MARLIN-E3S1PROFORK-BYTT-change92] number of probes default changed to 5 to be more accurate
+- [MARLIN-E3S1PROFORK-BYTT-change93] changed upper z axis limit in the screen firmware to allow z axis extension to 550mm
+
+### Fixed
+- [MARLIN-E3S1PROFORK-BYTT-fix54] fixed negative layers display
+- [MARLIN-E3S1PROFORK-BYTT-fix55] fix compilation under linux
+- [MARLIN-E3S1PROFORK-BYTT-fix56] fixed z offset save on leaving the manual leveling site via the back button on the upper left corner
+
 ## [MARLIN-E3S1PROFORK-BYTT-v031] - 2024-12-27
 
 This release i call "The uncommon functions fixes"
