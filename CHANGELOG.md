@@ -21,7 +21,7 @@ Github Sponsors: https://github.com/sponsors/ThomasToka
 
 ## [MARLIN-E3S1PROFORK-BYTT-v032] - 2025-05-20
 
-This release i call "The uncommon functions fixes"
+This release i call "The negative layers update"
 
 In this release the following additions/changes/fixes have been made:
 
