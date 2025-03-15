@@ -19,14 +19,31 @@ Patreon: https://www.patreon.com/ThomasToka
 
 Github Sponsors: https://github.com/sponsors/ThomasToka
 
-## [MARLIN-E3S1PROFORK-BYTT-v032] - 2025-05-20
+## [MARLIN-E3S1PROFORK-BYTT-v033] - 2025-03-15
+
+This release i call "The service update part 3"
+
+In this release the following additions/changes/fixes have been made:
+
+### Added
+- [MARLIN-E3S1PROFORK-BYTT-add120] included all Marlin upstream commits till 15.03.2025
+
+### Changed
+- nothing had to changed
+
+### Fixed
+- [MARLIN-E3S1PROFORK-BYTT-fix57] revert v029 M402 move from lcd_rts to powerloss fixing the laser / lightburn startup problem
+- [MARLIN-E3S1PROFORK-BYTT-fix58] revert v029 MarlinCore changes / reintroduce boot up delay fixing rare ubl builds startup problems
+- [MARLIN-E3S1PROFORK-BYTT-fix59] fix Linear Advance title icon in mainboard and screen firmware
+
+## [MARLIN-E3S1PROFORK-BYTT-v032] - 2025-02-20
 
 This release i call "The negative layers update"
 
 In this release the following additions/changes/fixes have been made:
 
 ### Added
-- [MARLIN-E3S1PROFORK-BYTT-add119] included all Marlin upstream commits till 20.Feb.2025
+- [MARLIN-E3S1PROFORK-BYTT-add119] included all Marlin upstream commits till 20.02.2025
 
 ### Changed
 - [MARLIN-E3S1PROFORK-BYTT-change91] changed behavior of a stop when laser mode is activated
