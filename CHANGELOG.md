@@ -19,6 +19,33 @@ Patreon: https://www.patreon.com/ThomasToka
 
 Github Sponsors: https://github.com/sponsors/ThomasToka
 
+
+## [MARLIN-E3S1PROFORK-BYTT-v034] - 2025-07-10
+
+### Important: Please update your SETTINGS.GCO if you want to use the Save and Load Settings function with v034 after the Upgrade. 
+Update the M900 and add the default TAU0.020 like:
+- before v034:
+M900 K0.035
+- as of v034:
+M900 K0.035 TAU0.020
+
+### Added
+- [MARLIN-E3S1PROFORK-BYTT-add121] included all Marlin upstream commits till 29.06.2025
+- [MARLIN-E3S1PROFORK-BYTT-add122] Smooth Linear Advance enabled with a default TAU of 0.020 in mainboard and screen firmware. read more about Smooth Linear Advance here: https://github.com/MarlinFirmware/Marlin/pull/27710
+- [MARLIN-E3S1PROFORK-BYTT-add123] introduced DYNAMIC_LEVELING and DYNAMIC_TRAMMING variables to conditionally enable or disable both on compile time
+
+### Changed
+- [MARLIN-E3S1PROFORK-BYTT-change94] starting autoleveling ALWAYS triggers a G28 Homing, even if you just entered the autoleveling site and the printer is homed
+- [MARLIN-E3S1PROFORK-BYTT-change95] more "changeable" text fields in blue on the screen
+- [MARLIN-E3S1PROFORK-BYTT-change96] reverted old non working "probe error 203 on point 1" fix
+- [MARLIN-E3S1PROFORK-BYTT-change97] removed old debug functions in stable code parts (nearly all, haha)
+- [MARLIN-E3S1PROFORK-BYTT-change98] rewritten both UBL and ABL to be conditionally dynamic
+- [MARLIN-E3S1PROFORK-BYTT-change99] rewritten the complete E3S1PRO_RTS implementation
+ 
+### Fixed
+- [MARLIN-E3S1PROFORK-BYTT-fix60] the "probe error 203 but finish autoleveling on point 1" bug was fixed by a earlier variable update of max_points
+
+
 ## [MARLIN-E3S1PROFORK-BYTT-v033] - 2025-03-15
 
 This release i call "The service update part 3"
