@@ -1,6 +1,6 @@
 ---
 name: Bug report script
-about: Create a report to help us improve
+about: Create a report to help us improve the scripts in this repo
 title: ''
 labels: ''
 assignees: ''
@@ -13,9 +13,9 @@ This issue tracker is not for firmware bugs, user errors, hardware problems or i
 
 Its dedicated to the scripts located in the repository.
 
-Every Issue not related to the scripts will be closed as invalid.
+Every issue not related to the scripts will be closed as invalid.
 
-The only pleace to get support by the developer directly is via the discord. The link is in the installation.txt .
+The only place to get support by our community or the developer directly is via the discord. The link is in the installation.txt .
 
 
 **Describe the bug**
