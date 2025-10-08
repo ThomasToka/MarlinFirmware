@@ -20,6 +20,30 @@ Patreon: https://www.patreon.com/ThomasToka
 Github Sponsors: https://github.com/sponsors/ThomasToka
 
 
+## [MARLIN-E3S1PROFORK-BYTT-v035] - 2025-09-27
+
+This release i call "The lcd shrink update"
+
+Important: If you upgrade from a version pre v034: Update your SETTINGS.GCO and add to the M900 the default TAU0.020 like:
+- before v034:
+M900 K0.035
+- as of v034:
+M900 K0.035 TAU0.020
+
+In this release the following additions/changes/fixes have been made:
+
+### Added
+- [MARLIN-E3S1PROFORK-BYTT-add124] included all Marlin upstream commits till 27.09.2025
+
+### Changed
+- [MARLIN-E3S1PROFORK-BYTT-change100] reworked movement site to save around 140KB display space
+- [MARLIN-E3S1PROFORK-BYTT-change101] reworked material preset sites to be on one site and also save some space
+ 
+### Fixed
+- [MARLIN-E3S1PROFORK-BYTT-fix61] fixed G29 display screen stuck on autoleveling on print start from start gcode right after G28 with G29 in abl or G29 P1 T in ubl from octoprint
+- [MARLIN-E3S1PROFORK-BYTT-fix62] powerloss recovery fixed again after it broke in v028
+
+
 ## [MARLIN-E3S1PROFORK-BYTT-v034] - 2025-07-10
 
 ### Important: Please update your SETTINGS.GCO if you want to use the Save and Load Settings function with v034 after the Upgrade. 
