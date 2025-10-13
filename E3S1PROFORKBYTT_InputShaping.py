@@ -11,12 +11,14 @@ class E3S1PROFORKBYTT_InputShaping(Script):
         super().__init__()
 
     def getSettingDataString(self):
+        # NOTE: Cura's PostProcessingPlugin UI is static; we can't hide TAU dynamically.
+        # We label it clearly as v034+ only and ignore it on v033 in execute().
         return json.dumps({
-            'name': 'E3S1PROFORKBYTT InputShaping',
-            'key': 'E3S1PROFORKBYTT InputShaping',
-            'metadata': {},
-            'version': 2,
-            'settings': {
+            "name": "E3S1PROFORKBYTT InputShaping",
+            "key": "E3S1PROFORKBYTT_InputShaping",
+            "metadata": {},
+            "version": 2,
+            "settings": {
                 "gcode": {
                     "label": "Motion planning type",
                     "description": "Use either M593 (ZV input shaping) or M493 (Fixed-time motion)",
@@ -27,58 +29,133 @@ class E3S1PROFORKBYTT_InputShaping(Script):
                     },
                     "default_value": "is"
                 },
-                'start_f': {
-                    'label': 'Start frequency',
-                    'description': 'Ringing compensation frequency sweep start value',
-                    'unit': 'Hz',
-                    'type': 'int',
-                    'default_value': 20
+                "forkversion": {
+                    "label": "E3S1PROFORK-BYTT Version",
+                    "description": "Select v033 or earlier (no TAU) or v034 or newer (supports TAU)",
+                    "type": "enum",
+                    "options": {
+                        "old": "up to v033",
+                        "new": "v034 or newer"
+                    },
+                    "default_value": "new"
                 },
-                'end_f': {
-                    'label': 'End frequency',
-                    'description': 'Ringing compensation frequency sweep end value',
-                    'unit': 'Hz',
-                    'type': 'int',
-                    'default_value': 60
+                "start_f": {
+                    "label": "Start frequency",
+                    "description": "Ringing compensation frequency sweep start value",
+                    "unit": "Hz",
+                    "type": "int",
+                    "default_value": 20
                 },
-                'linear_advance_k': {
-                    'label': 'Reenable LA after Test with K',
-                    'description': 'Reenable LA after Test with K',
-                    'unit': '',
-                    'type': 'float',
-                    'default_value': 0.03
+                "end_f": {
+                    "label": "End frequency",
+                    "description": "Ringing compensation frequency sweep end value",
+                    "unit": "Hz",
+                    "type": "int",
+                    "default_value": 100
+                },
+                "linear_advance_k": {
+                    "label": "Re-enable LA after test with K",
+                    "description": "K value to restore after the test",
+                    "type": "float",
+                    "default_value": 0.035
+                },
+                "linear_advance_tau": {
+                    "label": "Linear Advance TAU (v034+ only)",
+                    "description": "Ignored when fork version is v033.",
+                    "type": "float",
+                    "default_value": 0.020
                 }
             }
         })
 
     def execute(self, data):
-        gc = self.getSettingValueByKey('gcode')
-        start_hz = self.getSettingValueByKey('start_f')
-        end_hz = self.getSettingValueByKey('end_f')
-        linear_advance_k = self.getSettingValueByKey('linear_advance_k')
+        # Read settings
+        gc = self.getSettingValueByKey("gcode")
+        forkversion = self.getSettingValueByKey("forkversion")
+
+        # Cast numeric settings safely
+        try:
+            start_hz = float(self.getSettingValueByKey("start_f"))
+        except Exception:
+            start_hz = 20.0
+        try:
+            end_hz = float(self.getSettingValueByKey("end_f"))
+        except Exception:
+            end_hz = 100.0
+        try:
+            linear_advance_k = float(self.getSettingValueByKey("linear_advance_k"))
+        except Exception:
+            linear_advance_k = 0.035
+        try:
+            linear_advance_tau = float(self.getSettingValueByKey("linear_advance_tau"))
+        except Exception:
+            linear_advance_tau = 0.020
+
+        # Ensure sweep bounds make sense
+        if end_hz < start_hz:
+            start_hz, end_hz = end_hz, start_hz  # swap if user inverted them
+
         linear_advance_disabled = False
+        max_layer = 0
 
         for i, layer in enumerate(data):
-            lines = layer.split('\n')
+            lines = layer.split("\n")
             for j, line in enumerate(lines):
+                # Capture total layer count from header
                 if line.startswith(";LAYER_COUNT:"):
-                    max_layer = float(line.strip(';LAYER_COUNT:'))
-                elif line.startswith(';LAYER:'):
-                    layer = float(line.strip(';LAYER:'))
-                    hz = 0 if layer < 2 else start_hz + (end_hz - start_hz) * (layer - 2) / (max_layer - 3)
-                    if gc == 'ftm':
-                        if layer == 0:
-                            lines[j] += '\n;TYPE:INPUTSHAPING\nM493 S11 D0 ;Enable ZVD Input Shaping'
-                        lines[j] += '\n;TYPE:INPUTSHAPING\nM493 A%f ;(Hz) X Input Shaping Test' % hz
-                        lines[j] += '\nM493 B%f ;(Hz) Y Input Shaping Test' % hz
-                    if gc == 'is':
-                        if not linear_advance_disabled:
-                            lines[j] = 'M900 K0 ;disable Linear Advance\n' + lines[j]
-                            linear_advance_disabled = True
-                        lines[j] += '\n;TYPE:INPUTSHAPING\nM593 F%f ;(Hz) Input Shaping Test' % hz
-            data[i] = '\n'.join(lines)
+                    try:
+                        max_layer = int(line.replace(";LAYER_COUNT:", "").strip())
+                    except ValueError:
+                        pass
+                    continue
 
-        # Re-enable Linear Advance with the specified K-factor after the last line
-        data[-1] += '\nM900 K%f ;re-enable Linear Advance with specified K-factor\n' % linear_advance_k
+                # Per-layer handling
+                if line.startswith(";LAYER:"):
+                    try:
+                        layer_num = int(line.replace(";LAYER:", "").strip())
+                    except ValueError:
+                        continue
+
+                    # Sweep mapping:
+                    # - Layers 0–1 => F=0 (prime/purge and initial layer)
+                    # - Layers 2..(max_layer-1) distributed from start_hz..end_hz
+                    if layer_num < 2 or max_layer <= 3:
+                        hz = 0.0
+                    else:
+                        span = max(1, (max_layer - 3))
+                        hz = start_hz + (end_hz - start_hz) * (layer_num - 2) / span
+
+                    # Emit commands based on mode
+                    if gc == "ftm":
+                        if layer_num == 0:
+                            lines[j] += "\n;TYPE:INPUTSHAPING\nM493 S11 D0 ; Enable ZVD Input Shaping"
+                        lines[j] += f"\n;TYPE:INPUTSHAPING\nM493 A{hz:.2f} ; (Hz) X Input Shaping Test"
+                        lines[j] += f"\nM493 B{hz:.2f} ; (Hz) Y Input Shaping Test"
+
+                    elif gc == "is":
+                        # Disable Linear Advance once at first encountered layer
+                        if not linear_advance_disabled:
+                            if forkversion == "new":
+                                # v034+ supports TAU parameter with M900
+                                lines[j] = "M900 K0 TAU0 ; disable Linear Advance\n" + lines[j]
+                            else:
+                                lines[j] = "M900 K0 ; disable Linear Advance\n" + lines[j]
+                            linear_advance_disabled = True
+
+                        lines[j] += f"\n;TYPE:INPUTSHAPING\nM593 F{hz:.2f} ; (Hz) Input Shaping Test"
+
+            data[i] = "\n".join(lines)
+
+        # Re-enable Linear Advance on the very last chunk
+        if forkversion == "new":
+            data[-1] += (
+                f"\nM900 K{linear_advance_k:.3f} TAU{linear_advance_tau:.3f} "
+                f"; re-enable Linear Advance with specified K and TAU\n"
+            )
+        else:
+            data[-1] += (
+                f"\nM900 K{linear_advance_k:.3f} "
+                f"; re-enable Linear Advance with specified K (TAU unsupported on v033)\n"
+            )
 
         return data
