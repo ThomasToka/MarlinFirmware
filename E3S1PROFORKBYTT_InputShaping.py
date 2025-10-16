@@ -12,7 +12,7 @@ class E3S1PROFORKBYTT_InputShaping(Script):
 
     def getSettingDataString(self):
         # NOTE: Cura's PostProcessingPlugin UI is static; we can't hide TAU dynamically.
-        # We label it clearly as v034+ only and ignore it on v033 in execute().
+        # We label it as "smooth only" and ignore it on "classic" in execute().
         return json.dumps({
             "name": "E3S1PROFORKBYTT InputShaping",
             "key": "E3S1PROFORKBYTT_InputShaping",
@@ -30,14 +30,14 @@ class E3S1PROFORKBYTT_InputShaping(Script):
                     "default_value": "is"
                 },
                 "forkversion": {
-                    "label": "E3S1PROFORK-BYTT Version",
-                    "description": "Select v033 or earlier (no TAU) or v034 or newer (supports TAU)",
+                    "label": "Linear advance version",
+                    "description": "Select classic LA (no TAU) or smooth LA (supports TAU)",
                     "type": "enum",
                     "options": {
-                        "old": "up to v033",
-                        "new": "v034 or newer"
+                        "classic": "classic LA (without TAU) up to v033",
+                        "smooth": "smooth LA (with TAU) as of v034"
                     },
-                    "default_value": "new"
+                    "default_value": "smooth"
                 },
                 "start_f": {
                     "label": "Start frequency",
@@ -60,18 +60,39 @@ class E3S1PROFORKBYTT_InputShaping(Script):
                     "default_value": 0.035
                 },
                 "linear_advance_tau": {
-                    "label": "Linear Advance TAU (v034+ only)",
-                    "description": "Ignored when fork version is v033.",
+                    "label": "Linear Advance U (TAU) for smooth linear advance",
+                    "description": "Ignored when classic linear advance chosen",
                     "type": "float",
                     "default_value": 0.020
+                },
+                "input_shaping_hz_x": {
+                    "label": "Re-enable input shaping X with",
+                    "description": "Input shaping X frequency (Hz) to restore after the test",
+                    "unit": "Hz",
+                    "type": "float",
+                    "default_value": 40.0
+                },
+                "input_shaping_hz_y": {
+                    "label": "Re-enable input shaping Y with",
+                    "description": "Input shaping Y frequency (Hz) to restore after the test",
+                    "unit": "Hz",
+                    "type": "float",
+                    "default_value": 40.0
                 }
             }
         })
 
     def execute(self, data):
-        # Read settings
-        gc = self.getSettingValueByKey("gcode")
-        forkversion = self.getSettingValueByKey("forkversion")
+        # Normalize mode (Cura may return key or label)
+        gc_raw = str(self.getSettingValueByKey("gcode")).strip().lower()
+        if gc_raw in ("is", "m593 (zv input shaping)", "m593"):
+            gc = "is"
+        elif gc_raw in ("ftm", "m493 (fixed-time motion)", "m493"):
+            gc = "ftm"
+        else:
+            gc = "is"  # safe default
+
+        forkversion = str(self.getSettingValueByKey("forkversion")).strip().lower()
 
         # Cast numeric settings safely
         try:
@@ -90,6 +111,14 @@ class E3S1PROFORKBYTT_InputShaping(Script):
             linear_advance_tau = float(self.getSettingValueByKey("linear_advance_tau"))
         except Exception:
             linear_advance_tau = 0.020
+        try:
+            ishz_x = float(self.getSettingValueByKey("input_shaping_hz_x"))
+        except Exception:
+            ishz_x = 40.0
+        try:
+            ishz_y = float(self.getSettingValueByKey("input_shaping_hz_y"))
+        except Exception:
+            ishz_y = 40.0
 
         # Ensure sweep bounds make sense
         if end_hz < start_hz:
@@ -135,9 +164,9 @@ class E3S1PROFORKBYTT_InputShaping(Script):
                     elif gc == "is":
                         # Disable Linear Advance once at first encountered layer
                         if not linear_advance_disabled:
-                            if forkversion == "new":
-                                # v034+ supports TAU parameter with M900
-                                lines[j] = "M900 K0 TAU0 ; disable Linear Advance\n" + lines[j]
+                            if forkversion == "smooth":
+                                # smooth supports TAU with M900
+                                lines[j] = "M900 K0 U0 ; disable Linear Advance\n" + lines[j]
                             else:
                                 lines[j] = "M900 K0 ; disable Linear Advance\n" + lines[j]
                             linear_advance_disabled = True
@@ -147,15 +176,30 @@ class E3S1PROFORKBYTT_InputShaping(Script):
             data[i] = "\n".join(lines)
 
         # Re-enable Linear Advance on the very last chunk
-        if forkversion == "new":
+        if forkversion == "smooth":
             data[-1] += (
-                f"\nM900 K{linear_advance_k:.3f} TAU{linear_advance_tau:.3f} "
-                f"; re-enable Linear Advance with specified K and TAU\n"
+                f"\nM900 K{linear_advance_k:.3f} U{linear_advance_tau:.3f} "
+                f"; re-enable Linear Advance with specified K and U"
             )
         else:
             data[-1] += (
                 f"\nM900 K{linear_advance_k:.3f} "
-                f"; re-enable Linear Advance with specified K (TAU unsupported on v033)\n"
+                f"; re-enable Linear Advance with specified K (TAU unsupported in classic)"
+            )
+
+        # >>> Restore Input Shaping AFTER LA is restored (both modes)
+        if gc == "is":
+            # Per-axis restore for M593 (adjust to your firmware if global only)
+            data[-1] += (
+                f"\n; restore input shaping after test"
+                f"\nM593 X F{ishz_x:.2f} ; restore X input shaping"
+                f"\nM593 Y F{ishz_y:.2f} ; restore Y input shaping\n"
+            )
+        elif gc == "ftm":
+            data[-1] += (
+                f"\n; restore input shaping after test"
+                f"\nM493 A{ishz_x:.2f} ; restore X input shaping"
+                f"\nM493 B{ishz_y:.2f} ; restore Y input shaping\n"
             )
 
         return data
