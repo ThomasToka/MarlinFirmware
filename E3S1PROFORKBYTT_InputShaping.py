@@ -37,7 +37,7 @@ class E3S1PROFORKBYTT_InputShaping(Script):
                         "classic": "classic LA (without TAU) up to v033 and as of v036",
                         "smooth": "smooth LA (with TAU) for v034 and v035"
                     },
-                    "default_value": "smooth"
+                    "default_value": "classic"
                 },
                 "start_f": {
                     "label": "Start frequency",
@@ -203,4 +203,5 @@ class E3S1PROFORKBYTT_InputShaping(Script):
             )
 
         return data
+
 
