@@ -34,8 +34,8 @@ class E3S1PROFORKBYTT_InputShaping(Script):
                     "description": "Select classic LA (no TAU) or smooth LA (supports TAU)",
                     "type": "enum",
                     "options": {
-                        "classic": "classic LA (without TAU) up to v033",
-                        "smooth": "smooth LA (with TAU) as of v034"
+                        "classic": "classic LA (without TAU) up to v033 and as of v036",
+                        "smooth": "smooth LA (with TAU) for v034 and v035"
                     },
                     "default_value": "smooth"
                 },
@@ -203,3 +203,4 @@ class E3S1PROFORKBYTT_InputShaping(Script):
             )
 
         return data
+
