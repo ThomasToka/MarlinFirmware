@@ -19,6 +19,32 @@ Patreon: https://www.patreon.com/ThomasToka
 
 Github Sponsors: https://github.com/sponsors/ThomasToka
 
+## [MARLIN-E3S1PROFORK-BYTT-v037] - 2025-10-21
+
+This release i call "The OctoApp compatibility update"
+
+Important: If you upgrade from v034 or v035: Update your SETTINGS.GCO and remove the TAU from M900:
+- before v034:
+M900 K0.035
+- v034 and v035:
+M900 K0.035 TAU0.020
+- as of v036:
+M900 K0.035
+
+If you upgrade from v033 or before nothing has to be changed.
+
+In this release the following additions/changes/fixes have been made:
+
+### Added
+- nothing
+
+### Changed
+- [MARLIN-E3S1PROFORK-BYTT-change103] changed M19 S1 thumbnail load to be more robust and ommit lines added by third party plugins 
+ 
+### Fixed
+- [MARLIN-E3S1PROFORK-BYTT-fix63] OctoApp support fixed in mainboard firmware and in the OctoPrint-E3S1PROFORKBYTT_Thumbnails version 2.2.0 plugin
+
+
 ## [MARLIN-E3S1PROFORK-BYTT-v036] - 2025-10-18
 
 This release i call "The revert to classic LA update"
@@ -43,6 +69,7 @@ In this release the following additions/changes/fixes have been made:
  
 ### Fixed
 - nothing
+
 
 ## [MARLIN-E3S1PROFORK-BYTT-v035] - 2025-09-27
 
