@@ -1,5 +1,6 @@
 # Changelog of [MARLIN-E3S1PROFORK-BYTT] based on Marlin bugfix-2.1.x
-# for Ender 3 S1 Pro/Plus/noneProPlus
+# for Ender 3 S1 pro or plus with stock touchscreen 
+# and also for converted Ender 3 S1 with the pro/plus touchscreen.
 
 This is a fork of Marlin bugfix-2.1.x and the Creality Ender 3 S1 Pro source code.
 
