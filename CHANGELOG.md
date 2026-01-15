@@ -40,7 +40,7 @@ In this release the following additions/changes/fixes have been made:
 - [MARLIN-E3S1PROFORK-BYTT-add126] included all Marlin upstream commits till 01.15.2026
 
 ### Changed
-- [MARLIN-E3S1PROFORK-BYTT-change104] adjusted cardreader sorting after upstream changes to list folders first, then file
+- [MARLIN-E3S1PROFORK-BYTT-change104] adjusted cardreader sorting after upstream changes to list folders first, then files
 - [MARLIN-E3S1PROFORK-BYTT-change105] improve cardreader file list memory handling eliminating potential memory leaks 
  
 ### Fixed
