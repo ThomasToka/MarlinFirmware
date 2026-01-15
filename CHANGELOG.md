@@ -20,6 +20,32 @@ Patreon: https://www.patreon.com/ThomasToka
 
 Github Sponsors: https://github.com/sponsors/ThomasToka
 
+## [MARLIN-E3S1PROFORK-BYTT-v038] - 2026-01-15
+
+This release i call "The ubl mesh read fix"
+
+Important: If you upgrade from v034 or v035: Update your SETTINGS.GCO and remove the TAU from M900:
+- before v034:
+M900 K0.035
+- v034 and v035:
+M900 K0.035 TAU0.020
+- as of v036:
+M900 K0.035
+
+If you upgrade from v033 or before nothing has to be changed.
+
+In this release the following additions/changes/fixes have been made:
+
+### Added
+- [MARLIN-E3S1PROFORK-BYTT-add126] included all Marlin upstream commits till 01.15.2026
+
+### Changed
+- [MARLIN-E3S1PROFORK-BYTT-change104] adjusted cardreader sorting after upstream changes to list folders first, then file
+- [MARLIN-E3S1PROFORK-BYTT-change105] improve cardreader file list memory handling eliminating potential memory leaks 
+ 
+### Fixed
+- [MARLIN-E3S1PROFORK-BYTT-fix64] Ubl read mesh on boot sometimes failes
+
 ## [MARLIN-E3S1PROFORK-BYTT-v037] - 2025-10-21
 
 This release i call "The OctoApp compatibility update"
