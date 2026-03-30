@@ -20,6 +20,36 @@ Patreon: https://www.patreon.com/ThomasToka
 
 Github Sponsors: https://github.com/sponsors/ThomasToka
 
+## [MARLIN-E3S1PROFORK-BYTT-v039] - 2026-03-30
+
+This release i call "The abl mesh precision update"
+
+Important: If you upgrade from v034 or v035: Update your SETTINGS.GCO and remove the TAU from M900:
+- before v034:
+M900 K0.035
+- v034 and v035:
+M900 K0.035 TAU0.020
+- as of v036:
+M900 K0.035
+
+If you upgrade from v033 or before nothing has to be changed.
+
+In this release the following additions/changes/fixes have been made:
+
+### Added
+- [MARLIN-E3S1PROFORK-BYTT-add127] included all Marlin upstream commits till 29.03.2026
+- [MARLIN-E3S1PROFORK-BYTT-add128] added the ability to distinguish between a dacai and dwin display with a special craafted uart packet.
+- [MARLIN-E3S1PROFORK-BYTT-add129] added mainboard fw version, screen fw version and screen hw manufacturer on the boot site where the creality logo builds up
+- [MARLIN-E3S1PROFORK-BYTT-add130] added mainboard hw manufacturer on the about site
+- [MARLIN-E3S1PROFORK-BYTT-add131] added the abilty to check if the screen fw matches the mainboard fw and to change the color of the lower version text to red if a version missmatch between screen and mainboard is found
+    (this naturally will fully work for all comibinations of old and new firmwares as soo as the old version has also those adds. so fully working on the next update from v039 to v040)
+
+### Changed
+- [MARLIN-E3S1PROFORK-BYTT-change106] changed the way the abl mesh is finally handled by marlin firmware fixing a upstream bug manually after mathematically proving the post from the marlin discord. credits go to discord user PenguinAkiko. PR is here MarlinFirmware/Marlin#28380
+
+### Fixed
+- [MARLIN-E3S1PROFORK-BYTT-fix65] the pidtemp graph on dacai displays now goes from left bottom to right top
+
 ## [MARLIN-E3S1PROFORK-BYTT-v038] - 2026-01-15
 
 This release i call "The ubl mesh read fix"
