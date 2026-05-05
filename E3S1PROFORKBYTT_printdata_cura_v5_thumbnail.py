@@ -207,8 +207,7 @@ class E3S1PROFORKBYTT_printdata_cura_v5_thumbnail(Script):
                     filament_used_g_per_layer = filament_used_g / max(layers, 1)  # Avoid division by zero
                     remaining_filament_g = filament_used_g
 
-                    m117_added_1 = False  # Flag to check if M117 and M73 commands were added for Layer 0
-                    #m117_added_all = False
+                    m117_added = False  # Flag to check if M117 and M73 commands were added for Layer 0
                     for layer_index, layer_data in enumerate(data):
                         lines = layer_data.split("\n")
                         for line_index, line in enumerate(lines):
@@ -218,7 +217,7 @@ class E3S1PROFORKBYTT_printdata_cura_v5_thumbnail(Script):
                                 remaining_filament_g -= filament_used_g_per_layer
 
                                 # Check if this is Layer 1 and M117/M73 commands have not been added yet
-                                if layer_number == 1 and not m117_added_1:
+                                if layer_number == 1 and not m117_added:
                                     # Find the first G0 move with Z0.28 for Layer 0 and add M117 and M73 commands after it
                                     for sub_line_index, sub_line in enumerate(lines[line_index:], start=line_index):
                                         if sub_line.startswith("G0 ") and f"F" and f"X" and f"Y" and f"Z" in sub_line:
@@ -228,7 +227,7 @@ class E3S1PROFORKBYTT_printdata_cura_v5_thumbnail(Script):
                                             lines.insert(sub_line_index + 1, m117_line)
                                             lines.insert(sub_line_index + 2, m73_line_p)
                                             lines.insert(sub_line_index + 3, m73_line_r)
-                                            m117_added_1 = True  # Set the flag to True after adding M117 and M73 commands for Layer 0
+                                            m117_added = True  # Set the flag to True after adding M117 and M73 commands for Layer 0
                                             break
 
                                 # For all other layers, including Layer 1 if M117/M73 commands have not been added
@@ -239,7 +238,6 @@ class E3S1PROFORKBYTT_printdata_cura_v5_thumbnail(Script):
                                     lines.insert(line_index, m117_line)
                                     lines.insert(line_index + 1, m73_line_p)
                                     lines.insert(line_index + 2, m73_line_r)
-                                    #m117_added_all = True
                                     break  # Add the commands once and then break out of the loop
 
                         data[layer_index] = "\n".join(lines)
