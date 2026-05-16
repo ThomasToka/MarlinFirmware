@@ -14,10 +14,17 @@
 import sys
 import base64
 import math
-from PIL import Image
 from io import BytesIO
 import os
 import platform
+import subprocess
+
+try:
+    from PIL import Image
+except ImportError:
+    print("Pillow not found. Installing...")
+    subprocess.check_call([sys.executable, "-m", "pip", "install", "Pillow"])
+    from PIL import Image
 
 if platform.system() == "Darwin":
     print("Running on macOS")
