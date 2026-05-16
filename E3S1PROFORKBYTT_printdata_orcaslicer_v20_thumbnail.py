@@ -9,7 +9,6 @@
 import sys
 import base64
 import math
-from PIL import Image
 from io import BytesIO
 import os
 import platform
