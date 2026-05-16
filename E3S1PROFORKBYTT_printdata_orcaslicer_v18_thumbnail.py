@@ -9,9 +9,16 @@
 import sys
 import math
 import base64
-from PIL import Image
 from io import BytesIO
 import re
+import subprocess
+
+try:
+    from PIL import Image
+except ImportError:
+    print("Pillow not found. Installing...")
+    subprocess.check_call([sys.executable, "-m", "pip", "install", "Pillow"])
+    from PIL import Image
 
 def main(source_file):
     # Read the entire G-code file into memory
